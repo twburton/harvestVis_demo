@@ -43,9 +43,13 @@
 
 #container {
   width: 100%;
-  margin-top: -70px;
+  margin-top: -20px;
   padding: 0px;
-  position: relative;
+}
+
+#map-container{
+  display: block;
+  height: 600px;
 }
 
 #map {
