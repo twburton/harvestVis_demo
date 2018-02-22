@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>U.S. Fish &amp; Wildlife Service - Migratory Bird Program | Conserving America's Birds</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!--edit <head> data here-->
+<meta name="description" content="">
+	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/main.css">
+	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/normalize.min.css">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/jquery.mmenu.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/extensions/jquery.mmenu.positioning.css" />
+	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/custom-styling.css">
+  	<link rel="stylesheet" href="css/activity-map.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<script src="https://d3js.org/d3.v4.min.js"></script>
+  	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="js/HarvData.json"></script>
+
+<style>
+	.tooltip {
+		position: sticky;
+		/*display: inline-block;*/
+		#border-bottom: 1px dotted black;
+	}
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		width: 340px;
+		background-color: white;
+		color: black;
+		text-align: center;
+		font-size: 80%;
+		border: 1px solid gray;
+		line-height: 120%;
+		border-radius: 6px;
+		padding: 5px 3px;
+		position: absolute;
+		z-index: 1;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -60px;
+		/* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+		opacity: 0;
+		transition: opacity 1s;
+	}
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+		opacity: 1;
+	}
+</style>
+<!-- TemplateEndEditable -->
+</head>
+
+<body class="content-page">
+<div><!--this wrapping div is used for the mobile nav-->
+	<div id="content-hero"><div class="wrap">
+		<!-- TemplateBeginEditable name="hero-image" -->
+		<!--hero image goes here-->
+		<!-- TemplateEndEditable -->
+	</div></div>
+
+	<div id="breadcrumb"><div class="wrap">
+		<!-- TemplateBeginEditable name="breadcrumb" -->
+		<!--if you want dynamic breadcrumb, leave as is-->
+		<p class="dynamic-breadcrumb"></p>
+		<!-- TemplateEndEditable -->
+	</div></div>
+
+	<div id="content-wrapper">
+		<div class="wrap">
+			<div id="side-col">
+				<!-- TemplateBeginEditable name="side-col" -->
+				<!--if you want dynamic side nav, leave as is-->
+				<!-- TemplateEndEditable -->
+			</div>
+			<div id="content">
+				<div id="page-headings">
+					<!-- TemplateBeginEditable name="headings" -->
+					<!--<h1>Harvest Surveys Visualizations</h1>-->
+					<h1>Why is participation in harvest surveys so important?</h1>
+					<!-- TemplateEndEditable -->
+				</div>
+				<div id="content-area">
+					<!-- TemplateBeginEditable name="content" -->
+					Hunters provide information that helps set annual hunting regulations that minimize over-harvest and provide the best possible opportunities for hunting. The Harvest 'Diary' surveys tell us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. These surveys have been conducted for over 50 years (... years with short hunting seasons, long seasons, various daily bag limits, and a range of season dates ...), so we can predict the harvest for a specific season length and daily bag limit.
+
+					<!--<p><strong>Visualizations</strong></p>-->
+					<div class="overflow-hidden"><!--visualization #1-->
+					<h3 style="margin-bottom: -2px">This map shows hunting effort by state (2012-16 average) <br>&nbsp;&nbsp;<span style="font-size: smaller"><em>(Click on a state to see results!)</em></span></h3>
+						<div >
+								<div > <!--Select a state.-->
+									<span class="label state" id="state-value"></span><!--<br>
+									<span class="label state">2012-2016 Average</span>-->
+								<!--</div>
+								<div> -->
+									<span class="label"><br>&nbsp;&nbsp;Days afield per hunter: </span>
+								  	<span class="label" id="days-value"></span>
+								<!--</div>
+								<div>-->
+								  <span class="label"><br>&nbsp;&nbsp;Duck harvest per season: </span>
+								  <span class="label" id="bag-value"></span>
+								</div>
+							  </div>
+						<div id="container">
+						  <div id="map-container">
+							<svg id="map" width="960" height="600"
+							  viewBox="0 0 960 600"
+							  preserveAspectRatio="xMinYMid meet"></svg>
+							  
+						  </div>
+
+						  </div>
+
+					</div>
+                    <div>
+						<p>We use state estimates of hunter numbers <span class="tooltip">(<u>how do we know the number of waterfowl hunters in a state</u>?) <span class="tooltiptext">Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!</span></span> and the Diary survey to estimate harvest and hunting effort. For example, we multiply –the average number of ducks shot, as reported on the Diary surveys, times number of duck hunters to estimate the number of ducks shot in each state.</p>
+						<p>Someone registering for the Harvest Information Program (HIP) might wonder: <span class="tooltip"><em>"<u>I get asked questions about my hunting when I register, is that all there is to the survey</u>"?</em>
+						<span class="tooltiptext">No! Questions asked during HIP registration about how many birds you harvested the previous year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters. </span></span> The Diary survey provides other important information - when and where birds are harvested. Although the USFWS decides the season length every year, each state wildlife agency chooses the hunting dates that will provide the best hunting. Diary survey participants tell us the days they hunted and how many birds they harvested on each day. So, a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.
+                    </div>
+													
+					<div class="overflow-hidden"><!--visualization #2-->
+						<div>
+						      <div class="button-holder">
+						          <a class="btn btn-md btn-primary" href="javascript:update(0);" role="button" aria-pressed="true">Northeast</a>
+						          <a class="btn btn-md btn-primary" href="javascript:update(1);" role="button">Northwest</a>
+						          <a class="btn btn-md btn-primary" href="javascript:update(2);" role="button">Southeast</a>
+						          <a class="btn btn-md btn-primary" href="javascript:update(3);"role="button">Southwest</a>
+						      </div>
+						 <div id="mapid"></div>
+					</div>
+
+							
+					<div class="overflow-hidden"><!--visualization #3-->
+						<h3 style="margin-bottom: -5px">This map shows harvest by state and county <span style="font-size: smaller"><em>(click the map to see results!)</em></span></h3>
+						<p class="img-right"><a href="harvest-map.html"><img src="img/harvestMap.png" alt="" /></a></p>
+						<p class="overflow-hidden">Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the harvest survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.</p>
+					</div>
+					<!-- TemplateEndEditable -->
+				</div><!--ends content area div-->
+			</div><!--ends content div-->
+		</div><!--ends wrap div-->
+	</div><!--ends content wrapper div-->
+
+	<div id="update"><div class="wrap">
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->February 14, 2018<!-- #EndDate --></p>
+	</div></div>
+
+</div><!--ends div for mobile nav-->
+
+<?php include "https://www.fws.gov/birdhabitat/includes/scripts.php" ?>
+
+<!-- TemplateBeginEditable name="content-footer" -->
+<!--bottom include: used for scripts, footers, etc-->
+<!-- TemplateEndEditable -->
+</body>
+
+<script src="js/activity-map.js" type="text/javascript"></script>
+<script src="js/barchart.js" type="text/javascript"></script>
+</html>
