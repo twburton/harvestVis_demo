@@ -93,38 +93,34 @@
 
 					<!--<p><strong>Visualizations</strong></p>-->
 					<div class="overflow-hidden"><!--visualization #1-->
-					<h3 style="margin-bottom: -2px">This map shows hunting effort by state (2012-16 average) <br>&nbsp;&nbsp;<span style="font-size: smaller"><em>(Click on a state to see results!)</em></span></h3>
-						<div >
-								<div > <!--Select a state.-->
-									<span class="label state" id="state-value"></span><!--<br>
-									<span class="label state">2012-2016 Average</span>-->
-								<!--</div>
-								<div> -->
-									<span class="label"><br>&nbsp;&nbsp;Days afield per hunter: </span>
-								  	<span class="label" id="days-value"></span>
-								<!--</div>
-								<div>-->
-								  <span class="label"><br>&nbsp;&nbsp;Duck harvest per season: </span>
-								  <span class="label" id="bag-value"></span>
-								</div>
+						<h3 style="margin-bottom: -2px">This map shows hunting effort by state (2012-16 average) <br>&nbsp;&nbsp;
+							<span style="font-size: smaller"><em>(Click on a state to see results!)</em></span>
+						</h3>
+						<div > <!--Select a state.-->
+							<span class="label state" id="state-value"></span><!--<br>
+							<span class="label state">2012-2016 Average</span>-->
+						<!--</div>
+						<div> -->
+							<span class="label"><br>&nbsp;&nbsp;Days afield per hunter: </span>
+						  	<span class="label" id="days-value"></span>
+						<!--</div>
+						<div>-->
+						  <span class="label"><br>&nbsp;&nbsp;Duck harvest per season: </span>
+						  <span class="label" id="bag-value"></span>
+						</div>
+							<div id="container">
+							  <div id="map-container">
+									<svg id="map" width="960" height="600" viewBox="0 0 960 600" preserveAspectRatio="xMinYMid meet"></svg>
 							  </div>
-						<div id="container">
-						  <div id="map-container">
-							<svg id="map" width="960" height="600"
-							  viewBox="0 0 960 600"
-							  preserveAspectRatio="xMinYMid meet"></svg>
-							  
-						  </div>
-
-						  </div>
-
+							 </div>
 					</div>
-                    <div>
+
+					<div>
 						<p>We use state estimates of hunter numbers <span class="tooltip">(<u>how do we know the number of waterfowl hunters in a state</u>?) <span class="tooltiptext">Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!</span></span> and the Diary survey to estimate harvest and hunting effort. For example, we multiply –the average number of ducks shot, as reported on the Diary surveys, times number of duck hunters to estimate the number of ducks shot in each state.</p>
 						<p>Someone registering for the Harvest Information Program (HIP) might wonder: <span class="tooltip"><em>"<u>I get asked questions about my hunting when I register, is that all there is to the survey</u>"?</em>
 						<span class="tooltiptext">No! Questions asked during HIP registration about how many birds you harvested the previous year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters. </span></span> The Diary survey provides other important information - when and where birds are harvested. Although the USFWS decides the season length every year, each state wildlife agency chooses the hunting dates that will provide the best hunting. Diary survey participants tell us the days they hunted and how many birds they harvested on each day. So, a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.
-                    </div>
-													
+          </div>
+
 					<div class="overflow-hidden"><!--visualization #2-->
 						<div>
 						      <div class="button-holder">
@@ -136,7 +132,6 @@
 						 <div id="mapid"></div>
 					</div>
 
-							
 					<div class="overflow-hidden"><!--visualization #3-->
 						<h3 style="margin-bottom: -5px">This map shows harvest by state and county <span style="font-size: smaller"><em>(click the map to see results!)</em></span></h3>
 						<p class="img-right"><a href="harvest-map.html"><img src="img/harvestMap.png" alt="" /></a></p>
