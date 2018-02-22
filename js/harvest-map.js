@@ -282,8 +282,8 @@ document.getElementById('ND').addEventListener('click', function(ev){
 		myArray2[5] = "Logan";
 		myArray2[6] = "Sheridan";
 		myArray2[7] = "Benson";
-		myArray2[8] = "Sargent";
-		myArray2[9] = "Nelson";
+		myArray2[8] = "Nelson";
+		myArray2[9] = "McIntosh";
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
@@ -351,12 +351,12 @@ document.getElementById('LA').addEventListener('click', function(ev){
 		myArray2[8] = "Jefferson Davis";
 		myArray2[9] = "St. Mary";
 	$("path, circle").mouseenter(function(e) {
-	  $('#data-info').css('display','block');
-	  $('#data-info').html($(this).data('info2'));
+	  $('#info-box').css('display','block');
+	  $('#info-box').html($(this).data('info2'));
 	  var var1 = $(this).data('info').replace('<div>','');
 	  var var2 = var1.replace('</div>','');
 	  if (typeof $(this).data('info2') != 'undefined'){
-	    var var3 = $(this).data('info2').replace('<div>','');
+	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
