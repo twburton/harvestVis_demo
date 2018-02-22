@@ -52,7 +52,7 @@ function init(){
         .attr("y", 10)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
-        .text("Proportion of Total Harvest");
+        .text("Total Harvest");
 
     svg.append("g")
       .selectAll("text")
