@@ -345,11 +345,11 @@ document.getElementById('LA').addEventListener('click', function(ev){
 		myArray2[2] = "Cameron";
 		myArray2[3] = "Terrebon";
 		myArray2[4] = "Plaquemines";
-		myArray2[5] = "Avoyelles";
+		myArray2[5] = "St. Tammany";
 		myArray2[6] = "St. Bernard";
-		myArray2[7] = "St. Tammany";
-		myArray2[8] = "Jefferson Davis";
-		myArray2[9] = "St. Mary";
+		myArray2[7] = "Avoyelles";
+		myArray2[8] = "St. Mary";
+		myArray2[9] = "Jefferson Davis";
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
