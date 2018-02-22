@@ -26,20 +26,27 @@ function drawMap() {
        .data(topojson.feature(us, us.objects.states).features)
        .enter().append("path")
          .attr("d", path)
+         .attr("fill", function(d){
+           if(d.id == 15){
+             return "gray";
+           }
+         })
          .on("click", function(d){
-             data = stateInfo.get(d.id);
-             document.getElementById('state-value').innerHTML= data.name;
-             document.getElementById('days-value').innerHTML= (Number(data.days) / Number(data.hunters)).toFixed(0); //.toFixed(2);
-             document.getElementById('bag-value').innerHTML= Number(data.bag).toFixed(0);
+            // Do not allow clicking of Hawaii
+            if(d.id != 15){
+              data = stateInfo.get(d.id);
+              document.getElementById('state-value').innerHTML= data.name;
+              document.getElementById('days-value').innerHTML= (Number(data.days) / Number(data.hunters)).toFixed(0); //.toFixed(2);
+              document.getElementById('bag-value').innerHTML= Number(data.bag).toFixed(0);
 
-             // Find previously selected, unselect
-            d3.select(".selected").classed("selected", false);
-
-            // Select current item
-            d3.select(this).classed("selected", true);
+               // Find previously selected, unselect
+              d3.select(".selected").classed("selected", false);
+              // Select current item
+              d3.select(this).classed("selected", true);
+            }
            });
 
-
+      // Change Hawaii fill color.
      svg.append("path")
          .attr("class", "state-borders")
          .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
