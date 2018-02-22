@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
 }
-path:hover, circle:hover {
+#map path:hover, circle:hover {
   stroke: #002868 !important;
   stroke-width:2px;
   stroke-linejoin: round;
@@ -30,13 +30,13 @@ path:hover, circle:hover {
   padding: 5px;
   font-family: arial;
 }
-h1{ 
+h1{
     color:black;
     font-size:32px;
     text-align:center;
     display:inline-block;
     position:relative;
-    width:100%; 
+    width:100%;
    }
    .statesmap{
 	float:left;
@@ -97,7 +97,7 @@ div.mytable {
     background-color: #00FF00;
     width: 100px;
     height: 100px;
-    
+
 }
 */
 
@@ -108,7 +108,7 @@ footer{
 
 
 /*
-map left 
+map left
 legend bottom
 table right
 mouseout

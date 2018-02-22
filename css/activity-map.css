@@ -11,8 +11,7 @@
   fill: #66c2a4;
 }
 
-.states :hover {
-  /*fill: #336699;90A494*/
+.selected {
   fill: #002868;
 }
 

@@ -1,5 +1,5 @@
 function drawMap() {
-  var svg = d3.select("#map");
+  var svg = d3.select("#activity-map");
   var path = d3.geoPath();
   var stateInfo = d3.map();
 
@@ -16,6 +16,7 @@ function drawMap() {
                                               })
      .await(ready);
 
+
   function ready(error, us) {
      if (error) throw error;
 
@@ -30,7 +31,14 @@ function drawMap() {
              document.getElementById('state-value').innerHTML= data.name;
              document.getElementById('days-value').innerHTML= (Number(data.days) / Number(data.hunters)).toFixed(0); //.toFixed(2);
              document.getElementById('bag-value').innerHTML= Number(data.bag).toFixed(0);
+
+             // Find previously selected, unselect
+            d3.select(".selected").classed("selected", false);
+
+            // Select current item
+            d3.select(this).classed("selected", true);
            });
+
 
      svg.append("path")
          .attr("class", "state-borders")
