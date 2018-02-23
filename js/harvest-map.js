@@ -25,7 +25,7 @@ var timeout;
 document.getElementById('svg1').addEventListener('mouseover', function(ev){
 
 
-	$("svg1 > path, circle").mouseenter(function(e) {
+	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info'));
 	  
@@ -437,4 +437,3 @@ window.onload = function () {
 
 	 document.getElementById('mytable').innerHTML = myTable;
 }
-
