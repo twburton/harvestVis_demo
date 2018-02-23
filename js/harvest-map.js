@@ -11,7 +11,6 @@ svgTexas=document.getElementById('svgTexas');
 
 //make for each state
 
-
 svgCalifornia.style.display = 'none';
 
 svgLouisiana.style.display = 'none';
@@ -24,12 +23,9 @@ settable=0;
 var timeout;
 document.getElementById('svg1').addEventListener('mouseover', function(ev){
 
-
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info'));
-	  
-	 	  
 	  
 	  var var1 = $(this).data('info').replace('<div>','');
 	  var var2 = var1.replace('</div>','');
@@ -45,28 +41,15 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 		myArray[8] = "Missouri";
 		myArray[9] = "Wisconsin";
 		myArray[10] = var2;
-		
 
-		var myTable= "<table><tr><td style='height:15px; color: black;'>Rank</td>";
-		myTable+= "<td style='height:15px; color: black; text-align: left;'> State</td>";
-		//myTable+="<td style='width: 100px; color: black; text-align: left;'>State</td></tr>";
-		//myTable+= "<td style='width: 10px; color: black; text-align: left;'> Rank cont...</td>";
-		//myTable+="<td style='width: 100px; color: black; text-align: left;'>State</td></tr>";
-		/*
-		myTable+="<tr><td style='width: 10px;                   '>---------------</td>";
-		myTable+="<td     style='width: 10px; text-align: left;'>---------------</td>";
-		myTable+="<td     style='width: 100px; text-align: right;'>---------------</td></tr>";
-	*/
-	  	var myTable= "<table><tr><td style='height:15px; color: black;'>Rank</td>";
-		//myTable+= "<td style='height:15px; color: black; text-align: left;'> State</td>";
+		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td>";
+	  	
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			myTable+="<tr><td style='height:15px;'> " + "" + "    "+myArray[i]+"</td>";
-		//myTable+="<td style='height:15px; text-align: left;'>" + myArray[i] + "</td>";
+			myTable+="<tr><td style='height:15px;'> " +myArray[i]+ "</td>";
 		}
 		else{
-		myTable+="<tr><td style='height:15px;'> " + i +":    "+myArray[i]+"</td>";
-		//myTable+="<td style='height:15px; text-align: left;'>" + myArray[i] + "</td>";
+		myTable+="<tr><td style='height:15px;'> " + i + " - " +myArray[i]+ "</td>";
 		}
 	  }  
 	   myTable+="</table>";
@@ -78,13 +61,10 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 });
 })
 
-
-
 $("path, circle").click(function(e) {
   $('#info-box').css('display','block');
   $('#info-box').html($(this).data('info2'));
 });
-
 
 $(document).mousemove(function(e) {
 if (typeof $(this).data('info2') != null){
@@ -93,9 +73,6 @@ if (typeof $(this).data('info2') != null){
   $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
 	}
 }).mouseover();
-
-
-
 
 var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if(ios) {
@@ -106,11 +83,10 @@ if(ios) {
   });
 }
 
-
+//CALIFORNIA
 document.getElementById('CA').addEventListener('click', function(ev){
 	document.getElementById('svg1').style.display = 'none';
 	svgCalifornia.style.display = 'block';
-	//svgCalifornia.setAttribute("viewBox", "-124 83 500 500"); 
 	svgCalifornia.setAttribute("viewBox", "50 75 50 150"); 
 	svgCalifornia.setAttribute("height", "850"); 
 	svgCalifornia.setAttribute("width", "1100"); 
@@ -124,7 +100,7 @@ document.getElementById('CA').addEventListener('click', function(ev){
 		myArray[7] = "-";
 		myArray[8] = "-";
 		myArray[9] = "-";
-		var myArray2    = new Array();
+	var myArray2    = new Array();
 		myArray2[1] = "Merced";
 		myArray2[2] = "Colusa";
 		myArray2[3] = "Butte";
@@ -147,18 +123,15 @@ document.getElementById('CA').addEventListener('click', function(ev){
 		myArray[11] = var2;
 		myArray2[10] = var4;
 		
-		var myTable= "<table><tr><td style='height:15px; color: black;'>Rank within state.</td></tr>";
-		//myTable+= "<td style='height:15px; color: black;'>Rank within state.</td></tr>";
+		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			//myTable+="<tr><td style='height:15px;'>rank " + "    "+myArray[i]+"</td>";
-			myTable+="<tr><td style='height:15px;'> " + "    "+myArray2[i]+"</td></tr>";
-			myTable+="<tr><td style='height:15px;'> " + " National rank: "+myArray[11]+"</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray2[i]+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country</td></tr><tr><td style='heigh:15px;'>&nbsp;" +myArray[11]+ "</td></tr>";
 		}
 		
 		else{
-		//myTable+="<tr><td style='height:15px;'>rank " + i +"    "+myArray[i]+"</td>";
-		myTable+="<td style='height:15px;'> " + i +"    "+myArray2[i]+"</td></tr>";
+		myTable+="<td style='height:15px;'> " + i + " - " +myArray2[i]+ "</td></tr>";
 		}
 	  }  
 	   myTable+="</table>";
@@ -167,7 +140,6 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	svgCalifornia.addEventListener('click', function(ev){
 		
 		svgCalifornia.style.display = 'none';
-		//loadsvg1table();
 		svg1.style.display = 'block';
 		
 		return;
@@ -179,35 +151,34 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	
 })
 
+//TEXAS
 document.getElementById('TX').addEventListener('click', function(ev){
 	
 	document.getElementById('svg1').style.display = 'none';
 	svgTexas.style.display = 'block';
-	
-	//svgTexas.setAttribute("viewBox", "50 170 600 600"); 
 	svgTexas.setAttribute("viewBox", "170 250 200 30"); 
 	svgTexas.setAttribute("height", "800"); 
 	svgTexas.setAttribute("width", "1200"); 
 	 var myArray    = new Array();
-	 myArray[1] = "-";
-	myArray[2] = "-";
-	myArray[3] = "-";
-	myArray[4] = "-";
-	myArray[5] = "-";
-	myArray[6] = "-";
-	myArray[7] = "-";
-	myArray[8] = "-";
-	myArray[9] = "-";
+		myArray[1] = "-";
+		myArray[2] = "-";
+		myArray[3] = "-";
+		myArray[4] = "-";
+		myArray[5] = "-";
+		myArray[6] = "-";
+		myArray[7] = "-";
+		myArray[8] = "-";
+		myArray[9] = "-";
 	 var myArray2    = new Array();
-	 myArray2[1] = "Colorado";
-	myArray2[2] = "Wharton";
-	myArray2[3] = "Jefferson";
-	myArray2[4] = "Matagorda";
-	myArray2[5] = "Brazoria";
-	myArray2[6] = "Calhoun";
-	myArray2[7] = "Aransas";
-	myArray2[8] = "Bell";
-	myArray2[9] = "Chambers";
+		myArray2[1] = "Colorado";
+		myArray2[2] = "Wharton";
+		myArray2[3] = "Jefferson";
+		myArray2[4] = "Matagorda";
+		myArray2[5] = "Brazoria";
+		myArray2[6] = "Calhoun";
+		myArray2[7] = "Aransas";
+		myArray2[8] = "Bell";
+		myArray2[9] = "Chambers";
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
@@ -221,18 +192,15 @@ document.getElementById('TX').addEventListener('click', function(ev){
 		myArray[11] = var2;
 		myArray2[10] = var4;
 		
-		var myTable= "<table><tr><td style='height:15px; color: black;'>Rank within state.</td></tr>";
-		//myTable+= "<td style='height:15px; color: black;'>Rank within state.</td></tr>";
+				var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			//myTable+="<tr><td style='height:15px;'>rank " + "    "+myArray[i]+"</td>";
-			myTable+="<tr><td style='height:15px;'> " + "    "+myArray2[i]+"</td></tr>";
-			myTable+="<tr><td style='height:15px;'> " + " National rank: "+myArray[11]+"</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray2[i]+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country</td></tr><tr><td style='heigh:15px;'>&nbsp;" +myArray[11]+ "</td></tr>";
 		}
 		
 		else{
-		//myTable+="<tr><td style='height:15px;'>rank " + i +"    "+myArray[i]+"</td>";
-		myTable+="<td style='height:15px;'> " + i +"    "+myArray2[i]+"</td></tr>";
+		myTable+="<td style='height:15px;'> " + i + " - " +myArray2[i]+ "</td></tr>";
 		}
 	  }  
 	   myTable+="</table>";
@@ -242,19 +210,13 @@ document.getElementById('TX').addEventListener('click', function(ev){
 		svgTexas.style.display = 'none';
 		svg1.style.display = 'block';
 	})
-	/*
-	var myArray3    = new Array();
-		for (path in svgTexas){	//iterate through all paths in svg to set top counties and reset top counties to states
-		  myArray3[j]=$("path, circle").data('info');
-		  j++;
-		}
-		*/
 		$("path, circle").mouseleave(function(e) {
   $('#info-box').css('display','none');
 });
 	
 })
 
+//NORTH DAKOTA
 document.getElementById('ND').addEventListener('click', function(ev){
 	document.getElementById('svg1').style.display = 'none';
 	svgNorthdakota.style.display = 'block';
@@ -262,7 +224,6 @@ document.getElementById('ND').addEventListener('click', function(ev){
 	svgNorthdakota.setAttribute("height", "500"); 
 	svgNorthdakota.setAttribute("width", "1200"); 
 	var myArray    = new Array();
-	  
 		myArray[1] = "-";
 		myArray[2] = "-";
 		myArray[3] = "-";
@@ -272,7 +233,7 @@ document.getElementById('ND').addEventListener('click', function(ev){
 		myArray[7] = "-";
 		myArray[8] = "-";
 		myArray[9] = "-";
-		var myArray2    = new Array();
+	var myArray2    = new Array();
 		myArray2[1] = "Stutsman";
 		myArray2[2] = "Mclean";
 		myArray2[3] = "Ramsey";
@@ -295,20 +256,17 @@ document.getElementById('ND').addEventListener('click', function(ev){
 		myArray[11] = var2;
 		myArray2[10] = var4;
 		
-		var myTable= "<table><tr><td style='height:15px; color: black;'>Rank within state.</td></tr>";
-		//myTable+= "<td style='height:15px; color: black;'>Rank within state.</td></tr>";
+				var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			//myTable+="<tr><td style='height:15px;'>rank " + "    "+myArray[i]+"</td>";
-			myTable+="<tr><td style='height:15px;'> " + "    "+myArray2[i]+"</td></tr>";
-			myTable+="<tr><td style='height:15px;'> " + " National rank: "+myArray[11]+"</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray2[i]+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country</td></tr><tr><td style='heigh:15px;'>&nbsp;" +myArray[11]+ "</td></tr>";
 		}
 		
 		else{
-		//myTable+="<tr><td style='height:15px;'>rank " + i +"    "+myArray[i]+"</td>";
-		myTable+="<td style='height:15px;'> " + i +"    "+myArray2[i]+"</td></tr>";
+		myTable+="<td style='height:15px;'> " + i + " - " +myArray2[i]+ "</td></tr>";
 		}
-	  }  
+	  }
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
 	 });
@@ -321,6 +279,7 @@ document.getElementById('ND').addEventListener('click', function(ev){
 });
 })
 
+//LOUISIANA
 document.getElementById('LA').addEventListener('click', function(ev){
 	document.getElementById('svg1').style.display = 'none';
 	svgLouisiana.style.display = 'block';
@@ -328,7 +287,6 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	svgLouisiana.setAttribute("height", "500"); 
 	svgLouisiana.setAttribute("width", "1200"); 
 	var myArray    = new Array();
-	  
 		myArray[1] = "-";
 		myArray[2] = "-";
 		myArray[3] = "-";
@@ -338,7 +296,7 @@ document.getElementById('LA').addEventListener('click', function(ev){
 		myArray[7] = "-";
 		myArray[8] = "-";
 		myArray[9] = "-";
-		var myArray2    = new Array();
+	var myArray2    = new Array();
 		myArray2[1] = "Vermillion";
 		myArray2[2] = "Cameron";
 		myArray2[3] = "Terrebon";
@@ -361,20 +319,17 @@ document.getElementById('LA').addEventListener('click', function(ev){
 		myArray[11] = var2;
 		myArray2[10] = var4;
 		
-		var myTable= "<table><tr><td style='height:15px; color: black;'>Rank within state.</td></tr>";
-		//myTable+= "<td style='height:15px; color: black;'>Rank within state.</td></tr>";
+				var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			//myTable+="<tr><td style='height:15px;'>rank " + "    "+myArray[i]+"</td>";
-			myTable+="<tr><td style='height:15px;'> " + "    "+myArray2[i]+"</td></tr>";
-			myTable+="<tr><td style='height:15px;'> " + " National rank: "+myArray[11]+"</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray2[i]+ "</td></tr>";
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country</td></tr><tr><td style='heigh:15px;'>&nbsp;" +myArray[11]+ "</td></tr>";
 		}
 		
 		else{
-		//myTable+="<tr><td style='height:15px;'>rank " + i +"    "+myArray[i]+"</td>";
-		myTable+="<td style='height:15px;'> " + i +"    "+myArray2[i]+"</td></tr>";
+		myTable+="<td style='height:15px;'> " + i + " - " +myArray2[i]+ "</td></tr>";
 		}
-	  }  
+	  }
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
 	 });
@@ -398,8 +353,7 @@ function getBBox(elem){
 
 window.onload = function () {
  var myArray = new Array();
-    
-    myArray[1] = "Louisiana";
+    	myArray[1] = "Louisiana";
 		myArray[2] = "California";
 		myArray[3] = "Texas";
 		myArray[4] = "Arkansas";
@@ -409,28 +363,13 @@ window.onload = function () {
 		myArray[8] = "Missouri";
 		myArray[9] = "Wisconsin";
     
-
-   
-		//var myTable= "<table><tr><td style='height:15px; color: black;'>Rank no.</td>";
-		//myTable+= "<td style='height:15px; color: black; text-align: left;'> State</td>";
-		//myTable+="<td style='width: 100px; color: black; text-align: left;'>State</td></tr>";
-		//myTable+= "<td style='width: 10px; color: black; text-align: left;'> Rank cont...</td>";
-		//myTable+="<td style='width: 100px; color: black; text-align: left;'>State</td></tr>";
-		/*
-		myTable+="<tr><td style='width: 10px;                   '>---------------</td>";
-		myTable+="<td     style='width: 10px; text-align: left;'>---------------</td>";
-		myTable+="<td     style='width: 100px; text-align: right;'>---------------</td></tr>";
-	*/
-	  	var myTable= "<table><tr><td style='height:15px; color: black;'>Rank no.</td></tr>";
-		//myTable+= "<td style='height:15px; color: black; text-align: left;'> State</td>";
+	  	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			myTable+="<tr><td style='height:15px;'>rank " + "" + "    "+myArray[i]+"</td>";
-		//myTable+="<td style='height:15px; text-align: left;'>" + myArray[i] + "</td>";
+			myTable+="<tr><td style='height:15px;'>" +myArray[i]+ "</td>";	
 		}
 		else{
-		myTable+="<tr><td style='height:15px;'>rank " + i +":    "+myArray[i]+"</td>";
-		//myTable+="<td style='height:15px; text-align: left;'>" + myArray[i] + "</td>";
+		myTable+="<tr><td style='height:15px;'>" + i + " - " +myArray[i]+ "</td>";
 		}
 	  }  
 	   myTable+="</table>";
