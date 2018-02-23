@@ -63,10 +63,6 @@ align: center;
 }
 
 /* barchart css*/
-#mapid {
-   margin-bottom: 20px;
-}
-
 .bar {
   fill: #4b79b4; /* lightsteelblue family */
 }
@@ -91,4 +87,27 @@ svg text {
 
 .button-holder a {
   text-decoration: none;
+}
+
+.Northwest {
+  fill: #bdd7e7;
+}
+
+.Northeast {
+  fill: #6baed6;
+}
+
+.Southeast {
+  fill: #3182bd;
+}
+
+.Southwest {
+  fill: #08519c;
+}
+.exempt {
+  fill: 'grey';
+}
+
+#mapid {
+  padding-top: 10px;
 }

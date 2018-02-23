@@ -1,0 +1,257 @@
+var StateKey = {
+  "01": {
+    "GEOID": "01",
+    "NAME": "Alabama",
+    "region": "Southeast"
+  },
+  "02": {
+    "GEOID": "02",
+    "NAME": "Alaska",
+    "region": "Northwest"
+  },
+  "04": {
+    "GEOID": "04",
+    "NAME": "Arizona",
+    "region": "Southwest"
+  },
+  "05": {
+    "GEOID": "05",
+    "NAME": "Arkansas",
+    "region": "Southwest"
+  },
+  "06": {
+    "GEOID": "06",
+    "NAME": "California",
+    "region": "Southwest"
+  },
+  "08": {
+    "GEOID": "08",
+    "NAME": "Colorado",
+    "region": "Southwest"
+  },
+  "09": {
+    "GEOID": "09",
+    "NAME": "Connecticut",
+    "region": "Northeast"
+  },
+  "10": {
+    "GEOID": "10",
+    "NAME": "Delaware",
+    "region": "Northeast"
+  },
+  "11": {
+    "GEOID": "11",
+    "NAME": "District of Columbia",
+    "region": "Northeast"
+  },
+  "12": {
+    "GEOID": "12",
+    "NAME": "Florida",
+    "region": "Southeast"
+  },
+  "13": {
+    "GEOID": "13",
+    "NAME": "Georgia",
+    "region": "Southeast"
+  },
+  "15": {
+    "GEOID": "15",
+    "NAME": "Hawaii",
+    "region": "exempt"
+  },
+  "16": {
+    "GEOID": "16",
+    "NAME": "Idaho",
+    "region": "Northwest"
+  },
+  "17": {
+    "GEOID": "17",
+    "NAME": "Illinois",
+    "region": "Northeast"
+  },
+  "18": {
+    "GEOID": "18",
+    "NAME": "Indiana",
+    "region": "Northeast"
+  },
+  "19": {
+    "GEOID": "19",
+    "NAME": "Iowa",
+    "region": "Northwest"
+  },
+  "20": {
+    "GEOID": "20",
+    "NAME": "Kansas",
+    "region": "Southwest"
+  },
+  "21": {
+    "GEOID": "21",
+    "NAME": "Kentucky",
+    "region": "Southeast"
+  },
+  "22": {
+    "GEOID": "22",
+    "NAME": "Louisiana",
+    "region": "Southwest"
+  },
+  "23": {
+    "GEOID": "23",
+    "NAME": "Maine",
+    "region": "Northeast"
+  },
+  "24": {
+    "GEOID": "24",
+    "NAME": "Maryland",
+    "region": "Northeast"
+  },
+  "25": {
+    "GEOID": "25",
+    "NAME": "Massachusetts",
+    "region": "Northeast"
+  },
+  "26": {
+    "GEOID": "26",
+    "NAME": "Michigan",
+    "region": "Northeast"
+  },
+  "27": {
+    "GEOID": "27",
+    "NAME": "Minnesota",
+    "region": "Northwest"
+  },
+  "28": {
+    "GEOID": "28",
+    "NAME": "Mississippi",
+    "region": "Southeast"
+  },
+  "29": {
+    "GEOID": "29",
+    "NAME": "Missouri",
+    "region": "Southwest"
+  },
+  "30": {
+    "GEOID": "30",
+    "NAME": "Montana",
+    "region": "Northwest"
+  },
+  "31": {
+    "GEOID": "31",
+    "NAME": "Nebraska",
+    "region": "Northwest"
+  },
+  "32": {
+    "GEOID": "32",
+    "NAME": "Nevada",
+    "region": "Southwest"
+  },
+  "33": {
+    "GEOID": "33",
+    "NAME": "New Hampshire",
+    "region": "Northeast"
+  },
+  "34": {
+    "GEOID": "34",
+    "NAME": "New Jersey",
+    "region": "Northeast"
+  },
+  "35": {
+    "GEOID": "35",
+    "NAME": "New Mexico",
+    "region": "Southwest"
+  },
+  "36": {
+    "GEOID": "36",
+    "NAME": "New York",
+    "region": "Northeast"
+  },
+  "37": {
+    "GEOID": "37",
+    "NAME": "North Carolina",
+    "region": "Southeast"
+  },
+  "38": {
+    "GEOID": "38",
+    "NAME": "North Dakota",
+    "region": "Northwest"
+  },
+  "39": {
+    "GEOID": "39",
+    "NAME": "Ohio",
+    "region": "Northeast"
+  },
+  "40": {
+    "GEOID": "40",
+    "NAME": "Oklahoma",
+    "region": "Southwest"
+  },
+  "41": {
+    "GEOID": "41",
+    "NAME": "Oregon",
+    "region": "Northwest"
+  },
+  "42": {
+    "GEOID": "42",
+    "NAME": "Pennsylvania",
+    "region": "Northeast"
+  },
+  "44": {
+    "GEOID": "44",
+    "NAME": "Rhode Island",
+    "region": "Northeast"
+  },
+  "45": {
+    "GEOID": "45",
+    "NAME": "South Carolina",
+    "region": "Southeast"
+  },
+  "46": {
+    "GEOID": "46",
+    "NAME": "South Dakota",
+    "region": "Northwest"
+  },
+  "47": {
+    "GEOID": "47",
+    "NAME": "Tennessee",
+    "region": "Southeast"
+  },
+  "48": {
+    "GEOID": "48",
+    "NAME": "Texas",
+    "region": "Southwest"
+  },
+  "49": {
+    "GEOID": "49",
+    "NAME": "Utah",
+    "region": "Southwest"
+  },
+  "50": {
+    "GEOID": "50",
+    "NAME": "Vermont",
+    "region": "Northeast"
+  },
+  "51": {
+    "GEOID": "51",
+    "NAME": "Virginia",
+    "region": "Southeast"
+  },
+  "53": {
+    "GEOID": "53",
+    "NAME": "Washington",
+    "region": "Northwest"
+  },
+  "54": {
+    "GEOID": "54",
+    "NAME": "West Virginia",
+    "region": "Northeast"
+  },
+  "55": {
+    "GEOID": "55",
+    "NAME": "Wisconsin",
+    "region": "Northeast"
+  },
+  "56": {
+    "GEOID": "56",
+    "NAME": "Wyoming",
+    "region": "Northwest"
+  }
+}

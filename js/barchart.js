@@ -4,9 +4,9 @@ var months = [{month:'September', week:35},
               {month:'December',  week:50},
               {month:'January',   week:55}],
     HarvestByRegion;
-var width = 800,
-    height = 650,
-    margin = {top: 20, right: 0, bottom: 50, left: 80},
+
+var width = 800, height = 600
+    margin = {top: 20, right: 0, bottom: 50, left: 50};
     innerWidth = width - margin.left - margin.right,
     innerHeight = height - margin.top - margin.bottom,
     xScale = d3.scaleBand()
@@ -19,11 +19,35 @@ var width = 800,
     yAxis = d3.axisLeft(yScale)
               .ticks(12, "%");
 
-var svg = d3.select("#mapid").append("svg")
+var svg = d3.select("#barchart")
       .attr("width", width)
       .attr("height", height)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+function scale (scaleFactor,width,height) {
+        return d3.geoTransform({
+          point: function(x, y) {
+            //this.stream.point( (x - width/2) * scaleFactor + width/2 , (y - height/2) * scaleFactor + height/2);
+            this.stream.point( (x - width/2) * scaleFactor , (y - height/2) * scaleFactor );
+      }
+    });
+}
+
+d3.json("https://d3js.org/us-10m.v1.json", function (error, us){
+  var path = d3.geoPath().projection(scale(0.2,300,200))
+
+  svg.append("g")
+    .attr("transform", "translate(-65,-100)")
+    .selectAll("path")
+    .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+    .attr("class", function(d){
+      val = StateKey[d.id]['region'];
+      return val
+    })
+    .attr("d", path);
+});
 
 init();
 
@@ -100,3 +124,9 @@ function update(regionIdx){
       .duration(850);
 
 };
+
+/*function resize() {
+  width = window.innerWidth, height = window.innerHeight;
+  svg.attr("width", width).attr("height", height)
+  svg.size([width, height]);
+};*/
