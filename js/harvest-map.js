@@ -28,6 +28,7 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  
 	  
+	$("svg1 > path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info'));
 	  
