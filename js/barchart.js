@@ -38,7 +38,7 @@ d3.json("https://d3js.org/us-10m.v1.json", function (error, us){
   var path = d3.geoPath().projection(scale(0.2,300,200))
 
   svg.append("g")
-    .attr("transform", "translate(-65,-100)")
+    .attr("transform", "translate(65,0)")
     .selectAll("path")
     .data(topojson.feature(us, us.objects.states).features)
     .enter().append("path")
