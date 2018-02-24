@@ -6,13 +6,19 @@
   width: 100%;
   height: 100%;
 }
-#hmap path:hover, circle:hover {
+#hcontainer {
+  width: 100%;
+  padding: 0px;
+}
+#hmap-container path:hover, circle:hover {
   stroke: #002868 !important;
   stroke-width:2px;
   stroke-linejoin: round;
   fill: #002868 !important;
   cursor: pointer;
-	float: left;
+  float: left;
+  display: block;
+  height: 600px;
 }
 #path67 {
   fill: none !important;
