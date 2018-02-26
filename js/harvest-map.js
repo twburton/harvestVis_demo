@@ -46,7 +46,8 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 	  	
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			myTable+="<tr><td style='height:15px;'> " +myArray[i]+ "</td>";
+			
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray[i]+ "</td></tr>";
 		}
 		else{
 		myTable+="<tr><td style='height:15px;'> " + i + " - " +myArray[i]+ "</td>";
@@ -362,11 +363,11 @@ window.onload = function () {
 		myArray[7] = "Illinois";//tries to translate to finnish
 		myArray[8] = "Missouri";
 		myArray[9] = "Wisconsin";
-    
+    		myArray[10] = "-";
 	  	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td></tr>";
 	  for (var i=1; i<11; i++) {
 		if (i==10){
-			myTable+="<tr><td style='height:15px;'>" +myArray[i]+ "</td>";	
+			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray[i]+ "</td></tr>";
 		}
 		else{
 		myTable+="<tr><td style='height:15px;'>" + i + " - " +myArray[i]+ "</td>";
