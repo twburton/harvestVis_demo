@@ -29,7 +29,7 @@
   display: none;
   position: absolute;
   top: 0px;
-  left: -500px;
+  left: 0px;
   z-index: 1;
   background-color: #ffffff;
   border: 1px solid gray;
