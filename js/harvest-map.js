@@ -67,7 +67,7 @@ $("path, circle").click(function(e) {
   $('#info-box').html($(this).data('info2'));
 });
 
-$(document).mousemove(function(e) {
+$("path, circle").mousemove(function(e) {
 if (typeof $(this).data('info2') != null){
 	
   $('#info-box').css('top',e.pageY-$('#info-box').height()-100);
