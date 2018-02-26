@@ -31,7 +31,7 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 	  var var2 = var1.replace('</div>','');
 	  var myArray    = new Array();
 		
-		myArray[1] = "Louisiana";
+		myArray[1] = "Louisiana1";
 		myArray[2] = "California";
 		myArray[3] = "Texas";
 		myArray[4] = "Arkansas";
