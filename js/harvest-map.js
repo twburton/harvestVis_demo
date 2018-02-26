@@ -31,7 +31,7 @@ document.getElementById('svg1').addEventListener('mouseover', function(ev){
 	  var var2 = var1.replace('</div>','');
 	  var myArray    = new Array();
 		
-		myArray[1] = "Louisiana1";
+		myArray[1] = "Louisiana";
 		myArray[2] = "California";
 		myArray[3] = "Texas";
 		myArray[4] = "Arkansas";
@@ -65,15 +65,15 @@ $("path, circle").click(function(e) {
   $('#info-box').css('display','block');
   $('#info-box').html($(this).data('info2'));
 });
-/*
+
 $(document).mousemove(function(e) {
 if (typeof $(this).data('info2') != null){
 	
   $('#info-box').css('top',e.pageY-$('#info-box').height()-30);
-  $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
+  $('#info-box').css('left',e.pageX-($('#info-box').width())/2 -30);
 	}
 }).mouseover();
-*/
+
 var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if(ios) {
   $('a').on('click touchend', function() {
