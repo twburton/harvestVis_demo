@@ -71,7 +71,7 @@ $(document).mousemove(function(e) {
 if (typeof $(this).data('info2') != null){
 	
   $('#info-box').css('top',e.pageY-$('#info-box').height()-100);
-  $('#info-box').css('left',e.pageX-($('#info-box').width())/2 -300);
+  $('#info-box').css('left',e.pageX-($('#info-box').width()));
 	}
 }).mouseover();
 
