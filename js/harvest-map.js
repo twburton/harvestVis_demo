@@ -69,7 +69,7 @@ $("path, circle").click(function(e) {
 $(document).mousemove(function(e) {
 if (typeof $(this).data('info2') != null){
 	
-  $('#info-box').css('top',e.pageY-$('#info-box').height()-0);
+  $('#info-box').css('top',e.pageY-$('#info-box').height()-30);
   $('#info-box').css('left',e.pageX-($('#info-box').width())/2);
 	}
 }).mouseover();
