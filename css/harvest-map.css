@@ -12,13 +12,13 @@
 }
 #hmap-container path:hover, circle:hover {
   stroke: #002868 !important;
-  stroke-width:2px;
+  stroke-width:20px;
   stroke-linejoin: round;
   fill: #002868 !important;
   cursor: pointer;
   float: left;
   display: block;
-  height: 700px;
+  height: 600px;
 
 }
 #path67 {
