@@ -25,7 +25,7 @@
   	<script src="https://d3js.org/topojson.v2.min.js"></script>
 	<script src="js/HarvData.json"></script>
 	<script src="js/StateKey.json"></script>
-	
+
 	<script>document.write('<base href="' + document.location + '" />');</script>
 	<link rel="stylesheet" href="css/tooltip.css" />
 	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
@@ -66,20 +66,27 @@
 					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for hunting and thriving waterfowl populations. The <strong>Harvest 'Diary' surveys</strong> tell us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. These surveys have been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
 
 					<div class="overflow-hidden"><!--visualization #1-->
-						<h3 style="margin-bottom: -2px">hunting effort by state (2012-16 average) <br>&nbsp;&nbsp;
-							<span style="font-size: smaller"><em>(Click on a state to see results!)</em></span>
+						<h3 style="margin-bottom: -2px">hunting effort by state (2012&ndash;16 average) <br>&nbsp;&nbsp;
 						</h3>
-						<div> <!--Select a state.-->
-							<span class="label state" id="state-value"></span>
-							<span class="label"><br>&nbsp;&nbsp;Days afield per hunter: </span>
-						  	<span class="label" id="days-value"></span>
-						  <span class="label"><br>&nbsp;&nbsp;Duck harvest per season per hunter: </span>
-						  <span class="label" id="bag-value"></span>
-						</div>
 						<div id="container">
 						  <div id="map-container">
-								<svg id="activity-map" width="960" height="600" viewBox="0 0 960 600" preserveAspectRatio="xMinYMid meet"></svg>
+								<!--<div id="map-text">
+									<div style="text-align:center;margin-left:12px;margin-right:12px;">Pacific Flyway<br> 107 Days</div>
+									<div style="text-align:center;margin-left:12px;margin-right:12px;">Central Flyway<br> 74 Days</div>
+									<div style="text-align:center;margin-left:20px;margin-right:20px;">Mississippi Flyway<br> 60 Days</div>
+									<div style="text-align:center;margin-left:12px;margin-right:12px;">Atlantic Flyway<br> 60 Days</div>
+								</div>-->
+								<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin"> </svg>
 						  </div>
+							<div id='data-panel'>
+								<div class="label state" id="state-value">Select A State</div>
+								<div class="label">Days afield per hunter:<span class="label" id="days-value"></span></div>
+								<div class="label">Total hunters last year</div>
+								<div class="label">Total Duck hunters</div>
+								<div class="label">Total Goose hunters</div>
+								<div class="label">Duck harvest per season:<span class="label" id="bag-value"></span></div>
+								<div class="label">Goose harvest per season:<span class="label" id="bag-value"></span></div>
+							</div>
 						</div>
 
 						<p>We use the number of hunters registered in each state <span class="tooltipCustom" tooltip-follow-cursor>(how do we know the number of waterfowl hunters in a state?)<span class="tooltipCustomContent" >Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!</span></span>  and the Diary survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary surveys, by the  number of duck hunters to estimate the number of ducks shot in each state.</p>
@@ -116,11 +123,11 @@
 
 						<div><!--div for map, tbl, etc.-->
 						<div id="info-box"></div>
-						
+
 
 						<div id="hcontainer">
 							<div id="hmap-container">
-								
+
 									<svg width="960" height="600" viewBox="0 0 960 600" preserveAspectRatio="xMinYMid meet" class="statesmap" id="svg1"  opacity="1.0">
 
 										<g id="outlines">
@@ -1143,4 +1150,3 @@
 <script src="js/barchart.js" type="text/javascript"></script>
 <script src="js/harvest-map.js" type="text/javascript"></script>
 </html>
-	
