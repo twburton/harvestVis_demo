@@ -34,7 +34,7 @@ d3.json("js/us-states.json", function (error, us){
   mgmt_unit.forEach(function(unit){
     mgmt_map.append("path")
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", unit.classname)
+      .attr("class", "mgmt_unit" + " " + unit.classname)
       .attr("d", path)
       .on("click", function(d){ update(unit.idx); });
   });

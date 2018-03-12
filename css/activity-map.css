@@ -7,6 +7,7 @@
 
 .states {
   fill: #66c2a4; /*A9BDAD*/
+  cursor: pointer;
 }
 
 .selected {
@@ -102,6 +103,10 @@ svg text {
 
 .button-holder a {
   text-decoration: none;
+}
+
+.mgmt_unit {
+  cursor: pointer;
 }
 
 .PF-North {
