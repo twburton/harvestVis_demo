@@ -72,7 +72,7 @@ d3.json("js/us-states.json", function (error, us){
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
       .attr("class", unit.classname)
       .attr("d", path)
-      .on("click", function(d){ update(3); });
+      .on("click", function(d){ update(unit.idx); });
   });
 
   mgmt_map.append("path")

@@ -1,3 +1,46 @@
+var mgmt_unit = [
+  {
+    "classname": "PF-North",
+    "states": [53,41,30,16,2],
+    "idx": 0
+  },
+  {
+    "classname": "PF-South",
+    "states": [6,32,49,4],
+    "idx": 1
+  },
+  {
+    "classname": "CF-North",
+    "states": [38,31,46,56],
+    "idx": 2
+  },
+  {
+    "classname": "CF-South",
+    "states": [8,20,35,40,48],
+    "idx": 3
+  },
+  {
+    "classname": "MF-North",
+    "states": [26,27,17,18,19,39,55],
+    "idx": 0
+  },
+  {
+    "classname": "MF-South",
+    "states": [29,21,47,1,5,22,28],
+    "idx": 1
+  },
+  {
+    "classname": "AF-North",
+    "states": [51,54,44,42,36,34,33,25,24,23,11,10,9,50],
+    "idx": 2
+  },
+  {
+    "classname": "AF-South",
+    "states": [12,13,37,45],
+    "idx": 3
+  },
+];
+
 var HarvestByRegion = [
   {"key":"Northeast",
    "values": [{"region":"Northeast","week":35,"h":0.0015},
