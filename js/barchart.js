@@ -2,8 +2,7 @@ var months = [{month:'September', week:35},
               {month:'October',   week:40},
               {month:'November',  week:45},
               {month:'December',  week:50},
-              {month:'January',   week:55}],
-    HarvestByRegion;
+              {month:'January',   week:55}];
 
 var width = 800, height = 600
     margin = {top: 0, right: 0, bottom: 50, left: 50};
@@ -24,41 +23,6 @@ var svg = d3.select("#barchart")
       .attr("height", height)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-var mgmt_unit = [
-  {
-    'classname': 'PF-North',
-    'states': [53,41,30,16,2]
-  },
-  {
-    'classname': 'PF-South',
-    'states': [6,32,49,4]
-  },
-  {
-    'classname': 'CF-North',
-    'states': [38,31,46,56]
-  },
-  {
-    'classname': 'CF-South',
-    'states': [8,20,35,40,48]
-  },
-  {
-    'classname': 'MF-North',
-    'states': [26,27,17,18,19,39,55]
-  },
-  {
-    'classname': 'MF-South',
-    'states': [29,21,47,1,5,22,28]
-  },
-  {
-    'classname': 'AF-North',
-    'states': [51,54,44,42,36,34,33,25,24,23,11,10,9,50]
-  },
-  {
-    'classname': 'AF-South',
-    'states': [12,13,37,45]
-  },
-];
 
 d3.json("js/us-states.json", function (error, us){
   var projection = d3.geoAlbersUsa().scale(500).translate([500,110]);
