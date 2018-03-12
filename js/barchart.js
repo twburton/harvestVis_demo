@@ -6,9 +6,9 @@ var months = [{month:'September', week:35},
     HarvestByRegion;
 
 var width = 800, height = 600
-    margin = {top: 20, right: 0, bottom: 50, left: 50};
+    margin = {top: 0, right: 0, bottom: 50, left: 50};
     innerWidth = width - margin.left - margin.right,
-    innerHeight = height - margin.top - margin.bottom,
+    innerHeight = height - margin.top - margin.bottom - 150,
     xScale = d3.scaleBand()
                 .rangeRound([0, innerWidth])
                 .padding(0.2),
@@ -25,32 +25,60 @@ var svg = d3.select("#barchart")
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-function scale (scaleFactor,width,height) {
-        return d3.geoTransform({
-          point: function(x, y) {
-            //this.stream.point( (x - width/2) * scaleFactor + width/2 , (y - height/2) * scaleFactor + height/2);
-            this.stream.point( (x - width/2) * scaleFactor , (y - height/2) * scaleFactor );
-      }
-    });
-}
+var mgmt_unit = [
+  {
+    'classname': 'PF-North',
+    'states': [53,41,30,16,2]
+  },
+  {
+    'classname': 'PF-South',
+    'states': [6,32,49,4]
+  },
+  {
+    'classname': 'CF-North',
+    'states': [38,31,46,56]
+  },
+  {
+    'classname': 'CF-South',
+    'states': [8,20,35,40,48]
+  },
+  {
+    'classname': 'MF-North',
+    'states': [26,27,17,18,19,39,55]
+  },
+  {
+    'classname': 'MF-South',
+    'states': [29,21,47,1,5,22,28]
+  },
+  {
+    'classname': 'AF-North',
+    'states': [51,54,44,42,36,34,33,25,24,23,11,10,9,50]
+  },
+  {
+    'classname': 'AF-South',
+    'states': [12,13,37,45]
+  },
+];
 
-d3.json("https://d3js.org/us-10m.v1.json", function (error, us){
-  var path = d3.geoPath().projection(scale(0.2,300,200))
+d3.json("js/us-states.json", function (error, us){
+  var projection = d3.geoAlbersUsa().scale(500).translate([500,110]);
+  var path = d3.geoPath().projection(projection);
 
-  svg.append("g")
-    .attr("transform", "translate(65,0)")
-    .selectAll("path")
-    .data(topojson.feature(us, us.objects.states).features)
-    .enter().append("path")
-    .attr("class", function(d){
-      val = StateKey[d.id]['region'];
-      return val
-    })
-    .attr("d", path);
+  var mgmt_map = svg.append("g")
+      .attr("class", "mgmt_units");
+
+  mgmt_unit.forEach(function(unit){
+    mgmt_map.append("path")
+      .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
+      .attr("class", unit.classname)
+      .attr("d", path)
+      .on("click", function(d){ update(3); });
+  });
+
+  mgmt_map.append("path")
+    .attr("class", "state-borders")
+    .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 });
-
-init();
-
 
 function init(){
     var data = HarvestByRegion[0];
@@ -59,18 +87,21 @@ function init(){
     //yScale.domain([0, d3.max(data.values, function(d) { return d.h; })]);
     yScale.domain([0, 0.12]);
 
-    svg.append("g")
+    var bargraph = svg.append('g')
+      .attr("transform", "translate(0, 150)");
+
+    bargraph.append("g")
       .attr("class", "axis axis-x")
       .attr("transform", "translate(0," + innerHeight + ")")
       .call(xAxis)
         .selectAll("text")
         .remove();
 
-    svg.append("g")
+    bargraph.append("g")
         .attr("class", "axis axis-y")
         .call(yAxis);
 
-    svg.append("g")
+    bargraph.append("g")
       .append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 10)
@@ -78,7 +109,7 @@ function init(){
         .attr("text-anchor", "end")
         .text("Total Harvest");
 
-    svg.append("g")
+    bargraph.append("g")
       .selectAll("text")
         .data(months).enter()
         .append("text")
@@ -87,7 +118,7 @@ function init(){
           .style("text-anchor", "left")
           .text(function(d){ return d.month; });
 
-    var bars = svg.selectAll(".bar")
+    var bars = bargraph.selectAll(".bar")
       .data(data.values);
 
       bars.enter()
@@ -125,6 +156,7 @@ function update(regionIdx){
 
 };
 
+init();
 /*function resize() {
   width = window.innerWidth, height = window.innerHeight;
   svg.attr("width", width).attr("height", height)
