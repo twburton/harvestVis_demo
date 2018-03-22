@@ -1,4 +1,5 @@
 
+
 svg1=document.getElementById('svg1');
 
 svgCalifornia=document.getElementById('svgCalifornia');
