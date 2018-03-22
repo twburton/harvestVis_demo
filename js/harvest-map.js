@@ -258,15 +258,15 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 		myArray[8] = "-";
 		myArray[9] = "-";
 	var myArray2    = new Array();
-		myArray2[1] = "Merced";
-		myArray2[2] = "Colusa";
-		myArray2[3] = "Butte";
-		myArray2[4] = "Glenn";
-		myArray2[5] = "Sutter";
-		myArray2[6] = "Imperial";
-		myArray2[7] = "Solano";
-		myArray2[8] = "Humboldt";
-		myArray2[9] = "Siskiyou";
+		myArray2[1] = "";
+		myArray2[2] = "";
+		myArray2[3] = "";
+		myArray2[4] = "";
+		myArray2[5] = "";
+		myArray2[6] = "";
+		myArray2[7] = "";
+		myArray2[8] = "";
+		myArray2[9] = "";
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
