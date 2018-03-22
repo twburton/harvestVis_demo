@@ -72,14 +72,18 @@
 						  <div id="map-container">
 								<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin"> </svg>
 						  </div>
-							<div id="data-panel">
-								<div class="label state" id="state-value">Select A State</div>
-								<div class="label">Days afield per hunter:<span class="label" id="days-value"></span></div>
-								<div class="label">Total hunters last year</div>
-								<div class="label">Total Duck hunters</div>
-								<div class="label">Total Goose hunters</div>
-								<div class="label">Duck harvest per season:<span class="label" id="bag-value"></span></div>
-								<div class="label">Goose harvest per season:<span class="label" id="bag-value"></span></div>
+							<div id="data-panel" style="width: 30%;">
+								<div style="margin-bottom: 15px;">
+									<div class="label state" id="state-value">Select A State</div>
+									<div><span class="label" id="duck-value"></span> duck hunters, and</div>
+									<div><span class="label" id="goose-value"></span> goose hunters.</div>
+								</div>
+								<div>
+									An individual hunter averages<br>
+									<div><span class="label" id="days-value"></span> days afield,</div>
+									<div><span class="label" id="duck-bag-value"></span> ducks harvested, and</div>
+									<div><span class="label" id="goose-bag-value"></span> geese harvested per season.</div>
+								</div>
 							</div>
 						</div>
 

@@ -56,9 +56,11 @@ function drawMap() {
      .defer(d3.json, "js/FlywayBoundaryLine.geo.json")
      .defer(d3.csv, "js/States.csv", function(d){ stateInfo.set(d.id, {'name':d.name,
                                                                     'ab':d.abbrev,
-                                                                    'days':d.days,
-                                                                    'hunters':d.activeHunters,
-                                                                    'bag':d.bagPerHunter});
+                                                                    'duck_bag':d.duck_bag,
+                                                                    'duck_hunters':d.duck_hunters,
+                                                                    'goose_bag':d.goose_bag,
+                                                                    'goose_hunters': d.goose_hunters,
+                                                                    'days_afield': d.days_afield});
                                               })
      .await(ready);
 
@@ -82,9 +84,12 @@ function drawMap() {
             // Do not allow clicking of Hawaii
             if(d.id != 15){
               data = stateInfo.get(d.id);
-              document.getElementById('state-value').innerHTML= data.name;
-              document.getElementById('days-value').innerHTML= (Number(data.days) / Number(data.hunters)).toFixed(0); //.toFixed(2);
-              document.getElementById('bag-value').innerHTML= Number(data.bag).toFixed(0);
+              document.getElementById('state-value').innerHTML= data.name + " has ...";
+              document.getElementById('duck-value').innerHTML = Number(data.duck_hunters).toLocaleString();
+              document.getElementById('goose-value').innerHTML = Number(data.goose_hunters).toLocaleString();
+              document.getElementById('days-value').innerHTML= Number(data.days_afield);
+              document.getElementById('duck-bag-value').innerHTML= Number(data.duck_bag);
+              document.getElementById('goose-bag-value').innerHTML= Number(data.goose_bag);
 
                // Find previously selected, unselect
               d3.select(".selected").classed("selected", false);
