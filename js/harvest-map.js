@@ -52,7 +52,7 @@ svgWestvirginia=document.getElementById('svgWestvirginia');
 svgWyoming=document.getElementById('svgWyoming');
 
 //make for each state
-
+function hideall(){
 svgAlaska.style.display = 'none';
 svgAlabama.style.display = 'none';
 svgArkansas.style.display = 'none';
@@ -103,7 +103,9 @@ svgWashington.style.display = 'none';
 svgWisconsin.style.display = 'none';
 svgWestvirginia.style.display = 'none';
 svgWyoming.style.display = 'none';
-
+}
+hideall();
+svgLouisiana.style.display = 'block';
 settable=0;
 var timeout;
 document.getElementById('svg1').addEventListener('mouseover', function(ev){
@@ -171,12 +173,19 @@ if(ios) {
 
 //CALIFORNIA
 document.getElementById('CA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	//hideall();
+	hideall();
 	svgCalifornia.style.display = 'block';
-	svgCalifornia.setAttribute("viewBox", "50 75 50 150"); 
-	svgCalifornia.setAttribute("height", "850"); 
-	svgCalifornia.setAttribute("width", "1100"); 
-	
+	var svgW=window.innerWidth
+	var svgH=window.innerHeight
+    var bb=svgCalifornia.getBBox()
+	var bbx=bb.x
+	var bby=bb.y
+	var bbw=bb.width
+	var bbh=bb.height
+    svgCalifornia.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
+    svgCalifornia.setAttribute("width",svgW/1.5)
+    svgCalifornia.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
 		myArray[2] = "-";
@@ -232,11 +241,9 @@ document.getElementById('CA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('AZ').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgArizona.style.display = 'block';
-	svgArizona.setAttribute("viewBox", "80 155 50 150"); 
-	svgArizona.setAttribute("height", "1200"); 
-	svgArizona.setAttribute("width", "1200"); 
+	
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgArizona.getBBox()
@@ -245,7 +252,7 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgArizona.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgArizona.setAttribute("width",svgW)
+    svgArizona.setAttribute("width",svgW/1.5)
     svgArizona.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -305,7 +312,7 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 //TEXAS
 document.getElementById('TX').addEventListener('click', function(ev){
 	
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgTexas.style.display = 'block';
 	svgTexas.setAttribute("viewBox", "170 250 200 30"); 
 	svgTexas.setAttribute("height", "800"); 
@@ -318,7 +325,7 @@ document.getElementById('TX').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgTexas.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgTexas.setAttribute("width",svgW)
+    svgTexas.setAttribute("width",svgW/1.5)
     svgTexas.setAttribute("height",svgH)
 	 var myArray    = new Array();
 		myArray[1] = "-";
@@ -379,7 +386,7 @@ document.getElementById('TX').addEventListener('click', function(ev){
 
 //NORTH DAKOTA
 document.getElementById('ND').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNorthdakota.style.display = 'block';
 	svgNorthdakota.setAttribute("viewBox", "200 30 120 50"); 
 	svgNorthdakota.setAttribute("height", "500"); 
@@ -392,7 +399,7 @@ document.getElementById('ND').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNorthdakota.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNorthdakota.setAttribute("width",svgW)
+    svgNorthdakota.setAttribute("width",svgW/1.5)
     svgNorthdakota.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -452,7 +459,7 @@ document.getElementById('ND').addEventListener('click', function(ev){
 
 //LOUISIANA
 document.getElementById('LA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgLouisiana.style.display = 'block';
 	svgLouisiana.setAttribute("viewBox", "330 235 50 60"); 
 	svgLouisiana.setAttribute("height", "500"); 
@@ -465,7 +472,7 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgLouisiana.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgLouisiana.setAttribute("width",svgW)
+    svgLouisiana.setAttribute("width",svgW/1.5)
     svgLouisiana.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -525,7 +532,7 @@ document.getElementById('LA').addEventListener('click', function(ev){
 
 
 document.getElementById('AK').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgAlaska.style.display = 'block';
 	svgAlaska.setAttribute("viewBox", "80 155 50 150"); 
 	svgAlaska.setAttribute("height", "1200"); 
@@ -538,7 +545,7 @@ document.getElementById('AK').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgAlaska.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgAlaska.setAttribute("width",svgW)
+    svgAlaska.setAttribute("width",svgW/1.5)
     svgAlaska.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -596,7 +603,7 @@ document.getElementById('AK').addEventListener('click', function(ev){
 })
 
 document.getElementById('AL').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgAlabama.style.display = 'block';
 	svgAlabama.setAttribute("viewBox", "80 155 50 150"); 
 	svgAlabama.setAttribute("height", "1200"); 
@@ -609,7 +616,7 @@ document.getElementById('AL').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgAlabama.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgAlabama.setAttribute("width",svgW)
+    svgAlabama.setAttribute("width",svgW/1.5)
     svgAlabama.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -667,7 +674,7 @@ document.getElementById('AL').addEventListener('click', function(ev){
 })
 
 document.getElementById('AR').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgArkansas.style.display = 'block';
 	svgArkansas.setAttribute("viewBox", "80 155 50 150"); 
 	svgArkansas.setAttribute("height", "1200"); 
@@ -681,7 +688,7 @@ document.getElementById('AR').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgArkansas.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgArkansas.setAttribute("width",svgW)
+    svgArkansas.setAttribute("width",svgW/1.5)
     svgArkansas.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -739,7 +746,7 @@ document.getElementById('AR').addEventListener('click', function(ev){
 })
 
 document.getElementById('CO').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgColorado.style.display = 'block';
 	svgColorado.setAttribute("viewBox", "80 155 50 150"); 
 	svgColorado.setAttribute("height", "1200"); 
@@ -752,7 +759,7 @@ document.getElementById('CO').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgColorado.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgColorado.setAttribute("width",svgW)
+    svgColorado.setAttribute("width",svgW/1.5)
     svgColorado.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -809,7 +816,7 @@ document.getElementById('CO').addEventListener('click', function(ev){
 });
 })
 document.getElementById('CT').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgConnecticut.style.display = 'block';
 	svgConnecticut.setAttribute("viewBox", "80 155 50 150"); 
 	svgConnecticut.setAttribute("height", "1200"); 
@@ -822,7 +829,7 @@ document.getElementById('CT').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgConnecticut.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgConnecticut.setAttribute("width",svgW)
+    svgConnecticut.setAttribute("width",svgW/1.5)
     svgConnecticut.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -879,7 +886,7 @@ document.getElementById('CT').addEventListener('click', function(ev){
 });
 })
 document.getElementById('DE').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgDelaware.style.display = 'block';
 	svgDelaware.setAttribute("viewBox", "80 155 50 150"); 
 	svgDelaware.setAttribute("height", "1200"); 
@@ -892,7 +899,7 @@ document.getElementById('DE').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgDelaware.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgDelaware.setAttribute("width",svgW)
+    svgDelaware.setAttribute("width",svgW/1.5)
     svgDelaware.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -949,7 +956,7 @@ document.getElementById('DE').addEventListener('click', function(ev){
 });
 })
 document.getElementById('FL').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgFlorida.style.display = 'block';
 	svgFlorida.setAttribute("viewBox", "80 155 50 150"); 
 	svgFlorida.setAttribute("height", "1200"); 
@@ -962,7 +969,7 @@ document.getElementById('FL').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgFlorida.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgFlorida.setAttribute("width",svgW)
+    svgFlorida.setAttribute("width",svgW/1.5)
     svgFlorida.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1020,7 +1027,7 @@ document.getElementById('FL').addEventListener('click', function(ev){
 })
 
 document.getElementById('GA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgGeorgia.style.display = 'block';
 	svgGeorgia.setAttribute("viewBox", "80 155 50 150"); 
 	svgGeorgia.setAttribute("height", "1200"); 
@@ -1033,7 +1040,7 @@ document.getElementById('GA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgGeorgia.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgGeorgia.setAttribute("width",svgW)
+    svgGeorgia.setAttribute("width",svgW/1.5)
     svgGeorgia.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1091,7 +1098,7 @@ document.getElementById('GA').addEventListener('click', function(ev){
 })
 
 document.getElementById('HI').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgHawaii.style.display = 'block';
 	svgHawaii.setAttribute("viewBox", "80 155 50 150"); 
 	svgHawaii.setAttribute("height", "1200"); 
@@ -1104,7 +1111,7 @@ document.getElementById('HI').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgHawaii.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgHawaii.setAttribute("width",svgW)
+    svgHawaii.setAttribute("width",svgW/1.5)
     svgHawaii.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1161,7 +1168,7 @@ document.getElementById('HI').addEventListener('click', function(ev){
 });
 })
 document.getElementById('ID').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgIdaho.style.display = 'block';
 	svgIdaho.setAttribute("viewBox", "80 155 50 150"); 
 	svgIdaho.setAttribute("height", "1200"); 
@@ -1174,7 +1181,7 @@ document.getElementById('ID').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgIdaho.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgIdaho.setAttribute("width",svgW)
+    svgIdaho.setAttribute("width",svgW/1.5)
     svgIdaho.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1231,7 +1238,7 @@ document.getElementById('ID').addEventListener('click', function(ev){
 });
 })
 document.getElementById('IL').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgIllinois.style.display = 'block';
 	svgIllinois.setAttribute("viewBox", "80 155 50 150"); 
 	svgIllinois.setAttribute("height", "1200"); 
@@ -1244,7 +1251,7 @@ document.getElementById('IL').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgIllinois.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgIllinois.setAttribute("width",svgW)
+    svgIllinois.setAttribute("width",svgW/1.5)
     svgIllinois.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1301,7 +1308,7 @@ document.getElementById('IL').addEventListener('click', function(ev){
 });
 })
 document.getElementById('IN').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgIndiana.style.display = 'block';
 	svgIndiana.setAttribute("viewBox", "80 155 50 150"); 
 	svgIndiana.setAttribute("height", "1200"); 
@@ -1314,7 +1321,7 @@ document.getElementById('IN').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgIndiana.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgIndiana.setAttribute("width",svgW)
+    svgIndiana.setAttribute("width",svgW/1.5)
     svgIndiana.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1371,7 +1378,7 @@ document.getElementById('IN').addEventListener('click', function(ev){
 });
 })
 document.getElementById('IA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgIowa.style.display = 'block';
 	svgIowa.setAttribute("viewBox", "80 155 50 150"); 
 	svgIowa.setAttribute("height", "1200"); 
@@ -1384,7 +1391,7 @@ document.getElementById('IA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgIowa.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgIowa.setAttribute("width",svgW)
+    svgIowa.setAttribute("width",svgW/1.5)
     svgIowa.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1441,7 +1448,7 @@ document.getElementById('IA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('KS').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgKansas.style.display = 'block';
 	svgKansas.setAttribute("viewBox", "80 155 50 150"); 
 	svgKansas.setAttribute("height", "1200"); 
@@ -1454,7 +1461,7 @@ document.getElementById('KS').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgKansas.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgKansas.setAttribute("width",svgW)
+    svgKansas.setAttribute("width",svgW/1.5)
     svgKansas.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1511,7 +1518,7 @@ document.getElementById('KS').addEventListener('click', function(ev){
 });
 })
 document.getElementById('KY').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgKentucky.style.display = 'block';
 	svgKentucky.setAttribute("viewBox", "80 155 50 150"); 
 	svgKentucky.setAttribute("height", "1200"); 
@@ -1524,7 +1531,7 @@ document.getElementById('KY').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgKentucky.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgKentucky.setAttribute("width",svgW)
+    svgKentucky.setAttribute("width",svgW/1.5)
     svgKentucky.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1581,7 +1588,7 @@ document.getElementById('KY').addEventListener('click', function(ev){
 });
 })
 document.getElementById('ME').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMaine.style.display = 'block';
 	svgMaine.setAttribute("viewBox", "80 155 50 150"); 
 	svgMaine.setAttribute("height", "1200"); 
@@ -1594,7 +1601,7 @@ document.getElementById('ME').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMaine.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMaine.setAttribute("width",svgW)
+    svgMaine.setAttribute("width",svgW/1.5)
     svgMaine.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1651,7 +1658,7 @@ document.getElementById('ME').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MD').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMaryland.style.display = 'block';
 	svgMaryland.setAttribute("viewBox", "80 155 50 150"); 
 	svgMaryland.setAttribute("height", "1200"); 
@@ -1664,7 +1671,7 @@ document.getElementById('MD').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMaryland.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMaryland.setAttribute("width",svgW)
+    svgMaryland.setAttribute("width",svgW/1.5)
     svgMaryland.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1721,7 +1728,7 @@ document.getElementById('MD').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMassachusetts.style.display = 'block';
 	svgMassachusetts.setAttribute("viewBox", "80 155 50 150"); 
 	svgMassachusetts.setAttribute("height", "1200"); 
@@ -1734,7 +1741,7 @@ document.getElementById('MA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMassachusetts.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMassachusetts.setAttribute("width",svgW)
+    svgMassachusetts.setAttribute("width",svgW/1.5)
     svgMassachusetts.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1791,7 +1798,7 @@ document.getElementById('MA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MI').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMichigan.style.display = 'block';
 	svgMichigan.setAttribute("viewBox", "80 155 50 150"); 
 	svgMichigan.setAttribute("height", "1200"); 
@@ -1804,7 +1811,7 @@ document.getElementById('MI').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMichigan.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMichigan.setAttribute("width",svgW)
+    svgMichigan.setAttribute("width",svgW/1.5)
     svgMichigan.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1861,7 +1868,7 @@ document.getElementById('MI').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MN').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMinnesota.style.display = 'block';
 	svgMinnesota.setAttribute("viewBox", "80 155 50 150"); 
 	svgMinnesota.setAttribute("height", "1200"); 
@@ -1874,7 +1881,7 @@ document.getElementById('MN').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMinnesota.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMinnesota.setAttribute("width",svgW)
+    svgMinnesota.setAttribute("width",svgW/1.5)
     svgMinnesota.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -1931,7 +1938,7 @@ document.getElementById('MN').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MS').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMississippi.style.display = 'block';
 	svgMississippi.setAttribute("viewBox", "80 155 50 150"); 
 	svgMississippi.setAttribute("height", "1200"); 
@@ -1944,7 +1951,7 @@ document.getElementById('MS').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMississippi.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMississippi.setAttribute("width",svgW)
+    svgMississippi.setAttribute("width",svgW/1.5)
     svgMississippi.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2001,7 +2008,7 @@ document.getElementById('MS').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MO').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMissouri.style.display = 'block';
 	svgMissouri.setAttribute("viewBox", "80 155 50 150"); 
 	svgMissouri.setAttribute("height", "1200"); 
@@ -2014,7 +2021,7 @@ document.getElementById('MO').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMissouri.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMissouri.setAttribute("width",svgW)
+    svgMissouri.setAttribute("width",svgW/1.5)
     svgMissouri.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2071,7 +2078,7 @@ document.getElementById('MO').addEventListener('click', function(ev){
 });
 })
 document.getElementById('MT').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgMontana.style.display = 'block';
 	svgMontana.setAttribute("viewBox", "80 155 50 150"); 
 	svgMontana.setAttribute("height", "1200"); 
@@ -2084,7 +2091,7 @@ document.getElementById('MT').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgMontana.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgMontana.setAttribute("width",svgW)
+    svgMontana.setAttribute("width",svgW/1.5)
     svgMontana.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2141,7 +2148,7 @@ document.getElementById('MT').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NE').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNebraska.style.display = 'block';
 	svgNebraska.setAttribute("viewBox", "80 155 50 150"); 
 	svgNebraska.setAttribute("height", "1200"); 
@@ -2154,7 +2161,7 @@ document.getElementById('NE').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNebraska.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNebraska.setAttribute("width",svgW)
+    svgNebraska.setAttribute("width",svgW/1.5)
     svgNebraska.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2211,7 +2218,7 @@ document.getElementById('NE').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NV').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNevada.style.display = 'block';
 	svgNevada.setAttribute("viewBox", "80 155 50 150"); 
 	svgNevada.setAttribute("height", "1200"); 
@@ -2224,7 +2231,7 @@ document.getElementById('NV').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNevada.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNevada.setAttribute("width",svgW)
+    svgNevada.setAttribute("width",svgW/1.5)
     svgNevada.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2281,7 +2288,7 @@ document.getElementById('NV').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NH').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNewhampshire.style.display = 'block';
 	svgNewhampshire.setAttribute("viewBox", "80 155 50 150"); 
 	svgNewhampshire.setAttribute("height", "1200"); 
@@ -2294,7 +2301,7 @@ document.getElementById('NH').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNewhampshire.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNewhampshire.setAttribute("width",svgW)
+    svgNewhampshire.setAttribute("width",svgW/1.5)
     svgNewhampshire.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2351,7 +2358,7 @@ document.getElementById('NH').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NJ').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNewjersey.style.display = 'block';
 	svgNewjersey.setAttribute("viewBox", "80 155 50 150"); 
 	svgNewjersey.setAttribute("height", "1200"); 
@@ -2364,7 +2371,7 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNewjersey.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNewjersey.setAttribute("width",svgW)
+    svgNewjersey.setAttribute("width",svgW/1.5)
     svgNewjersey.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2421,7 +2428,7 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NM').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNewmexico.style.display = 'block';
 	svgNewmexico.setAttribute("viewBox", "80 155 50 150"); 
 	svgNewmexico.setAttribute("height", "1200"); 
@@ -2434,7 +2441,7 @@ document.getElementById('NM').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNewmexico.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNewmexico.setAttribute("width",svgW)
+    svgNewmexico.setAttribute("width",svgW/1.5)
     svgNewmexico.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2491,7 +2498,7 @@ document.getElementById('NM').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NY').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNewyork.style.display = 'block';
 	svgNewyork.setAttribute("viewBox", "80 155 50 150"); 
 	svgNewyork.setAttribute("height", "1200"); 
@@ -2504,7 +2511,7 @@ document.getElementById('NY').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNewyork.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNewyork.setAttribute("width",svgW)
+    svgNewyork.setAttribute("width",svgW/1.5)
     svgNewyork.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2561,7 +2568,7 @@ document.getElementById('NY').addEventListener('click', function(ev){
 });
 })
 document.getElementById('NC').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgNorthcarolina.style.display = 'block';
 	svgNorthcarolina.setAttribute("viewBox", "80 155 50 150"); 
 	svgNorthcarolina.setAttribute("height", "1200"); 
@@ -2574,7 +2581,7 @@ document.getElementById('NC').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgNorthcarolina.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgNorthcarolina.setAttribute("width",svgW)
+    svgNorthcarolina.setAttribute("width",svgW/1.5)
     svgNorthcarolina.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2631,7 +2638,7 @@ document.getElementById('NC').addEventListener('click', function(ev){
 });
 })
 document.getElementById('OH').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgOhio.style.display = 'block';
 	svgOhio.setAttribute("viewBox", "80 155 50 150"); 
 	svgOhio.setAttribute("height", "1200"); 
@@ -2644,7 +2651,7 @@ document.getElementById('OH').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgOhio.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgOhio.setAttribute("width",svgW)
+    svgOhio.setAttribute("width",svgW/1.5)
     svgOhio.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2701,7 +2708,7 @@ document.getElementById('OH').addEventListener('click', function(ev){
 });
 })
 document.getElementById('OK').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgOklahoma.style.display = 'block';
 	svgOklahoma.setAttribute("viewBox", "80 155 50 150"); 
 	svgOklahoma.setAttribute("height", "1200"); 
@@ -2714,7 +2721,7 @@ document.getElementById('OK').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgOklahoma.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgOklahoma.setAttribute("width",svgW)
+    svgOklahoma.setAttribute("width",svgW/1.5)
     svgOklahoma.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2771,7 +2778,7 @@ document.getElementById('OK').addEventListener('click', function(ev){
 });
 })
 document.getElementById('OR').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgOregon.style.display = 'block';
 	svgOregon.setAttribute("viewBox", "80 155 50 150"); 
 	svgOregon.setAttribute("height", "1200"); 
@@ -2784,7 +2791,7 @@ document.getElementById('OR').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgOregon.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgOregon.setAttribute("width",svgW)
+    svgOregon.setAttribute("width",svgW/1.5)
     svgOregon.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2841,7 +2848,7 @@ document.getElementById('OR').addEventListener('click', function(ev){
 });
 })
 document.getElementById('PA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgPennsylvania.style.display = 'block';
 	svgPennsylvania.setAttribute("viewBox", "80 155 50 150"); 
 	svgPennsylvania.setAttribute("height", "1200"); 
@@ -2854,7 +2861,7 @@ document.getElementById('PA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgPennsylvania.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgPennsylvania.setAttribute("width",svgW)
+    svgPennsylvania.setAttribute("width",svgW/1.5)
     svgPennsylvania.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2911,7 +2918,7 @@ document.getElementById('PA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('RI').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgRhodeisland.style.display = 'block';
 	svgRhodeisland.setAttribute("viewBox", "80 155 50 150"); 
 	svgRhodeisland.setAttribute("height", "1200"); 
@@ -2924,7 +2931,7 @@ document.getElementById('RI').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgRhodeisland.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgRhodeisland.setAttribute("width",svgW)
+    svgRhodeisland.setAttribute("width",svgW/1.5)
     svgRhodeisland.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -2981,7 +2988,7 @@ document.getElementById('RI').addEventListener('click', function(ev){
 });
 })
 document.getElementById('SC').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgSouthcarolina.style.display = 'block';
 	svgSouthcarolina.setAttribute("viewBox", "80 155 50 150"); 
 	svgSouthcarolina.setAttribute("height", "1200"); 
@@ -2994,7 +3001,7 @@ document.getElementById('SC').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgSouthcarolina.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgSouthcarolina.setAttribute("width",svgW)
+    svgSouthcarolina.setAttribute("width",svgW/1.5)
     svgSouthcarolina.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3051,7 +3058,7 @@ document.getElementById('SC').addEventListener('click', function(ev){
 });
 })
 document.getElementById('SD').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgSouthdakota.style.display = 'block';
 	svgSouthdakota.setAttribute("viewBox", "80 155 50 150"); 
 	svgSouthdakota.setAttribute("height", "1200"); 
@@ -3064,7 +3071,7 @@ document.getElementById('SD').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgSouthdakota.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgSouthdakota.setAttribute("width",svgW)
+    svgSouthdakota.setAttribute("width",svgW/1.5)
     svgSouthdakota.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3121,7 +3128,7 @@ document.getElementById('SD').addEventListener('click', function(ev){
 });
 })
 document.getElementById('TN').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgTennessee.style.display = 'block';
 	svgTennessee.setAttribute("viewBox", "80 155 50 150"); 
 	svgTennessee.setAttribute("height", "1200"); 
@@ -3134,7 +3141,7 @@ document.getElementById('TN').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgTennessee.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgTennessee.setAttribute("width",svgW)
+    svgTennessee.setAttribute("width",svgW/1.5)
     svgTennessee.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3191,7 +3198,7 @@ document.getElementById('TN').addEventListener('click', function(ev){
 });
 })
 document.getElementById('UT').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgUtah.style.display = 'block';
 	svgUtah.setAttribute("viewBox", "80 155 50 150"); 
 	svgUtah.setAttribute("height", "1200"); 
@@ -3204,7 +3211,7 @@ document.getElementById('UT').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgUtah.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgUtah.setAttribute("width",svgW)
+    svgUtah.setAttribute("width",svgW/1.5)
     svgUtah.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3261,7 +3268,7 @@ document.getElementById('UT').addEventListener('click', function(ev){
 });
 })
 document.getElementById('VT').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgVermont.style.display = 'block';
 	svgVermont.setAttribute("viewBox", "80 155 50 150"); 
 	svgVermont.setAttribute("height", "1200"); 
@@ -3274,7 +3281,7 @@ document.getElementById('VT').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgVermont.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgVermont.setAttribute("width",svgW)
+    svgVermont.setAttribute("width",svgW/1.5)
     svgVermont.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3331,7 +3338,7 @@ document.getElementById('VT').addEventListener('click', function(ev){
 });
 })
 document.getElementById('VA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgVirginia.style.display = 'block';
 	svgVirginia.setAttribute("viewBox", "80 155 50 150"); 
 	svgVirginia.setAttribute("height", "1200"); 
@@ -3344,7 +3351,7 @@ document.getElementById('VA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgVirginia.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgVirginia.setAttribute("width",svgW)
+    svgVirginia.setAttribute("width",svgW/1.5)
     svgVirginia.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3401,7 +3408,7 @@ document.getElementById('VA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('WA').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgWashington.style.display = 'block';
 	svgWashington.setAttribute("viewBox", "80 155 50 150"); 
 	svgWashington.setAttribute("height", "1200"); 
@@ -3414,7 +3421,7 @@ document.getElementById('WA').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgWashington.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgWashington.setAttribute("width",svgW)
+    svgWashington.setAttribute("width",svgW/1.5)
     svgWashington.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3471,7 +3478,7 @@ document.getElementById('WA').addEventListener('click', function(ev){
 });
 })
 document.getElementById('WV').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgWestvirginia.style.display = 'block';
 	svgWestvirginia.setAttribute("viewBox", "80 155 50 150"); 
 	svgWestvirginia.setAttribute("height", "1200"); 
@@ -3484,7 +3491,7 @@ document.getElementById('WV').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgWestvirginia.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgWestvirginia.setAttribute("width",svgW)
+    svgWestvirginia.setAttribute("width",svgW/1.5)
     svgWestvirginia.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3541,7 +3548,7 @@ document.getElementById('WV').addEventListener('click', function(ev){
 });
 })
 document.getElementById('WI').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgWisconsin.style.display = 'block';
 	svgWisconsin.setAttribute("viewBox", "80 155 50 150"); 
 	svgWisconsin.setAttribute("height", "1200"); 
@@ -3554,7 +3561,7 @@ document.getElementById('WI').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgWisconsin.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgWisconsin.setAttribute("width",svgW)
+    svgWisconsin.setAttribute("width",svgW/1.5)
     svgWisconsin.setAttribute("height",svgH)
 	var myArray    = new Array();
 		myArray[1] = "-";
@@ -3611,7 +3618,7 @@ document.getElementById('WI').addEventListener('click', function(ev){
 });
 })
 document.getElementById('WY').addEventListener('click', function(ev){
-	document.getElementById('svg1').style.display = 'none';
+	hideall();
 	svgWyoming.style.display = 'block';
 
 	var svgW=window.innerWidth
@@ -3622,7 +3629,7 @@ document.getElementById('WY').addEventListener('click', function(ev){
 	var bbw=bb.width
 	var bbh=bb.height
     svgWyoming.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
-    svgWyoming.setAttribute("width",svgW)
+    svgWyoming.setAttribute("width",svgW/1.5)
     svgWyoming.setAttribute("height",svgH)
 	
 	var myArray    = new Array();
