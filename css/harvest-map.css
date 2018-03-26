@@ -46,27 +46,80 @@ h1{
     position:relative;
     width:100%;
    }
-   .statesmap{
+.statesmap{
 	float:left;
-	width:100%;
+	width:50%;
 	display:inline-block;
 }
 
 .table1{
 	font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 22%;
-	height: 100%;
+    width: 25%;
+	height: 20%;
 	table-layout: fixed;
 	overflow: hidden;
 	float: right;
 	position: absolute;
-	margin-left: 80%;
-	margin-top: 5%;
+	margin-left: 40%;
+	margin-right:30%;
+	margin-top: 25%;
 }
+.texas{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.california{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.louisiana{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.northdakota{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.arizona{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.alabama{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.alaska{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.arkansas{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.colorado{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.connecticut{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.delaware{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.florida{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.georgia{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.hawaii{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.idaho{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.illinois{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.indiana{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.iowa{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.kansas{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.kentucky{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.maine{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.maryland{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.massachusetts{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.michigan{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.minnesota{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.mississippi{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.missouri{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.montana{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.nebraska{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.nevada{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.newhampshire{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.newjersey{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.newmexico{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.newyork{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.northcarolina{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.ohio{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.oklahoma{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.oregon{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.pennsylvania{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.rhodeisland{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.southcarolina{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.southdakota{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.tennessee{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.utah{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.vermont{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.virginia{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.washington{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.westvirginia{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.wisconsin{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.wyoming{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+
+/*
 .texas{float:left;display:inline-block;width:80%;height:80%}
-.california{float: left;display:inline-block; width:80%;height:80%;}
-.louisiana{float: left;display:inline-block;width:85%;height:85%}
+.california{float: right;display:inline-block; width:50%;height:60%;margin-bottom:60%;}
+.louisiana{float: left;display:inline-block;width:80%;height:80%}
 .northdakota{float: left;display:inline-block;width:80%;height:80%;}
 .arizona{float: left;display:inline-block;width:80%;height:80%;}
 .alabama{float: left;display:inline-block;width:80%;height:80%;}
@@ -114,6 +167,7 @@ h1{
 .westvirginia{float: left;display:inline-block;width:80%;height:80%;}
 .wisconsin{float: left;display:inline-block;width:80%;height:80%;}
 .wyoming{float: left;display:inline-block;width:80%;height:80%;}
+*/
 /*.legend { list-style: none;display:inline-block; margin-right: 30%; margin-left: 50px;}
 .legend li { float: left; margin-right: 200px; margin-left: 200px; }
 .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px; }
