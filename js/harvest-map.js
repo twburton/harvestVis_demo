@@ -104,46 +104,69 @@ svgWisconsin.style.display = 'none';
 svgWestvirginia.style.display = 'none';
 svgWyoming.style.display = 'none';
 }
+
 hideall();
 svgLouisiana.style.display = 'block';
 settable=0;
 var timeout;
+var svgW=window.innerWidth
+	var svgH=window.innerHeight
+    var bb=svg1.getBBox()
+	var bbx=bb.x
+	var bby=bb.y
+	var bbw=bb.width
+	var bbh=bb.height
+    svg1.setAttribute("viewBox",bbx+" "+bby+" "+bbw+" "+bbh )
+    svg1.setAttribute("width",svgW/1.7)
+    svg1.setAttribute("height",svgH)
 document.getElementById('svg1').addEventListener('mouseover', function(ev){
-
-	$("path, circle").mouseenter(function(e) {
+	
+	var $statesmap = $('.statesmap')
+	//$statesmap.mouseenter(function() {
+		//console.log('mouse enter');
+		$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  $('#info-box').html($(this).data('info'));
-	  
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
-	  var myArray    = new Array();
+	  $('#info-box').html($(this).data('info3'));
+	  $('#info-box').html($(this).data('info2'));
+	
+	  var varsvg1 = $(this).data('info3');
+	  var statespecies = $(this).data('info4');
+	  var myArray3    = new Array();
 		
-		myArray[1] = "Louisiana";
-		myArray[2] = "California";
-		myArray[3] = "Texas";
-		myArray[4] = "Arkansas";
-		myArray[5] = "Minnesota";
-		myArray[6] = "North Dakota";
-		myArray[7] = "Illinois";
-		myArray[8] = "Missouri";
-		myArray[9] = "Wisconsin";
-		myArray[10] = var2;
+		myArray3[1] = "Louisiana";
+		myArray3[2] = "California";
+		myArray3[3] = "Texas";
+		myArray3[4] = "Arkansas";
+		myArray3[5] = "Minnesota";
+		
+		myArray3[6] = varsvg1;
+		myArray3[7] = statespecies;
 
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td>";
-	  	
-	  for (var i=1; i<11; i++) {
-		if (i==10){
+		var myTable2= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td>";
+	  	//var myTable2= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td>";
+		//myTable2+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
+		
+	  for (var i=6; i<8; i++) {
+		if (i==6){
 			
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray[i]+ "</td></tr>";
+			myTable2+="<tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
 		}
 		else{
-		myTable+="<tr><td style='height:15px;'> " + i + " - " +myArray[i]+ "</td>";
+			
+		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
+		myTable2+= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Top three duck species harvested</td>";
+		myTable2+="<tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
 		}
 	  }  
-	   myTable+="</table>";
-
-	 document.getElementById('mytable').innerHTML = myTable;
+	   myTable2+="</table>";
+	
+	 document.getElementById('mytable2').innerHTML = myTable2;
+	 
+	 
+	 
 	 });
+	 
+	 //});
 	 $("path, circle").mouseleave(function(e) {
   $('#info-box').css('display','none');
 });
@@ -155,12 +178,11 @@ $("path, circle").click(function(e) {
 });
 
 $("path, circle").mousemove(function(e) {
-if (typeof $(this).data('info2') != null){
-	
   $('#info-box').css('top',e.pageY-$('#info-box').height()-100);
   $('#info-box').css('left',e.pageX-($('#info-box').width())-200);
-	}
+	
 }).mouseover();
+
 
 var ios = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 if(ios) {
@@ -206,11 +228,15 @@ document.getElementById('CA').addEventListener('click', function(ev){
 		myArray2[7] = "Solano";
 		myArray2[8] = "Humboldt";
 		myArray2[9] = "Siskiyou";
+	//document.getElementById('svgCalifornia').addEventListener('mouseover', function(ev){
+		
 	$("path, circle").mouseenter(function(e) {
+		
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  
+	  var var1 = $(this).data('info');
+	  var var2 = var1;
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
@@ -231,6 +257,7 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
 	 });
+	//})
 	svgCalifornia.addEventListener('click', function(ev){
 		svgCalifornia.style.display = 'none';
 		svg1.style.display = 'block';
@@ -277,14 +304,13 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -350,8 +376,8 @@ document.getElementById('TX').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
+	  var var2 = var1;
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
@@ -424,15 +450,15 @@ document.getElementById('ND').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
+	
 		
 				var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -497,14 +523,13 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		
 				var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -570,14 +595,13 @@ document.getElementById('AK').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -641,14 +665,13 @@ document.getElementById('AL').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -713,14 +736,13 @@ document.getElementById('AR').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -784,14 +806,13 @@ document.getElementById('CO').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -854,14 +875,13 @@ document.getElementById('CT').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -924,14 +944,13 @@ document.getElementById('DE').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -994,14 +1013,13 @@ document.getElementById('FL').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1065,14 +1083,13 @@ document.getElementById('GA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1136,14 +1153,13 @@ document.getElementById('HI').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1206,14 +1222,13 @@ document.getElementById('ID').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1276,14 +1291,13 @@ document.getElementById('IL').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1346,14 +1360,13 @@ document.getElementById('IN').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1416,14 +1429,13 @@ document.getElementById('IA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1486,14 +1498,13 @@ document.getElementById('KS').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1556,14 +1567,13 @@ document.getElementById('KY').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1626,14 +1636,13 @@ document.getElementById('ME').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1696,14 +1705,13 @@ document.getElementById('MD').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1766,14 +1774,13 @@ document.getElementById('MA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1836,14 +1843,13 @@ document.getElementById('MI').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1906,14 +1912,13 @@ document.getElementById('MN').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -1976,14 +1981,13 @@ document.getElementById('MS').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2046,14 +2050,13 @@ document.getElementById('MO').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2116,14 +2119,13 @@ document.getElementById('MT').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2186,14 +2188,13 @@ document.getElementById('NE').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2256,14 +2257,13 @@ document.getElementById('NV').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2326,14 +2326,13 @@ document.getElementById('NH').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2396,14 +2395,13 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2466,14 +2464,13 @@ document.getElementById('NM').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2536,14 +2533,13 @@ document.getElementById('NY').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2606,14 +2602,13 @@ document.getElementById('NC').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2676,14 +2671,13 @@ document.getElementById('OH').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2746,14 +2740,13 @@ document.getElementById('OK').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2816,14 +2809,13 @@ document.getElementById('OR').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2886,14 +2878,13 @@ document.getElementById('PA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -2956,14 +2947,13 @@ document.getElementById('RI').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3026,14 +3016,13 @@ document.getElementById('SC').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3096,14 +3085,13 @@ document.getElementById('SD').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3166,14 +3154,13 @@ document.getElementById('TN').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3236,14 +3223,13 @@ document.getElementById('UT').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3306,14 +3292,13 @@ document.getElementById('VT').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3376,14 +3361,13 @@ document.getElementById('VA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3446,14 +3430,13 @@ document.getElementById('WA').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3516,14 +3499,13 @@ document.getElementById('WV').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3586,14 +3568,13 @@ document.getElementById('WI').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3655,14 +3636,13 @@ document.getElementById('WY').addEventListener('click', function(ev){
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
 	  $('#info-box').html($(this).data('info2'));
-	  var var1 = $(this).data('info').replace('<div>','');
-	  var var2 = var1.replace('</div>','');
+	  var var1 = $(this).data('info');
 	  if (typeof $(this).data('info2') != 'undefined'){
 	  var var3 = $(this).data('info2').replace('<div>','');
 	  var var4 = var3.replace('</div>','');
 	  }
 		myArray[10] = "";
-		myArray[11] = var2;
+		myArray[11] = var1;
 		myArray2[10] = var4;
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<11; i++) {
@@ -3698,27 +3678,42 @@ function getBBox(elem){
 }
 
 window.onload = function () {
- var myArray = new Array();
-    	myArray[1] = "Louisiana";
-		myArray[2] = "California";
-		myArray[3] = "Texas";
-		myArray[4] = "Arkansas";
-		myArray[5] = "Minnesota";
-		myArray[6] = "North Dakota";
-		myArray[7] = "Illinois";//tries to translate to finnish
-		myArray[8] = "Missouri";
-		myArray[9] = "Wisconsin";
-    		myArray[10] = "-";
-	  	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td></tr>";
-	  for (var i=1; i<11; i++) {
-		if (i==10){
-			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the country</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray[i]+ "</td></tr>";
+ var myArray2 = new Array();
+    	myArray2[1] = "Louisiana";
+		myArray2[2] = "California";
+		myArray2[3] = "Texas";
+		myArray2[4] = "Arkansas";
+		myArray2[5] = "Minnesota";
+		
+    	myArray2[6] = "-";
+	  	var myTable2= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'></td></tr>";
+	  for (var i=6; i<7; i++) {
+		if (i==6){
+			myTable2+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the country</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray2[i]+ "</td></tr>";
 		}
 		else{
-		myTable+="<tr><td style='height:15px;'>" + i + " - " +myArray[i]+ "</td>";
+		myTable2+="<tr><td style='height:15px;'>" + i + " - " +myArray2[i]+ "</td>";
 		}
 	  }  
-	   myTable+="</table>";
+	   myTable2+="</table>";
 
+	 document.getElementById('mytable2').innerHTML = myTable2;
+	 var myArray    = new Array();
+		myArray[1] = "-";
+		myArray[2] = "-";
+		myArray[3] = "-";
+		myArray[4] = "-";
+		myArray[5] = "-";
+		myArray[6] = "-";
+		myArray[7] = "-";
+		myArray[8] = "-";
+		myArray[9] = "-";
+		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the Nation</td></tr>";
+	  for (var i=1; i<10; i++) {
+		
+		myTable+="<td style='height:15px;'> " + i + " - " +myArray[i]+ "</td></tr>";
+		
+	  }  
+	  myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
 }
