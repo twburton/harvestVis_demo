@@ -50,8 +50,22 @@ h1{
 	float:left;
 	width:50%;
 	display:inline-block;
+	margin-top:22%;
 }
-
+.table2{
+	font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 28%;
+	height: 9%;
+	table-layout: fixed;
+	overflow: hidden;
+	float: left;
+	position: absolute;
+	margin-left: 0%;
+	margin-right:50%;
+	margin-top: 0%;
+	
+}
 .table1{
 	font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -185,3 +199,5 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+
