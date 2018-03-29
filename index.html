@@ -67,7 +67,7 @@
 					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested (someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <span class="tooltipCustom" tooltip-follow-cursor>"I get asked questions about my hunting when I register, is that all there is to the survey?"<span class="tooltipCustomContent">Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters.</span></span> No! <img src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />). The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
 
 					<div class="overflow-hidden"><!--visualization #1-->
-						<h3 style="margin-bottom: -2px">hunting effort by state (2012&ndash;16 average) <br>&nbsp;&nbsp;</h3>
+						<h3 style="margin-bottom: -2px">hunting effort by state (2007&ndash;16 average) <br>&nbsp;&nbsp;</h3>
 						<div id="container">
 						  <div id="map-container">
 								<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin"> </svg>
@@ -75,14 +75,14 @@
 							<div id="data-panel" style="width: 30%;">
 								<div style="margin-bottom: 15px;">
 									<div class="label state" id="state-value">Select A State</div>
-									<div><span class="label" id="duck-value"></span> duck hunters, and</div>
-									<div><span class="label" id="goose-value"></span> goose hunters.</div>
+									<div id="tx-indent"><span class="label" id="duck-value"></span> duck hunters, and</div>
+									<div id="tx-indent"><span class="label" id="goose-value"></span> goose hunters.</div>
 								</div>
 								<div>
 									An individual hunter averages<br>
-									<div><span class="label" id="days-value"></span> days afield,</div>
-									<div><span class="label" id="duck-bag-value"></span> ducks harvested, and</div>
-									<div><span class="label" id="goose-bag-value"></span> geese harvested per season.</div>
+									<div id="tx-indent"><span class="label" id="days-value"></span> days afield,</div>
+									<div id="tx-indent"><span class="label" id="duck-bag-value"></span> ducks harvested, and</div>
+									<div id="tx-indent"><span class="label" id="goose-bag-value"></span> geese harvested per season.</div>
 								</div>
 							</div>
 						</div>
@@ -93,9 +93,9 @@
 					</div><!--end vis #1-->
 
 					<div class="overflow-hidden"><!--visualization #2-->
-						<h3 style="margin-bottom: -2px">Average regional weekly harvest<br>&nbsp;&nbsp;
-							<span style="font-size: smaller"><em>(select a region to see results!)</em></span><br>
-						</h3>
+						<h3 style="margin-bottom: -2px">Average regional weekly harvest</h3>
+					  <span id="subhead-text">Select a Region</span>
+						
 						<div id="mapid">
 								<svg id="barchart" width="600" height="800" viewBox="0 0 800 600"></svg>
 						</div>
@@ -105,10 +105,10 @@
 						Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the Harvest Survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.
 
 						<h3 style="margin-bottom: -5px">harvest by state and county
-						<br>&nbsp;&nbsp;<span style="font-size: smaller"><em>(Mouse over to see a state's rank in total waterfowl harvest;
-							<!--...how does your state stack up? <br>-->
+						<!--<br>&nbsp;&nbsp;<span style="font-size: smaller"><em>(Mouse over to see a state's rank in total waterfowl harvest;
+							...how does your state stack up? <br>
 						<br>&nbsp;&nbsp;then click on a state to see county-level results;)<br>
-						<br>&nbsp;&nbsp;click once more to return to the entire US!)</em></span></h3>
+						<br>&nbsp;&nbsp;click once more to return to the entire US!)</em></span>--></h3>
 
 						<div><!--div for map, tbl, etc.-->
 						<div id="info-box"></div>
@@ -6625,12 +6625,10 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->March 22, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->March 29, 2018<!-- #EndDate --></p>
 	</div></div>
 
-</div><!--ends div for mobile nav-->
-</div>
-<!-- TemplateBeginEditable name="content-footer" -->
+</div><!--ends div for mobile nav--><!-- TemplateBeginEditable name="content-footer" -->
 <!--bottom include: used for scripts, footers, etc-->
 <!-- TemplateEndEditable -->
 </body>

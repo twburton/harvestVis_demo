@@ -32,7 +32,6 @@
 	font-weight: bold;
 }
 
-
 #container {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -51,6 +50,11 @@
 #activity-map text {
   font-size: 16pt;
   font-family: sans-serif;
+}
+
+div#tx-indent {
+	text-indent: 20px;
+	font-size: 15pt;
 }
 
 div#map-text {
@@ -142,4 +146,14 @@ svg text {
 
 #mapid {
   padding-top: 10px;
+}
+
+/*text css*/
+#subhead-text {
+  display: block;
+  margin-left: 10px;
+  font-size: 16pt;
+  color: #002868;
+  font-family: "Arial Narrow", Arial, sans-serif;
+	font-weight: bold;
 }
