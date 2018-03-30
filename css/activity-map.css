@@ -108,37 +108,21 @@ svg text {
   cursor: pointer;
 }
 
-.PF-North {
-  fill: #f7fbff;
-}
-
-.PF-South {
-  fill: #deebf7;
-}
-
-.CF-North {
-  fill: #c6dbef;
-}
-
-.CF-South {
-  fill: #9ecae1;
-}
-.MF-North {
+.PF-North, .MF-North {
   fill: #6baed6;
 }
 
-.MF-South {
+.PF-South, .MF-South {
   fill: #4292c6;
 }
 
-.AF-North {
+.CF-North, .AF-North {
   fill: #2171b5;
 }
 
-.AF-South {
+.CF-South, .AF-South {
   fill: #084594;
 }
-
 
 .exempt {
   fill: 'grey';
