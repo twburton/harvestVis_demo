@@ -36,7 +36,12 @@ d3.json("js/us-states.json", function (error, us){
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
       .attr("class", "mgmt_unit" + " " + unit.classname)
       .attr("d", path)
-      .on("click", function(d){ update(unit.idx); });
+      .on("click", function(d){
+        // Find previously selected, unselect
+        d3.select(".barchart-selected").classed("barchart-selected", false);
+        // Select current item
+        d3.select(this).classed("barchart-selected", true);
+        update(unit.idx); });
   });
 
   mgmt_map.append("path")

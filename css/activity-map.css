@@ -124,6 +124,10 @@ svg text {
   fill: #084594;
 }
 
+.barchart-selected {
+    fill: #FFDEAD;
+}
+
 .exempt {
   fill: 'grey';
 }
