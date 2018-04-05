@@ -183,13 +183,28 @@ var timeout;
 	 // $('#info-box').html($(this).data('info3'));
 	  //$('#info-box').html($(this).data('info2'));
 	 
-	  var staterank = $(this).data('info3').substring(0,2);
-	  if (staterank.substring(1,2) == '1'){
-		  staterank.replace(staterank, staterank+"st");
-	  }
-	  var stateid = $(this).data('info3').replace(staterank,'');
-	   
 	  var statespecies = $(this).data('info4');
+	  var staterank = $(this).data('info3').substring(0,2);
+	   var stateid = $(this).data('info3').replace(staterank,'');
+	  staterank = parseInt(staterank);
+	  function suffix(i) {
+		var j = i % 10,
+			k = i % 100;
+		if (j == 1 && k != 11) {
+			return i + "st";
+		}
+		if (j == 2 && k != 12) {
+			return i + "nd";
+		}
+		if (j == 3 && k != 13) {
+			return i + "rd";
+		}
+		return i + "th";
+	}
+	staterank = suffix(staterank);
+	//staterank = staterank.toString();
+	console.log(staterank);
+	  
 	  statespecies=statespecies.replace(';',', ');
 	  statespecies=statespecies.replace(';',', and ');
 	 // var myArray3    = new Array();
