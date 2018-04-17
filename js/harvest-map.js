@@ -203,10 +203,10 @@ var timeout;
 	}
 	staterank = suffix(staterank);
 	//staterank = staterank.toString();
-	console.log(staterank);
+	//console.log(staterank);
 	  
-	  statespecies=statespecies.replace(';',', ');
-	  statespecies=statespecies.replace(';',', and ');
+	  statespecies=statespecies.replace(';',',<p class="indented">');
+	  statespecies=statespecies.replace(';',', and</p><p class="indented">');
 	 // var myArray3    = new Array();
 	
 
@@ -217,13 +217,13 @@ var timeout;
 	  for (var i=1; i<3; i++) {
 		if (i==1){
 			
-			myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td style='text-indent: 16px; font-size: 14pt;'>"+staterank+" in the U.S.</td></tr>";
+			myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td style='text-indent: 16px;'>"+staterank+" in the U.S.</td></tr>";
 		}
 		else{
 			
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
-		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td style='text-indent: 16px; font-size: 14pt;'>"+statespecies+".</td></tr>";
+		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td><p class='indented'>"+statespecies+".</p></td></tr>";
 		}
 	  }  
 	   myTable2+="</table>";
@@ -376,8 +376,13 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	  var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -479,9 +484,15 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -587,9 +598,15 @@ document.getElementById('TX').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -693,9 +710,15 @@ var myArray2    = new Array();
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -798,9 +821,15 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -902,9 +931,15 @@ document.getElementById('AK').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1007,9 +1042,15 @@ document.getElementById('AL').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1113,9 +1154,15 @@ document.getElementById('AR').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1218,9 +1265,15 @@ document.getElementById('CO').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1322,9 +1375,15 @@ document.getElementById('CT').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1426,9 +1485,15 @@ document.getElementById('DE').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1530,9 +1595,15 @@ document.getElementById('FL').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1635,9 +1706,15 @@ document.getElementById('GA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1740,9 +1817,15 @@ document.getElementById('HI').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1844,9 +1927,15 @@ document.getElementById('ID').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1948,9 +2037,15 @@ document.getElementById('IL').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2052,9 +2147,15 @@ document.getElementById('IN').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2156,9 +2257,15 @@ document.getElementById('IA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2260,9 +2367,15 @@ document.getElementById('KS').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2364,9 +2477,15 @@ document.getElementById('KY').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2468,9 +2587,15 @@ document.getElementById('ME').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2572,9 +2697,15 @@ document.getElementById('MD').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2676,9 +2807,15 @@ document.getElementById('MA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2780,9 +2917,15 @@ document.getElementById('MI').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2884,9 +3027,15 @@ document.getElementById('MN').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2988,9 +3137,15 @@ document.getElementById('MS').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3092,9 +3247,15 @@ document.getElementById('MO').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3196,9 +3357,15 @@ document.getElementById('MT').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3300,9 +3467,15 @@ document.getElementById('NE').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3404,9 +3577,15 @@ document.getElementById('NV').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3508,9 +3687,15 @@ document.getElementById('NH').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3612,9 +3797,15 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3716,9 +3907,15 @@ document.getElementById('NM').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3820,9 +4017,15 @@ document.getElementById('NY').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3924,9 +4127,15 @@ document.getElementById('NC').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4028,9 +4237,15 @@ document.getElementById('OH').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4132,9 +4347,15 @@ document.getElementById('OK').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4236,9 +4457,15 @@ document.getElementById('OR').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4340,9 +4567,15 @@ document.getElementById('PA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4444,9 +4677,15 @@ document.getElementById('RI').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4548,9 +4787,15 @@ document.getElementById('SC').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4652,9 +4897,15 @@ document.getElementById('SD').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4756,9 +5007,15 @@ document.getElementById('TN').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4860,9 +5117,15 @@ document.getElementById('UT').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4966,9 +5229,15 @@ document.getElementById('VT').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5072,9 +5341,15 @@ document.getElementById('VA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5178,9 +5453,15 @@ document.getElementById('WA').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5284,9 +5565,15 @@ document.getElementById('WV').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5390,9 +5677,15 @@ document.getElementById('WI').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5495,9 +5788,15 @@ document.getElementById('WY').addEventListener('click', function(ev){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
-	  var var4 = $(this).data('info5')
+	   var var4 = $(this).data('info5')
+	  var nationrank=var1.toString();
+	  if (nationrank.length=='4'){
+		  
+		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
+		  }
 	  }
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+var1+"</strong> out of 3,111 counties in the U.S.");
+	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
