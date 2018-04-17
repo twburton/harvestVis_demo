@@ -157,6 +157,20 @@ $("#WV").css('fill', '');
 $("#WI").css('fill', '');
 $("#WY").css('fill', '');
 }
+function suffix(i) {
+		var j = i % 10,
+			k = i % 100;
+		if (j == 1 && k != 11) {
+			return i + "st";
+		}
+		if (j == 2 && k != 12) {
+			return i + "nd";
+		}
+		if (j == 3 && k != 13) {
+			return i + "rd";
+		}
+		return i + "th";
+	}
 hideall();
 	
 svgLouisiana.style.display = 'block';
@@ -187,20 +201,7 @@ var timeout;
 	  var staterank = $(this).data('info3').substring(0,2);
 	   var stateid = $(this).data('info3').replace(staterank,'');
 	  staterank = parseInt(staterank);
-	  function suffix(i) {
-		var j = i % 10,
-			k = i % 100;
-		if (j == 1 && k != 11) {
-			return i + "st";
-		}
-		if (j == 2 && k != 12) {
-			return i + "nd";
-		}
-		if (j == 3 && k != 13) {
-			return i + "rd";
-		}
-		return i + "th";
-	}
+	  
 	staterank = suffix(staterank);
 	//staterank = staterank.toString();
 	//console.log(staterank);
@@ -376,9 +377,9 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	  var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	  nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -485,9 +486,9 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -599,9 +600,9 @@ document.getElementById('TX').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -711,9 +712,9 @@ var myArray2    = new Array();
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -822,9 +823,9 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -932,9 +933,9 @@ document.getElementById('AK').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1043,9 +1044,9 @@ document.getElementById('AL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1155,9 +1156,9 @@ document.getElementById('AR').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1266,9 +1267,9 @@ document.getElementById('CO').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1376,9 +1377,9 @@ document.getElementById('CT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1486,9 +1487,9 @@ document.getElementById('DE').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1596,9 +1597,9 @@ document.getElementById('FL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1707,9 +1708,9 @@ document.getElementById('GA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1818,9 +1819,9 @@ document.getElementById('HI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -1928,9 +1929,9 @@ document.getElementById('ID').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2038,9 +2039,9 @@ document.getElementById('IL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2148,9 +2149,9 @@ document.getElementById('IN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2258,9 +2259,9 @@ document.getElementById('IA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2368,9 +2369,9 @@ document.getElementById('KS').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2478,9 +2479,9 @@ document.getElementById('KY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2588,9 +2589,9 @@ document.getElementById('ME').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2698,9 +2699,9 @@ document.getElementById('MD').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2808,9 +2809,9 @@ document.getElementById('MA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -2918,9 +2919,9 @@ document.getElementById('MI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3028,9 +3029,9 @@ document.getElementById('MN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3138,9 +3139,9 @@ document.getElementById('MS').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3248,9 +3249,9 @@ document.getElementById('MO').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3358,9 +3359,9 @@ document.getElementById('MT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3468,9 +3469,9 @@ document.getElementById('NE').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3578,9 +3579,9 @@ document.getElementById('NV').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3688,9 +3689,9 @@ document.getElementById('NH').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3798,9 +3799,9 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -3908,9 +3909,9 @@ document.getElementById('NM').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4018,9 +4019,9 @@ document.getElementById('NY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4128,9 +4129,9 @@ document.getElementById('NC').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4238,9 +4239,9 @@ document.getElementById('OH').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4348,9 +4349,9 @@ document.getElementById('OK').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4458,9 +4459,9 @@ document.getElementById('OR').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4568,9 +4569,9 @@ document.getElementById('PA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4678,9 +4679,9 @@ document.getElementById('RI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4788,9 +4789,9 @@ document.getElementById('SC').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -4898,9 +4899,9 @@ document.getElementById('SD').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5008,9 +5009,9 @@ document.getElementById('TN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5118,9 +5119,9 @@ document.getElementById('UT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5230,9 +5231,9 @@ document.getElementById('VT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5342,9 +5343,9 @@ document.getElementById('VA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5454,9 +5455,9 @@ document.getElementById('WA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5566,9 +5567,9 @@ document.getElementById('WV').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5678,9 +5679,9 @@ document.getElementById('WI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
@@ -5789,9 +5790,9 @@ document.getElementById('WY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	  var nationrank=var1.toString();
-	  if (nationrank.length=='4'){
-		  
+	   nationrank=suffix(var1);
+	  var3=suffix(var3);
+	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
