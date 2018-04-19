@@ -213,7 +213,7 @@ hideall();
 		//myTable2+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
 		
 	  if($(this).data('info3')=="Hawaii"){
-				myTable2+="<tr><td>Waterfowl are not hunted in Haiwaii</td></tr>";
+				myTable2+="<tr><td>Waterfowl are not hunted in Hawaii</td></tr>";
 			
 		}
 		else{
@@ -221,7 +221,12 @@ hideall();
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
 		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+".</td></tr>";
+		if(stateid==" Alaska"){
+				myTable2+="<tr><td><strong><p class='indented2'>Alaskan harvest data is not available at the borough-level.</p></strong></td></tr>";
+			}
+			else{
 			myTable2+="<tr><td><p></p><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"
+			}
 		}
 	   
 	   myTable2+="</table>";
@@ -374,7 +379,7 @@ document.getElementById('CA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	  var var4 = $(this).data('info5')
-	  nationrank=suffix(var1);
+	  var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -483,7 +488,7 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -597,7 +602,7 @@ document.getElementById('TX').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -709,7 +714,7 @@ var myArray2    = new Array();
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -820,7 +825,7 @@ document.getElementById('LA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -930,7 +935,7 @@ document.getElementById('AK').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1041,7 +1046,7 @@ document.getElementById('AL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1153,7 +1158,7 @@ document.getElementById('AR').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1264,7 +1269,7 @@ document.getElementById('CO').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1374,7 +1379,7 @@ document.getElementById('CT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1484,7 +1489,7 @@ document.getElementById('DE').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1594,7 +1599,7 @@ document.getElementById('FL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1705,7 +1710,7 @@ document.getElementById('GA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1842,7 +1847,7 @@ document.getElementById('ID').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1952,7 +1957,7 @@ document.getElementById('IL').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2062,7 +2067,7 @@ document.getElementById('IN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2172,7 +2177,7 @@ document.getElementById('IA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2282,7 +2287,7 @@ document.getElementById('KS').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2392,7 +2397,7 @@ document.getElementById('KY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2502,7 +2507,7 @@ document.getElementById('ME').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2612,7 +2617,7 @@ document.getElementById('MD').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2722,7 +2727,7 @@ document.getElementById('MA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2832,7 +2837,7 @@ document.getElementById('MI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2942,7 +2947,7 @@ document.getElementById('MN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3052,7 +3057,7 @@ document.getElementById('MS').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3162,7 +3167,7 @@ document.getElementById('MO').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3272,7 +3277,7 @@ document.getElementById('MT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3382,7 +3387,7 @@ document.getElementById('NE').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3492,7 +3497,7 @@ document.getElementById('NV').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3602,7 +3607,7 @@ document.getElementById('NH').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3712,7 +3717,7 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3822,7 +3827,7 @@ document.getElementById('NM').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3932,7 +3937,7 @@ document.getElementById('NY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4042,7 +4047,7 @@ document.getElementById('NC').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4152,7 +4157,7 @@ document.getElementById('OH').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4262,7 +4267,7 @@ document.getElementById('OK').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4372,7 +4377,7 @@ document.getElementById('OR').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4482,7 +4487,7 @@ document.getElementById('PA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4592,7 +4597,7 @@ document.getElementById('RI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4702,7 +4707,7 @@ document.getElementById('SC').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4812,7 +4817,7 @@ document.getElementById('SD').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4922,7 +4927,7 @@ document.getElementById('TN').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5032,7 +5037,7 @@ document.getElementById('UT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5144,7 +5149,7 @@ document.getElementById('VT').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5256,7 +5261,7 @@ document.getElementById('VA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5368,7 +5373,7 @@ document.getElementById('WA').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5480,7 +5485,7 @@ document.getElementById('WV').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5592,7 +5597,7 @@ document.getElementById('WI').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5703,7 +5708,7 @@ document.getElementById('WY').addEventListener('click', function(ev){
 	  var var1 = $(this).data('info');
 	  var var3 = $(this).data('info2')
 	   var var4 = $(this).data('info5')
-	   nationrank=suffix(var1);
+	   var nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
