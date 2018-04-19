@@ -215,19 +215,18 @@ var timeout;
 	  	//var myTable2= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked States within the Country</td>";
 		//myTable2+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
 		
-	  for (var i=1; i<3; i++) {
-		if (i==1){
+	  if($(this).data('info3')=="Hawaii"){
+				myTable2+="<tr><td>Waterfowl are not hunted in Haiwaii</td></tr>";
 			
-			myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S.</td></tr>";
 		}
 		else{
-			
+		myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S.</td></tr>";	
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
 		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+".</td></tr>";
 			myTable2+="<tr><td><p></p><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"
 		}
-	  }  
+	   
 	   myTable2+="</table>";
 	
 	 document.getElementById('mytable2').innerHTML = myTable2;
