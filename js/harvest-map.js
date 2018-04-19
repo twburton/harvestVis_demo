@@ -173,10 +173,6 @@ function suffix(i) {
 	}
 hideall();
 	
-svgLouisiana.style.display = 'block';
-settable=0;
-var timeout;
-
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svg1.getBBox()
