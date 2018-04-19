@@ -84,12 +84,13 @@ function drawMap() {
             // Do not allow clicking of Hawaii
             if(d.id != 15){
               data = stateInfo.get(d.id);
-              document.getElementById('state-value').innerHTML= data.name + " has ...";
-              document.getElementById('duck-value').innerHTML = Number(data.duck_hunters).toLocaleString();
-              document.getElementById('goose-value').innerHTML = Number(data.goose_hunters).toLocaleString();
-              document.getElementById('days-value').innerHTML= Number(data.days_afield);
-              document.getElementById('duck-bag-value').innerHTML= Number(data.duck_bag);
-              document.getElementById('goose-bag-value').innerHTML= Number(data.goose_bag);
+              document.getElementById('state-value').innerHTML= data.name + " has...";
+              document.getElementById('duck-value').innerHTML = Number(data.duck_hunters).toLocaleString() + " duck and";
+              document.getElementById('goose-value').innerHTML = Number(data.goose_hunters).toLocaleString() + " goose hunters.";
+			  document.getElementById('hunter-value').innerHTML= "An individual hunter averages";
+              document.getElementById('days-value').innerHTML= Number(data.days_afield) + " days afield,";
+              document.getElementById('duck-bag-value').innerHTML= Number(data.duck_bag) + " ducks, and";
+              document.getElementById('goose-bag-value').innerHTML= Number(data.goose_bag) + " geese harvested per season.";
 
                // Find previously selected, unselect
               d3.select(".selected").classed("selected", false);

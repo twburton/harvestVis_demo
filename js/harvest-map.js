@@ -206,8 +206,8 @@ var timeout;
 	//staterank = staterank.toString();
 	//console.log(staterank);
 	  
-	  statespecies=statespecies.replace(';',',<p class="indented">');
-	  statespecies=statespecies.replace(';',', and</p><p class="indented">');
+	  statespecies=statespecies.replace(';',',<tr><td class="indented">');
+	  statespecies=statespecies.replace(';',', and</td></tr><tr><td class="indented">');
 	 // var myArray3    = new Array();
 	
 
@@ -218,13 +218,14 @@ var timeout;
 	  for (var i=1; i<3; i++) {
 		if (i==1){
 			
-			myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td style='text-indent: 16px;'>"+staterank+" in the U.S.</td></tr>";
+			myTable2+="<tr><td><strong>"+stateid+"</strong> ranks...</td></tr><tr><td class='indented'>"+staterank+" in the U.S.</td></tr>";
 		}
 		else{
 			
 		//myTable2+="<tr><td style='height:15px;'> " + i + " - " +myArray3[i]+ "</td>";
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
-		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td><p class='indented'>"+statespecies+".</p></td></tr>";
+		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+".</td></tr>";
+			myTable2+="<tr><td><p></p><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"
 		}
 	  }  
 	   myTable2+="</table>";

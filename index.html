@@ -67,22 +67,23 @@
 					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. (Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <span class="tooltipCustom" tooltip-follow-cursor>"I get asked questions about my hunting when I register, is that all there is to the survey?"<span class="tooltipCustomContent">Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters.</span></span> No! <img src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />). The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
 
 					<div class="overflow-hidden"><!--visualization #1-->
-						<h3 style="margin-bottom: -2px">hunting effort by state (2007&ndash;16 average) <br>&nbsp;&nbsp;</h3>
+						<h3 style="margin-bottom: -2px">hunting effort by state (2007&ndash;16 average)</h3>
+						<span id="subhead-text" style="font-weight: normal;">Select a state on the map<br>&nbsp;&nbsp;</span>
 						<div id="container">
 						  <div id="map-container">
 								<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin"> </svg>
 						  </div>
 							<div id="data-panel" style="width: 30%;">
 								<div style="margin-bottom: 15px;">
-									<div class="label state" id="state-value">Select a state on the map</div>
-									<div id="tx-indent"><span class="label" id="duck-value"></span> duck and</div>
-									<div id="tx-indent"><span class="label" id="goose-value"></span> goose hunters.</div>
+									<div class="label state" id="state-value"></div><!--Select a state on the map-->
+									<div id="tx-indent"><span class="label" id="duck-value"></span></div><!-- duck and-->
+									<div id="tx-indent"><span class="label" id="goose-value"></span></div><!-- goose hunters.-->
 								</div>
 								<div>
-									An individual hunter averages<br>
-									<div id="tx-indent"><span class="label" id="days-value"></span> days afield,</div>
-									<div id="tx-indent"><span class="label" id="duck-bag-value"></span> ducks and</div>
-									<div id="tx-indent"><span class="label" id="goose-bag-value"></span> geese harvested per season.</div>
+									<div class="label state" id="hunter-value" style="font-weight: normal;"></div><!--An individual hunter averages<br>-->
+									<div id="tx-indent"><span class="label" id="days-value"></span></div><!-- days afield,-->
+									<div id="tx-indent"><span class="label" id="duck-bag-value"></span></div><!-- ducks and-->
+									<div id="tx-indent"><span class="label" id="goose-bag-value"></span></div><!-- geese harvested per season.-->
 								</div>
 							</div>
 						</div>
@@ -104,7 +105,7 @@
 					<div class="overflow-hidden"><!--visualization #3-->
 						Information about where birds are harvested is also important. Duck harvest is high in areas where there are lots of ducks, and that's because those areas have good duck habitat. So, the Harvest Survey can help the USFWS, state wildlife agencies, and other partners decide where they should use their resources to protect, maintain, and improve critical wetland habitats for waterfowl.
 
-						<h3 style="margin-bottom: -2px">harvest by state and county</h3>
+						<h3 style="margin-bottom: -2px">waterfowl harvest by state and county</h3>
 							<span id="subhead-text" style="font-weight: normal;">Select a state on the map</span>
 						<!--<br>&nbsp;&nbsp;<span style="font-size: smaller"><em>(Mouse over to see a state's rank in total waterfowl harvest;
 							...how does your state stack up? <br>
@@ -223,9 +224,9 @@
 <div style="float: right;" class="table2" id="mytable2"></div><!--table for data div-->
 	
 							</div><!--end hcontainer div-->
-							
-							
+								
 <div id="hsmap-container">
+	
   <svg class="alaska" id="svgAlaska">
    <path d="M 62.678745,259.31235 L 63.560745,258.43135 L 64.220745,257.99135 L 64.439745,258.43135 L 64.000745,258.65135 L 64.439745,258.65135 L 66.643745,257.99135 L 68.626745,255.56635 L 70.388745,256.44835 L 70.388745,256.89035 L 69.727745,257.54935 L 69.727745,258.21235 L 70.388745,257.99135 L 70.829745,256.89035 L 71.269745,256.44835 L 71.930745,257.10835 L 72.150745,257.99135 L 72.811745,258.21235 L 73.030745,257.77135 L 74.131745,257.54935 L 75.894745,257.54935 L 76.113745,257.77135 L 75.673745,258.43135 L 75.673745,258.65135 L 76.996745,258.87235 L 76.774745,259.53235 L 77.656745,259.53235 L 78.757745,258.87235 L 81.180745,258.65135 L 82.722745,259.09235 L 83.386745,259.09235 L 84.044745,259.31235 L 84.267745,259.53235 L 85.148745,259.53235 L 86.249745,259.31235 L 87.572745,259.31235 L 89.114745,259.75435 L 89.554745,259.53235 L 90.436745,258.87235 L 90.655745,258.65135 L 91.096745,258.21235 L 92.639745,258.43135 L 96.163745,259.53235 L 97.264745,263.05835 L 97.925745,265.26135 L 88.893745,267.46435 L 89.334745,269.88635 L 87.572745,270.32735 L 82.945745,271.21135 L 82.722745,271.21135 L 72.371745,272.31135 L 69.947745,272.31135 L 69.947745,271.87035 L 68.186745,271.87035 L 68.186745,271.42935 L 66.423745,271.42935 L 64.661745,271.64935 L 63.338745,271.64935 L 63.338745,271.21135 L 62.678745,271.21135 L 62.678745,271.42935 L 60.696745,271.42935 L 60.255745,271.21135 L 60.034745,271.21135 L 60.034745,271.42935 L 59.154745,271.42935 L 58.932745,270.98935 L 57.831745,270.98935 L 57.831745,271.42935 L 57.389745,271.42935 L 54.304745,271.21135 L 54.304745,272.08935 L 52.762745,272.08935 L 51.441745,271.42935 L 50.780745,270.54735 L 51.220745,269.22735 L 51.441745,267.68335 L 52.983745,267.90535 L 54.967745,267.68335 L 55.626745,267.46435 L 56.948745,265.92135 L 57.611745,263.93935 L 58.932745,261.95735 L 59.814745,261.07435 L 60.474745,261.29735 L 61.356745,260.85535 L 62.678745,259.31235" data-info="North Slope, AK" id="02185" style="font-size:12px;fill:#d0d0d0;fill-rule:nonzero;stroke:#000000;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:butt;marker-start:none;stroke-linejoin:bevel">
    </path>
@@ -6617,7 +6618,7 @@
 							<div style="display: none;" class="table1" id="mytable"></div><!----><!--removing tb1 removes county maps hover!-->
 							<div id="info-box"></div><!---->
 
-						
+					<!--<span id="subhead-text" style="font-weight: normal;">Hover over a county on the map</span>-->	
 <!--<div id="legend"><p align="center"><img src="img/harvestMap-legend.png" width="40%" alt=""/></p></div>-->
 						</div> <!--end vis3-->
 						
@@ -6637,7 +6638,7 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->April 12, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->April 19, 2018<!-- #EndDate --></p>
 	</div></div>
 
 </div><!--ends div for mobile nav--><!-- TemplateBeginEditable name="content-footer" -->

@@ -62,11 +62,13 @@ h1{
   position:relative;
   width:100%;
    }
-p.indented 
+td.indented 
 { 
-margin-bottom: -1.62em;
-padding: 0px;   
-text-indent: 20px; 
+  /*margin-bottom: -1.62em;
+  padding: 0px;   
+  text-indent: 20px;*/
+  text-indent: 16px;
+  font-size: 14pt;
 } 
 
 .statesmap{
