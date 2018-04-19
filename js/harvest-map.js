@@ -201,9 +201,10 @@ hideall();
 	staterank = suffix(staterank);
 	//staterank = staterank.toString();
 	//console.log(staterank);
-	  
+	  if($(this).data('info3')!="Hawaii"){
 	  statespecies=statespecies.replace(';',',<tr><td class="indented">');
 	  statespecies=statespecies.replace(';',', and</td></tr><tr><td class="indented">');
+	  }
 	 // var myArray3    = new Array();
 	
 
