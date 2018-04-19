@@ -859,7 +859,7 @@ document.getElementById('LA').addEventListener('click', function(ev){
 document.getElementById('AK').addEventListener('click', function(ev){
 	hideall();
 	hideselect();
-	svgAlaska.style.display = 'block';
+	//svgAlaska.style.display = 'block';
 	$("#AK").css('fill', '002868');
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
@@ -1744,7 +1744,7 @@ document.getElementById('GA').addEventListener('click', function(ev){
 document.getElementById('HI').addEventListener('click', function(ev){
 	hideall();
 	hideselect();
-	svgHawaii.style.display = 'block';
+	//svgHawaii.style.display = 'block';
 	
 	$("#HI").css('fill', '002868');
 	var svgW=window.innerWidth
