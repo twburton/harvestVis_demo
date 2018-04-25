@@ -385,7 +385,12 @@ document.getElementById('CA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -494,7 +499,12 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -608,7 +618,12 @@ document.getElementById('TX').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -720,7 +735,12 @@ var myArray2    = new Array();
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -831,7 +851,12 @@ document.getElementById('LA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -941,7 +966,12 @@ document.getElementById('AK').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1052,7 +1082,12 @@ document.getElementById('AL').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1164,7 +1199,12 @@ document.getElementById('AR').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1275,7 +1315,12 @@ document.getElementById('CO').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1385,7 +1430,12 @@ document.getElementById('CT').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1495,7 +1545,12 @@ document.getElementById('DE').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1605,7 +1660,12 @@ document.getElementById('FL').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1716,7 +1776,12 @@ document.getElementById('GA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1853,7 +1918,12 @@ document.getElementById('ID').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -1963,7 +2033,12 @@ document.getElementById('IL').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2073,7 +2148,12 @@ document.getElementById('IN').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2183,7 +2263,12 @@ document.getElementById('IA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2293,7 +2378,12 @@ document.getElementById('KS').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2403,7 +2493,12 @@ document.getElementById('KY').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2513,7 +2608,12 @@ document.getElementById('ME').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2623,7 +2723,12 @@ document.getElementById('MD').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2733,7 +2838,12 @@ document.getElementById('MA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2843,7 +2953,12 @@ document.getElementById('MI').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -2953,7 +3068,12 @@ document.getElementById('MN').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3063,7 +3183,12 @@ document.getElementById('MS').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3173,7 +3298,12 @@ document.getElementById('MO').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3283,7 +3413,12 @@ document.getElementById('MT').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3393,7 +3528,12 @@ document.getElementById('NE').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3503,7 +3643,12 @@ document.getElementById('NV').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3613,7 +3758,12 @@ document.getElementById('NH').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3723,7 +3873,12 @@ document.getElementById('NJ').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3833,7 +3988,12 @@ document.getElementById('NM').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -3943,7 +4103,12 @@ document.getElementById('NY').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4053,7 +4218,12 @@ document.getElementById('NC').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4163,7 +4333,12 @@ document.getElementById('OH').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4273,7 +4448,12 @@ document.getElementById('OK').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4383,7 +4563,12 @@ document.getElementById('OR').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4493,7 +4678,12 @@ document.getElementById('PA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4603,7 +4793,12 @@ document.getElementById('RI').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4713,7 +4908,12 @@ document.getElementById('SC').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4823,7 +5023,12 @@ document.getElementById('SD').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -4933,7 +5138,12 @@ document.getElementById('TN').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5043,7 +5253,12 @@ document.getElementById('UT').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5155,7 +5370,12 @@ document.getElementById('VT').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5267,7 +5487,12 @@ document.getElementById('VA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5379,7 +5604,12 @@ document.getElementById('WA').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5491,7 +5721,12 @@ document.getElementById('WV').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5603,7 +5838,12 @@ document.getElementById('WI').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -5714,7 +5954,12 @@ document.getElementById('WY').addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	   if (nationrank=="2,927th"){
+			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  }
+		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+		  }
 	  
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
