@@ -26,7 +26,7 @@
 	<script src="js/HarvData.json"></script>
 	<script src="js/StateKey.json"></script>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	
+
 	<script>document.write('<base href="' + document.location + '" />');</script>
 	<link rel="stylesheet" href="css/tooltip.css" />
 	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
@@ -73,19 +73,7 @@
 						  <div id="map-container">
 								<svg id="activity-map" viewBox="0 0 960 550" preserveAspectRatio="xMinYMin"> </svg>
 						  </div>
-							<div id="data-panel" style="width: 30%;">
-								<div style="margin-bottom: 15px;">
-									<div class="label state" id="state-value"></div><!--Select a state on the map-->
-									<div id="tx-indent"><span class="label" id="duck-value"></span></div><!-- duck and-->
-									<div id="tx-indent"><span class="label" id="goose-value"></span></div><!-- goose hunters.-->
-								</div>
-								<div>
-									<div class="label state" id="hunter-value" style="font-weight: normal;"></div><!--An individual hunter averages<br>-->
-									<div id="tx-indent"><span class="label" id="days-value"></span></div><!-- days afield,-->
-									<div id="tx-indent"><span class="label" id="duck-bag-value"></span></div><!-- ducks and-->
-									<div id="tx-indent"><span class="label" id="goose-bag-value"></span></div><!-- geese harvested per season.-->
-								</div>
-							</div>
+							<div id="data-panel" style="width: 30%;"></div>
 						</div>
 
 						<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<span class="tooltipCustom" tooltip-follow-cursor>how do we know the number of waterfowl hunters in a state?<span class="tooltipCustomContent">Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!</span></span> <img src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />).</p>
@@ -96,9 +84,9 @@
 					<div class="overflow-hidden"><!--visualization #2-->
 						<h3 style="margin-bottom: -2px">Average regional weekly harvest</h3>
 					  <span id="subhead-text" style="font-weight: normal;">Select a region on the map</span>
-						
+
 						<div id="mapid">
-								<svg id="barchart" width="600" height="800" viewBox="0 0 800 600"></svg>
+								<svg id="barchart" width="600" height="800" viewBox="0 0 800 600" preserveAspectRatio="xMaxYMax meet"></svg>
 						</div>
 					</div> <!--end vis #2-->
 
@@ -112,10 +100,10 @@
 						<br>&nbsp;&nbsp;then click on a state to see county-level results;)<br>
 						<br>&nbsp;&nbsp;click once more to return to the entire US!)</em></span>-->
 
-						
+
 						<div id="hcontainer">
 							<div id="hmap-container" >
-									
+
   <svg class="statesmap" height="800" id="svg1" opacity="1.0" preserveaspectratio="xMinYMid meet" viewbox="0 0 800 600" width="600">
    <g id="outlines">
     <path d="M161.1,453.7 l-0.3,85.4 1.6,1 3.1,0.2 1.5,-1.1 h2.6 l0.2,2.9 7,6.8 0.5,2.6 3.4,-1.9 0.6,-0.2 0.3,-3.1 1.5,-1.6 1.1,-0.2 1.9,-1.5 3.1,2.1 0.6,2.9 1.9,1.1 1.1,2.4 3.9,1.8 3.4,6 2.7,3.9 2.3,2.7 1.5,3.7 5,1.8 5.2,2.1 1,4.4 0.5,3.1 -1,3.4 -1.8,2.3 -1.6,-0.8 -1.5,-3.1 -2.7,-1.5 -1.8,-1.1 -0.8,0.8 1.5,2.7 0.2,3.7 -1.1,0.5 -1.9,-1.9 -2.1,-1.3 0.5,1.6 1.3,1.8 -0.8,0.8 c0,0 -0.8,-0.3 -1.3,-1 -0.5,-0.6 -2.1,-3.4 -2.1,-3.4 l-1,-2.3 c0,0 -0.3,1.3 -1,1 -0.6,-0.3 -1.3,-1.5 -1.3,-1.5 l1.8,-1.9 -1.5,-1.5 v-5 h-0.8 l-0.8,3.4 -1.1,0.5 -1,-3.7 -0.6,-3.7 -0.8,-0.5 0.3,5.7 v1.1 l-1.5,-1.3 -3.6,-6 -2.1,-0.5 -0.6,-3.7 -1.6,-2.9 -1.6,-1.1 v-2.3 l2.1,-1.3 -0.5,-0.3 -2.6,0.6 -3.4,-2.4 -2.6,-2.9 -4.8,-2.6 -4,-2.6 1.3,-3.2 v-1.6 l-1.8,1.6 -2.9,1.1 -3.7,-1.1 -5.7,-2.4 h-5.5 l-0.6,0.5 -6.5,-3.9 -2.1,-0.3 -2.7,-5.8 -3.6,0.3 -3.6,1.5 0.5,4.5 1.1,-2.9 1,0.3 -1.5,4.4 3.2,-2.7 0.6,1.6 -3.9,4.4 -1.3,-0.3 -0.5,-1.9 -1.3,-0.8 -1.3,1.1 -2.7,-1.8 -3.1,2.1 -1.8,2.1 -3.4,2.1 -4.7,-0.2 -0.5,-2.1 3.7,-0.6 v-1.3 l-2.3,-0.6 1,-2.4 2.3,-3.9 v-1.8 l0.2,-0.8 4.4,-2.3 1,1.3 h2.7 l-1.3,-2.6 -3.7,-0.3 -5,2.7 -2.4,3.4 -1.8,2.6 -1.1,2.3 -4.2,1.5 -3.1,2.6 -0.3,1.6 2.3,1 0.8,2.1 -2.7,3.2 -6.5,4.2 -7.8,4.2 -2.1,1.1 -5.3,1.1 -5.3,2.3 1.8,1.3 -1.5,1.5 -0.5,1.1 -2.7,-1 -3.2,0.2 -0.8,2.3 h-1 l0.3,-2.4 -3.6,1.3 -2.9,1 -3.4,-1.3 -2.9,1.9 h-3.2 l-2.1,1.3 -1.6,0.8 -2.1,-0.3 -2.6,-1.1 -2.3,0.6 -1,1 -1.6,-1.1 v-1.9 l3.1,-1.3 6.3,0.6 4.4,-1.6 2.1,-2.1 2.9,-0.6 1.8,-0.8 2.7,0.2 1.6,1.3 1,-0.3 2.3,-2.7 3.1,-1 3.4,-0.6 1.3,-0.3 0.6,0.5 h0.8 l1.3,-3.7 4,-1.5 1.9,-3.7 2.3,-4.5 1.6,-1.5 0.3,-2.6 -1.6,1.3 -3.4,0.6 -0.6,-2.4 -1.3,-0.3 -1,1 -0.2,2.9 -1.5,-0.2 -1.5,-5.8 -1.3,1.3 -1.1,-0.5 -0.3,-1.9 -4,0.2 -2.1,1.1 -2.6,-0.3 1.5,-1.5 0.5,-2.6 -0.6,-1.9 1.5,-1 1.3,-0.2 -0.6,-1.8 v-4.4 l-1,-1 -0.8,1.5 h-6.1 l-1.5,-1.3 -0.6,-3.9 -2.1,-3.6 v-1 l2.1,-0.8 0.2,-2.1 1.1,-1.1 -0.8,-0.5 -1.3,0.5 -1.1,-2.7 1,-5 4.5,-3.2 2.6,-1.6 1.9,-3.7 2.7,-1.3 2.6,1.1 0.3,2.4 2.4,-0.3 3.2,-2.4 1.6,0.6 1,0.6 h1.6 l2.3,-1.3 0.8,-4.4 c0,0 0.3,-2.9 1,-3.4 0.6,-0.5 1,-1 1,-1 l-1.1,-1.9 -2.6,0.8 -3.2,0.8 -1.9,-0.5 -3.6,-1.8 -5,-0.2 -3.6,-3.7 0.5,-3.9 0.6,-2.4 -2.1,-1.8 -1.9,-3.7 0.5,-0.8 6.8,-0.5 h2.1 l1,1 h0.6 l-0.2,-1.6 3.9,-0.6 2.6,0.3 1.5,1.1 -1.5,2.1 -0.5,1.5 2.7,1.6 5,1.8 1.8,-1 -2.3,-4.4 -1,-3.2 1,-0.8 -3.4,-1.9 -0.5,-1.1 0.5,-1.6 -0.8,-3.9 -2.9,-4.7 -2.4,-4.2 2.9,-1.9 h3.2 l1.8,0.6 4.2,-0.2 3.7,-3.6 1.1,-3.1 3.7,-2.4 1.6,1 2.7,-0.6 3.7,-2.1 1.1,-0.2 1,0.8 4.5,-0.2 2.7,-3.1 h1.1 l3.6,2.4 1.9,2.1 -0.5,1.1 0.6,1.1 1.6,-1.6 3.9,0.3 0.3,3.7 1.9,1.5 7.1,0.6 6.3,4.2 1.5,-1 5.2,2.6 2.1,-0.6 1.9,-0.8 4.8,1.9z m-115.1,28.9 2.1,5.3 -0.2,1 -2.9,-0.3 -1.8,-4 -1.8,-1.5 h-2.4 l-0.2,-2.6 1.8,-2.4 1.1,2.4 1.5,1.5z m-2.6,33.5 3.7,0.8 3.7,1 0.8,1 -1.6,3.7 -3.1,-0.2 -3.4,-3.6z m-20.7,-14.1 1.1,2.6 1.1,1.6 -1.1,0.8 -2.1,-3.1 v-1.9z m-13.7,73.1 3.4,-2.3 3.4,-1 2.6,0.3 0.5,1.6 1.9,0.5 1.9,-1.9 -0.3,-1.6 2.7,-0.6 2.9,2.6 -1.1,1.8 -4.4,1.1 -2.7,-0.5 -3.7,-1.1 -4.4,1.5 -1.6,0.3z m48.9,-4.5 1.6,1.9 2.1,-1.6 -1.5,-1.3z m2.9,3 1.1,-2.3 2.1,0.3 -0.8,1.9 h-2.4z m23.6,-1.9 1.5,1.8 1,-1.1 -0.8,-1.9z m8.8,-12.5 1.1,5.8 2.9,0.8 5,-2.9 4.4,-2.6 -1.6,-2.4 0.5,-2.4 -2.1,1.3 -2.9,-0.8 1.6,-1.1 1.9,0.8 3.9,-1.8 0.5,-1.5 -2.4,-0.8 0.8,-1.9 -2.7,1.9 -4.7,3.6 -4.8,2.9z m42.3,-19.8 2.4,-1.5 -1,-1.8 -1.8,1z" data-info3="37 Alaska" data-info4="Mallard;Wigeon;Pintail" fill="#99d8c9" id="AK">
@@ -218,15 +206,15 @@
     </path>
     <path d="M353,161.9 l-1.5,25.4 -4.4,44 -2.7,-0.3 -83.3,-9.1 -27.9,-3 2,-12 6.9,-41 3.8,-24.2 1.3,-11.2 48.2,7 59.1,6.5z" data-info3="39 Wyoming" data-info4="Mallard;Green-winged Teal;Wigeon" fill="#99d8c9" id="WY">
     </path>
-  
+
   </svg>
 	  </div> <!--hmapcontainer div for states maps-->
 <div style="float: right;" class="table2" id="mytable2"></div><!--table for data div-->
-	
+
 							</div><!--end hcontainer div-->
-								
+
 <div id="hsmap-container">
-	
+
   <svg class="alaska" id="svgAlaska">
    <path d="M 62.678745,259.31235 L 63.560745,258.43135 L 64.220745,257.99135 L 64.439745,258.43135 L 64.000745,258.65135 L 64.439745,258.65135 L 66.643745,257.99135 L 68.626745,255.56635 L 70.388745,256.44835 L 70.388745,256.89035 L 69.727745,257.54935 L 69.727745,258.21235 L 70.388745,257.99135 L 70.829745,256.89035 L 71.269745,256.44835 L 71.930745,257.10835 L 72.150745,257.99135 L 72.811745,258.21235 L 73.030745,257.77135 L 74.131745,257.54935 L 75.894745,257.54935 L 76.113745,257.77135 L 75.673745,258.43135 L 75.673745,258.65135 L 76.996745,258.87235 L 76.774745,259.53235 L 77.656745,259.53235 L 78.757745,258.87235 L 81.180745,258.65135 L 82.722745,259.09235 L 83.386745,259.09235 L 84.044745,259.31235 L 84.267745,259.53235 L 85.148745,259.53235 L 86.249745,259.31235 L 87.572745,259.31235 L 89.114745,259.75435 L 89.554745,259.53235 L 90.436745,258.87235 L 90.655745,258.65135 L 91.096745,258.21235 L 92.639745,258.43135 L 96.163745,259.53235 L 97.264745,263.05835 L 97.925745,265.26135 L 88.893745,267.46435 L 89.334745,269.88635 L 87.572745,270.32735 L 82.945745,271.21135 L 82.722745,271.21135 L 72.371745,272.31135 L 69.947745,272.31135 L 69.947745,271.87035 L 68.186745,271.87035 L 68.186745,271.42935 L 66.423745,271.42935 L 64.661745,271.64935 L 63.338745,271.64935 L 63.338745,271.21135 L 62.678745,271.21135 L 62.678745,271.42935 L 60.696745,271.42935 L 60.255745,271.21135 L 60.034745,271.21135 L 60.034745,271.42935 L 59.154745,271.42935 L 58.932745,270.98935 L 57.831745,270.98935 L 57.831745,271.42935 L 57.389745,271.42935 L 54.304745,271.21135 L 54.304745,272.08935 L 52.762745,272.08935 L 51.441745,271.42935 L 50.780745,270.54735 L 51.220745,269.22735 L 51.441745,267.68335 L 52.983745,267.90535 L 54.967745,267.68335 L 55.626745,267.46435 L 56.948745,265.92135 L 57.611745,263.93935 L 58.932745,261.95735 L 59.814745,261.07435 L 60.474745,261.29735 L 61.356745,260.85535 L 62.678745,259.31235" data-info="North Slope, AK" id="02185" style="font-size:12px;fill:#d0d0d0;fill-rule:nonzero;stroke:#000000;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:butt;marker-start:none;stroke-linejoin:bevel">
    </path>
@@ -6612,23 +6600,23 @@
 		</svg>
 
 
-								</div> <!--end hmapcontainer for counties maps div-->							
-							
-							
+								</div> <!--end hmapcontainer for counties maps div-->
+
+
 							<div style="display: none;" class="table1" id="mytable"></div><!----><!--removing tb1 removes county maps hover!-->
 							<div id="info-box"></div><!---->
 
-					<!--<span id="subhead-text" style="font-weight: normal;">Hover over a county on the map</span>-->	
+					<!--<span id="subhead-text" style="font-weight: normal;">Hover over a county on the map</span>-->
 <!--<div id="legend"><p align="center"><img src="img/harvestMap-legend.png" width="40%" alt=""/></p></div>-->
 						</div> <!--end vis3-->
-						
-						<div class="overflow-hidden">						  
+
+						<div class="overflow-hidden">
 						Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.
-							<p style="float: right; padding-left: 5px;"><img src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings" height="138" width="400"/></p>	
+							<p style="float: right; padding-left: 5px;"><img src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings" height="138" width="400"/></p>
 						<p> <span class="tooltipCustom" tooltip-follow-cursor>Did you know ducks can be identified using just a wing?<span class="tooltipCustomContent">We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits.</span></span> Yes, it's true! <img src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />
 						<a href="harvest-map.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
 						</div>
-						
+
 
 					<!-- TemplateEndEditable -->
 

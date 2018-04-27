@@ -58,9 +58,10 @@ function drawMap() {
                                                                     'ab':d.abbrev,
                                                                     'duck_bag':d.duck_bag,
                                                                     'duck_hunters':d.duck_hunters,
+                                                                    'duck_days': d.duck_daysAfield,
                                                                     'goose_bag':d.goose_bag,
                                                                     'goose_hunters': d.goose_hunters,
-                                                                    'days_afield': d.days_afield});
+                                                                    'goose_days': d.goose_daysAfield});
                                               })
      .await(ready);
 
@@ -75,28 +76,37 @@ function drawMap() {
        .data(topojson.feature(us, us.objects.states).features)
        .enter().append("path")
          .attr("d", path)
-         .attr("fill", function(d){
-           if(d.id === 15){
-             return "gray";
-           }
-         })
          .on("click", function(d){
-            // Do not allow clicking of Hawaii
-            if(d.id != 15){
+            if(d.id === 15){
+              // Change message for Hawaii
+              var textblock = document.createElement('div');
+              textblock.innerHTML = "Waterfowl are not hunted in Hawaii.";
+            }
+            else {
               data = stateInfo.get(d.id);
-              document.getElementById('state-value').innerHTML= data.name + " has...";
-              document.getElementById('duck-value').innerHTML = Number(data.duck_hunters).toLocaleString() + " duck and";
-              document.getElementById('goose-value').innerHTML = Number(data.goose_hunters).toLocaleString() + " goose hunters.";
-			  document.getElementById('hunter-value').innerHTML= "An individual hunter averages";
-              document.getElementById('days-value').innerHTML= Number(data.days_afield) + " days afield,";
-              document.getElementById('duck-bag-value').innerHTML= Number(data.duck_bag) + " ducks, and";
-              document.getElementById('goose-bag-value').innerHTML= Number(data.goose_bag) + " geese harvested per season.";
+              console.log(data);
+              var textblock = document.createElement('div');
 
-               // Find previously selected, unselect
+              textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' has...</div>\n';
+              textblock.innerHTML += '<div id="tx-indent">' + Number(data.duck_hunters).toLocaleString() +' duck and<br>' + Number(data.goose_hunters).toLocaleString() + ' goose hunters.</div>\n';
+
+              textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter spends</div>\n';
+              textblock.innerHTML += '<div id="tx-indent">'+ Number(data.duck_days) + ' days afield hunting ducks,<br>' + Number(data.goose_days) + ' days afield hunting geese.</span></div>\n';
+
+              textblock.innerHTML += '<div class="label state" id="hunter-value" style="font-weight: normal;">A hunter harvests an average of</div>\n';
+              textblock.innerHTML +=  '<div id="tx-indent">' + Number(data.duck_bag) + ' ducks<br>' + Number(data.goose_bag) + ' geese.</div>';
+            }
+              var panel = document.getElementById('data-panel');
+              if (panel.hasChildNodes()){
+                 panel.replaceChild(textblock, panel.childNodes[0]);
+              } else {
+                panel.appendChild(textblock);
+              }
+
+              // Find previously selected, unselect
               d3.select(".selected").classed("selected", false);
               // Select current item
               d3.select(this).classed("selected", true);
-            }
           });
 
 
