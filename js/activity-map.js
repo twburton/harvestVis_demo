@@ -83,8 +83,7 @@ function drawMap() {
               textblock.innerHTML = "Waterfowl are not hunted in Hawaii.";
             }
             else {
-              data = stateInfo.get(d.id);
-              console.log(data);
+              data = stateInfo.get(d.id);            
               var textblock = document.createElement('div');
 
               textblock.innerHTML += '<div class="state" id="state-value">' + data.name + ' has...</div>\n';
