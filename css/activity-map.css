@@ -129,6 +129,12 @@ svg text {
   stroke-linecap: round;
 }
 
+canvas {
+  display: block;
+  width: 100%;
+  visibility: hidden;
+}
+
 .exempt {
   fill: 'grey';
 }
