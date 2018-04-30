@@ -105,16 +105,20 @@ svg text {
   text-decoration: none;
 }
 
-.mgmt_unit {
+.mgmt_unit.boundary {
   cursor: pointer;
   fill: none;
   stroke: #000;
   stroke-width: 1px;
 }
 
-.mgmt_unit.boundary {
+.mgmt_unit {
   cursor: pointer;
   fill: #6BAED6;
+}
+
+.selected-unit {
+  fill: #084594;
 }
 
 .state-borders.white {
@@ -123,10 +127,6 @@ svg text {
   stroke-width: 1px;
   stroke-linejoin: round;
   stroke-linecap: round;
-}
-
-.barchart-selected {
-  fill: #FFDEAD;
 }
 
 .exempt {

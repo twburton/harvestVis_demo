@@ -34,13 +34,13 @@ d3.json("js/us-states.json", function (error, us){
   mgmt_unit.forEach(function(unit){
     mgmt_map.append("path")
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", "mgmt_unit boundary")
+      .attr("class", "mgmt_unit")
       .attr("d", path)
       .on("click", function(d){
         // Find previously selected, unselect
-        d3.select(".barchart-selected").classed("barchart-selected", false);
+        d3.select(".selected-unit").classed("selected-unit", false);
         // Select current item
-        d3.select(this).classed("barchart-selected", true);
+        d3.select(this).classed("selected-unit", true);
         update(unit.idx); });
   });
 
@@ -51,7 +51,7 @@ d3.json("js/us-states.json", function (error, us){
   mgmt_unit.forEach(function(unit){
     mgmt_map.append("path")
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", "mgmt_unit")
+      .attr("class", "mgmt_unit boundary")
       .attr("d", path);
   });
 });
