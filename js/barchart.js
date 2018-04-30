@@ -29,12 +29,12 @@ d3.json("js/us-states.json", function (error, us){
   var path = d3.geoPath().projection(projection);
 
   var mgmt_map = svg.append("g")
-      .attr("class", "mgmt_units");
+    .attr("class", "mgmt_units");
 
   mgmt_unit.forEach(function(unit){
     mgmt_map.append("path")
       .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
-      .attr("class", "mgmt_unit" + " " + unit.classname)
+      .attr("class", "mgmt_unit boundary")
       .attr("d", path)
       .on("click", function(d){
         // Find previously selected, unselect
@@ -45,8 +45,15 @@ d3.json("js/us-states.json", function (error, us){
   });
 
   mgmt_map.append("path")
-    .attr("class", "state-borders")
+    .attr("class", "state-borders white")
     .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
+
+  mgmt_unit.forEach(function(unit){
+    mgmt_map.append("path")
+      .datum(topojson.merge(us, us.objects.states.geometries.filter(function(d){ return d3.set(unit.states).has(d.id); })))
+      .attr("class", "mgmt_unit")
+      .attr("d", path);
+  });
 });
 
 function init(){

@@ -107,22 +107,22 @@ svg text {
 
 .mgmt_unit {
   cursor: pointer;
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
 }
 
-.PF-North, .MF-North {
-  fill: #6baed6;
+.mgmt_unit.boundary {
+  cursor: pointer;
+  fill: #6BAED6;
 }
 
-.PF-South, .MF-South {
-  fill: #4292c6;
-}
-
-.CF-North, .AF-North {
-  fill: #2171b5;
-}
-
-.CF-South, .AF-South {
-  fill: #084594;
+.state-borders.white {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
 .barchart-selected {
@@ -134,7 +134,7 @@ svg text {
 }
 
 #mapid {
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 /*text css*/
