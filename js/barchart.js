@@ -16,7 +16,7 @@ var width = 800, height = 600
     xAxis = d3.axisBottom(xScale)
               .tickSize(0.1),
     yAxis = d3.axisLeft(yScale)
-              .ticks(12, "%");
+              .ticks(15, "%");
 
 var svg = d3.select("#barchart")
       .attr("width", width)
@@ -54,7 +54,7 @@ function init(){
 
     xScale.domain(data.values.map(function(d) { return d.week; }));
     //yScale.domain([0, d3.max(data.values, function(d) { return d.h; })]);
-    yScale.domain([0, 0.12]);
+    yScale.domain([0, 0.15]);
 
     var bargraph = svg.append('g')
       .attr("transform", "translate(0, 150)");
