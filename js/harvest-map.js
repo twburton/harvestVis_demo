@@ -369,44 +369,45 @@ CA.addEventListener('click', function(ev){
 	var myArray2    = new Array();
 	
 	 paths = svgCalifornia.querySelectorAll('.california > path');
-	 pathlength=paths.length;
-
-	for(var i=0; i<pathlength; ++i) {
+	 stringstate = ', CA'
+	pathlength=paths.length;
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', CA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>
 	  for (var i=1; i<12; i++) {
@@ -426,6 +427,7 @@ CA.addEventListener('click', function(ev){
 	  var var1 = ""
 	  var var3 = ""
 	  var var4 = ""
+	  var type1=" County"
 	  if (typeof $(this).data('info5') != 'undefined'){
 	  var stringcounty = $(this).data('info5').replace(stringstate,'');
 	  var var1 = $(this).data('info');
@@ -437,11 +439,23 @@ CA.addEventListener('click', function(ev){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
+	  //!San Francisco
 	   if (nationrank=="2,927th"){
-			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+			 if (stringcounty=="!San Francisco"){
+			   stringcounty=stringcounty.replace('!','');
+			   type1=" City"
+		   }
+		   
+		   $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		  type1=" County"
 		  }
 		  else{
-	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+			  if (stringcounty=="!San Francisco"){
+			   stringcounty=stringcounty.replace('!','');
+			   type1=" City"
+			  }
+	  $('#info-box').html(stringcounty +type1+" ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
+	  type1=" County"
 		  }
 	  
 		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
@@ -484,43 +498,45 @@ AZ.addEventListener('click', function(ev){
     svgArizona.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgArizona.querySelectorAll('.arizona > path');
+	 stringstate = ', AZ'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', AZ'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -534,18 +550,20 @@ AZ.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -559,7 +577,7 @@ AZ.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -602,44 +620,46 @@ TX.addEventListener('click', function(ev){
     svgTexas.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgTexas.querySelectorAll('.texas > path');
+	 stringstate = ', TX'
 	pathlength=paths.length;
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', TX'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -653,18 +673,20 @@ TX.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -678,7 +700,7 @@ TX.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -720,43 +742,45 @@ ND.addEventListener('click', function(ev){
     svgNorthdakota.setAttribute("height",svgH)
 var myArray2    = new Array();
 	 paths = svgNorthdakota.querySelectorAll('.northdakota > path');
+	 stringstate = ', ND'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', ND'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -770,18 +794,20 @@ var myArray2    = new Array();
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -795,7 +821,7 @@ var myArray2    = new Array();
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -836,43 +862,45 @@ LA.addEventListener('click', function(ev){
     svgLouisiana.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgLouisiana.querySelectorAll('.louisiana > path');
+	 stringstate = ', LA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', LA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -886,18 +914,20 @@ LA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -911,7 +941,7 @@ LA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -951,43 +981,45 @@ AK.addEventListener('click', function(ev){
     svgAlaska.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgAlaska.querySelectorAll('.alaska > path');
+	 stringstate = ', AK'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', AK'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1001,18 +1033,20 @@ AK.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1026,7 +1060,7 @@ AK.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1067,43 +1101,45 @@ AL.addEventListener('click', function(ev){
     svgAlabama.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgAlabama.querySelectorAll('.alabama > path');
+	 stringstate = ', AL'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', AL'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1117,18 +1153,20 @@ AL.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1142,7 +1180,7 @@ AL.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1184,43 +1222,45 @@ AR.addEventListener('click', function(ev){
     svgArkansas.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgArkansas.querySelectorAll('.arkansas > path');
+	 stringstate = ', AR'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', AR'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1234,18 +1274,20 @@ AR.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1259,7 +1301,7 @@ AR.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1300,43 +1342,45 @@ CO.addEventListener('click', function(ev){
     svgColorado.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgColorado.querySelectorAll('.colorado > path');
+	 stringstate = ', CO'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', CO'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1350,18 +1394,20 @@ CO.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1375,7 +1421,7 @@ CO.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1415,43 +1461,45 @@ CT.addEventListener('click', function(ev){
     svgConnecticut.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgConnecticut.querySelectorAll('.connecticut > path');
+	 stringstate = ', CT'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', CT'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1465,18 +1513,20 @@ CT.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1490,7 +1540,7 @@ CT.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1530,43 +1580,45 @@ DE.addEventListener('click', function(ev){
     svgDelaware.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgDelaware.querySelectorAll('.delaware > path');
+	 stringstate = ', DE'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', DE'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1580,18 +1632,20 @@ DE.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1605,7 +1659,7 @@ DE.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1645,43 +1699,45 @@ FL.addEventListener('click', function(ev){
     svgFlorida.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgFlorida.querySelectorAll('.florida > path');
+	 stringstate = ', FL'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', FL'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1695,18 +1751,20 @@ FL.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1720,7 +1778,7 @@ FL.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1761,43 +1819,45 @@ GA.addEventListener('click', function(ev){
     svgGeorgia.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgGeorgia.querySelectorAll('.georgia > path');
+	 stringstate = ', GA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', GA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1811,18 +1871,20 @@ GA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1836,7 +1898,7 @@ GA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -1903,43 +1965,45 @@ ID.addEventListener('click', function(ev){
     svgIdaho.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgIdaho.querySelectorAll('.idaho > path');
+	 stringstate = ', ID'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', ID'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -1953,18 +2017,20 @@ ID.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -1978,7 +2044,7 @@ ID.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2018,43 +2084,45 @@ IL.addEventListener('click', function(ev){
     svgIllinois.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgIllinois.querySelectorAll('.illinois > path');
+	 stringstate = ', IL'
 	pathlength=paths.length;
-	for(var i=0; i<pathlength; ++i) {
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', IL'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2068,18 +2136,20 @@ IL.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2093,7 +2163,7 @@ IL.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2133,43 +2203,45 @@ IN.addEventListener('click', function(ev){
     svgIndiana.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgIndiana.querySelectorAll('.indiana > path');
+	 stringstate = ', IN'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', IN'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2183,18 +2255,20 @@ IN.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2208,7 +2282,7 @@ IN.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2248,43 +2322,45 @@ IA.addEventListener('click', function(ev){
     svgIowa.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgIowa.querySelectorAll('.iowa > path');
+	 stringstate = ', IA'
 	pathlength=paths.length;
-	for(var i=0; i<pathlength; ++i) {
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', IA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2298,18 +2374,20 @@ IA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2323,7 +2401,7 @@ IA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2363,43 +2441,45 @@ KS.addEventListener('click', function(ev){
     svgKansas.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgKansas.querySelectorAll('.kansas > path');
+	 stringstate = ', KS'
 	pathlength=paths.length;
-	for(var i=0; i<pathlength; ++i) {
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', KS'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2413,18 +2493,20 @@ KS.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2438,7 +2520,7 @@ KS.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2478,43 +2560,45 @@ KY.addEventListener('click', function(ev){
     svgKentucky.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgKentucky.querySelectorAll('.kentucky > path');
+	 stringstate = ', KY'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', KY'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2527,19 +2611,21 @@ KY.addEventListener('click', function(ev){
 		}
 	  }  
 	   myTable+="</table>";
-	 document.getElementById('mytable').innerHTML = myTable;
-
+	document.getElementById('mytable').innerHTML = myTable;
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2553,7 +2639,7 @@ KY.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2593,43 +2679,45 @@ ME.addEventListener('click', function(ev){
     svgMaine.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMaine.querySelectorAll('.maine > path');
+	 stringstate = ', ME'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', ME'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2643,18 +2731,20 @@ ME.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2668,7 +2758,7 @@ ME.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2708,43 +2798,45 @@ MD.addEventListener('click', function(ev){
     svgMaryland.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgMaryland.querySelectorAll('.maryland > path');
+	 stringstate = ', MD'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MD'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2753,37 +2845,45 @@ MD.addEventListener('click', function(ev){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the country (out of 3111)</td></tr><tr><td style='heigh:15px;'>&nbsp;</td></tr>";
 		}
 		else{
+			 console.log(myArray2[i]);
 		myTable+="<td style='height:15px;'> " +myArray2[i]+ "</td></tr>";
 		}
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
 	   if (nationrank=="2,927th"){
-			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		   if (stringcounty=="!Baltimore"){
+			   stringcounty=stringcounty.replace('!','');
+			   $('#info-box').html(stringcounty +" City: <strong>No harvest reported in survey</strong>");
+		   }
+		   else{
+		   $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");}
 		  }
 		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2823,43 +2923,45 @@ MA.addEventListener('click', function(ev){
     svgMassachusetts.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMassachusetts.querySelectorAll('.massachusetts > path');
+	 stringstate = ', MA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -2873,18 +2975,20 @@ MA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -2898,7 +3002,7 @@ MA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -2938,44 +3042,47 @@ MI.addEventListener('click', function(ev){
     svgMichigan.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMichigan.querySelectorAll('.michigan > path');
+	 stringstate = ', MI'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MI'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	
-	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
@@ -2988,18 +3095,20 @@ MI.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3013,7 +3122,7 @@ MI.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3053,43 +3162,45 @@ MN.addEventListener('click', function(ev){
     svgMinnesota.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMinnesota.querySelectorAll('.minnesota > path');
+	 stringstate = ', MN'
 	pathlength=paths.length;
-	for(var i=0; i<pathlength; ++i) {
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MN'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3103,18 +3214,20 @@ MN.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3128,7 +3241,7 @@ MN.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3168,43 +3281,45 @@ MS.addEventListener('click', function(ev){
     svgMississippi.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMississippi.querySelectorAll('.mississippi > path');
+	 stringstate = ', MS'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MS'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3218,18 +3333,20 @@ MS.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3243,7 +3360,7 @@ MS.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3283,43 +3400,45 @@ MO.addEventListener('click', function(ev){
     svgMissouri.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMissouri.querySelectorAll('.missouri > path');
+	 stringstate = ', MO'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MO'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3333,18 +3452,20 @@ MO.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3358,7 +3479,7 @@ MO.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3398,43 +3519,45 @@ MT.addEventListener('click', function(ev){
     svgMontana.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgMontana.querySelectorAll('.montana > path');
+	 stringstate = ', MT'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', MT'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3448,18 +3571,20 @@ MT.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3473,7 +3598,7 @@ MT.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3513,43 +3638,45 @@ NE.addEventListener('click', function(ev){
     svgNebraska.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNebraska.querySelectorAll('.nebraska > path');
+	 stringstate = ', NE'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NE'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3563,18 +3690,20 @@ NE.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3588,7 +3717,7 @@ NE.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3628,43 +3757,45 @@ NV.addEventListener('click', function(ev){
     svgNevada.setAttribute("height",svgH)
 	var myArray2    = new Array();
 	 paths = svgNevada.querySelectorAll('.nevada > path');
+	 stringstate = ', NV'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NV'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3678,18 +3809,20 @@ NV.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3703,7 +3836,7 @@ NV.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3743,43 +3876,45 @@ NH.addEventListener('click', function(ev){
     svgNewhampshire.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNewhampshire.querySelectorAll('.newhampshire > path');
+	 stringstate = ', NH'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NH'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3793,18 +3928,20 @@ NH.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3818,7 +3955,7 @@ NH.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3858,43 +3995,45 @@ NJ.addEventListener('click', function(ev){
     svgNewjersey.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNewjersey.querySelectorAll('.newjersey > path');
+	 stringstate = ', NJ'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NJ'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -3908,18 +4047,20 @@ NJ.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -3933,7 +4074,7 @@ NJ.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -3973,43 +4114,45 @@ NM.addEventListener('click', function(ev){
     svgNewmexico.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNewmexico.querySelectorAll('.newmexico > path');
+	 stringstate = ', NM'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NM'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4023,18 +4166,20 @@ NM.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4048,7 +4193,7 @@ NM.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4088,43 +4233,45 @@ NY.addEventListener('click', function(ev){
     svgNewyork.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNewyork.querySelectorAll('.newyork > path');
+	 stringstate = ', NY'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NY'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4138,18 +4285,20 @@ NY.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4163,7 +4312,7 @@ NY.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4203,43 +4352,45 @@ NC.addEventListener('click', function(ev){
     svgNorthcarolina.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgNorthcarolina.querySelectorAll('.northcarolina > path');
+	 stringstate = ', NC'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', NC'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4253,18 +4404,20 @@ NC.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4278,7 +4431,7 @@ NC.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4318,43 +4471,45 @@ OH.addEventListener('click', function(ev){
     svgOhio.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgOhio.querySelectorAll('.ohio > path');
+	 stringstate = ', OH'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', OH'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4368,18 +4523,20 @@ OH.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4393,7 +4550,7 @@ OH.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4433,43 +4590,45 @@ OK.addEventListener('click', function(ev){
     svgOklahoma.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgOklahoma.querySelectorAll('.oklahoma > path');
+	 stringstate = ', OK'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', OK'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4483,18 +4642,20 @@ OK.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4508,7 +4669,7 @@ OK.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4548,43 +4709,45 @@ OR.addEventListener('click', function(ev){
     svgOregon.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgOregon.querySelectorAll('.oregon > path');
+	 stringstate = ', OR'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', OR'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4598,18 +4761,20 @@ OR.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4623,7 +4788,7 @@ OR.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4663,43 +4828,45 @@ PA.addEventListener('click', function(ev){
     svgPennsylvania.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgPennsylvania.querySelectorAll('.pennsylvania > path');
+	 stringstate = ', PA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', PA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4713,18 +4880,20 @@ PA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4738,7 +4907,7 @@ PA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4778,43 +4947,45 @@ RI.addEventListener('click', function(ev){
     svgRhodeisland.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgRhodeisland.querySelectorAll('.rhodeisland > path');
+	 stringstate = ', RI'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', RI'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4828,18 +4999,20 @@ RI.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4853,7 +5026,7 @@ RI.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -4893,43 +5066,45 @@ SC.addEventListener('click', function(ev){
     svgSouthcarolina.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgSouthcarolina.querySelectorAll('.southcarolina > path');
+	 stringstate = ', SC'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', SC'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -4943,18 +5118,20 @@ SC.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -4968,7 +5145,7 @@ SC.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5008,43 +5185,45 @@ SD.addEventListener('click', function(ev){
     svgSouthdakota.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgSouthdakota.querySelectorAll('.southdakota > path');
+	 stringstate = ', SD'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', SD'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5058,18 +5237,20 @@ SD.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5083,7 +5264,7 @@ SD.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5123,43 +5304,45 @@ TN.addEventListener('click', function(ev){
     svgTennessee.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgTennessee.querySelectorAll('.tennessee > path');
+	 stringstate = ', TN'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', TN'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5173,18 +5356,20 @@ TN.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5198,7 +5383,7 @@ TN.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5238,43 +5423,45 @@ UT.addEventListener('click', function(ev){
     svgUtah.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgUtah.querySelectorAll('.utah > path');
+	 stringstate = ', UT'
 	pathlength=paths.length;
-	for(var i=0; i<pathlength; ++i) {
+		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', UT'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5288,18 +5475,20 @@ UT.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5313,7 +5502,7 @@ UT.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5353,43 +5542,45 @@ VT.addEventListener('click', function(ev){
     svgVermont.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgVermont.querySelectorAll('.vermont > path');
+	 stringstate = ', VT'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', VT'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5403,18 +5594,20 @@ VT.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5428,7 +5621,7 @@ VT.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5468,44 +5661,52 @@ VA.addEventListener('click', function(ev){
     svgVirginia.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgVirginia.querySelectorAll('.virginia > path');
+	 stringstate = ', VA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', VA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
-	
-	}
+	/*
+	if (your_string.indexOf('hello') > -1)
+{
+  alert("hello found inside your_string");
+}
+*/
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
@@ -5518,32 +5719,42 @@ VA.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
+	  
+	  
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
 		  }
 	  }
 	   if (nationrank=="2,927th"){
+		   if (stringcounty.indexOf('!') > -1){
+			stringcounty=stringcounty.replace('!','');
+		   $('#info-box').html(stringcounty +" City: <strong>No harvest reported in survey</strong>");
+		   }
+		   else{
 			  $('#info-box').html(stringcounty +" County: <strong>No harvest reported in survey</strong>");
+		   }
 		  }
 		  else{
 	  $('#info-box').html(stringcounty +" County ranks <strong>"+var3+"</strong> out of "+pathlength+" counties in the state<br>and <strong>"+nationrank+"</strong> out of 3,111 counties in the U.S.");
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5583,43 +5794,45 @@ WA.addEventListener('click', function(ev){
     svgWashington.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgWashington.querySelectorAll('.washington > path');
+	 stringstate = ', WA'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', WA'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5632,19 +5845,21 @@ WA.addEventListener('click', function(ev){
 		}
 	  }  
 	   myTable+="</table>";
-	 document.getElementById('mytable').innerHTML = myTable;
-
+	document.getElementById('mytable').innerHTML = myTable;
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5658,7 +5873,7 @@ WA.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5697,43 +5912,45 @@ WV.addEventListener('click', function(ev){
     svgWestvirginia.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgWestvirginia.querySelectorAll('.westvirginia > path');
+	 stringstate = ', WV'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', WV'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5746,19 +5963,21 @@ WV.addEventListener('click', function(ev){
 		}
 	  }  
 	   myTable+="</table>";
-	 document.getElementById('mytable').innerHTML = myTable;
-
+	document.getElementById('mytable').innerHTML = myTable;
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5772,7 +5991,7 @@ WV.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5812,43 +6031,45 @@ WI.addEventListener('click', function(ev){
     svgWisconsin.setAttribute("height",svgH)
 		var myArray2    = new Array();
 	 paths = svgWisconsin.querySelectorAll('.wisconsin > path');
+	 stringstate = ', WI'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', WI'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5862,18 +6083,20 @@ WI.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -5887,7 +6110,7 @@ WI.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
@@ -5928,43 +6151,45 @@ WY.addEventListener('click', function(ev){
 	
 		var myArray2    = new Array();
 	 paths = svgWyoming.querySelectorAll('.wyoming > path');
+	 stringstate = ', WY'
 	pathlength=paths.length;
 		for(var i=0; i<pathlength; ++i) {
 		pathdata = paths[i].attributes['data-info2'].value;
 		pathdata2 = paths[i].attributes['data-info5'].value;
-		stringstate = ', WY'
-	if(pathdata== '1'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[1] =pathdata2;
-	}if(pathdata== '2'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[2] =pathdata2;
-	}if(pathdata== '3'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[3] =pathdata2;
-	}if(pathdata== '4'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[4] =pathdata2;
-	}if(pathdata== '5'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[5] =pathdata2;
-	}if(pathdata== '6'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[6] =pathdata2;
-	}if(pathdata== '7'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[7] =pathdata2;
-	}if(pathdata== '8'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[8] =pathdata2;
-	}if(pathdata== '9'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[9] =pathdata2;
-	}if(pathdata== '10'){
-			pathdata2=pathdata2.replace(stringstate,'')
-		myArray2[10] =pathdata2;
-	}
-	
+		if(parseInt(pathdata)< 11){
+		pathdata2=pathdata2.replace(stringstate,'')
+		if(pathdata== '1'){
+			myArray2[1] =pathdata2;
+			continue;
+		}if(pathdata== '2'){
+			myArray2[2] =pathdata2;
+			continue;
+		}if(pathdata== '3'){
+			myArray2[3] =pathdata2;
+			continue;
+		}if(pathdata== '4'){
+			myArray2[4] =pathdata2;
+			continue;
+		}if(pathdata== '5'){
+			myArray2[5] =pathdata2;
+			continue;
+		}if(pathdata== '6'){
+			myArray2[6] =pathdata2;
+			continue;
+		}if(pathdata== '7'){
+			myArray2[7] =pathdata2;
+			continue;
+		}if(pathdata== '8'){
+			myArray2[8] =pathdata2;
+			continue;
+		}if(pathdata== '9'){
+			myArray2[9] =pathdata2;
+			continue;
+		}if(pathdata== '10'){
+			myArray2[10] =pathdata2;
+			continue;
+		}
+		}
 	}
 	var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
@@ -5978,18 +6203,20 @@ WY.addEventListener('click', function(ev){
 	  }  
 	   myTable+="</table>";
 	 document.getElementById('mytable').innerHTML = myTable;
-
+	  var var1 = "";
+	  var var3 = "";
+	  var var4 = "";
+	  var nationrank="";
+	  var stringcounty ="";
+	  
 	$("path, circle").mouseenter(function(e) {
 	  $('#info-box').css('display','block');
-	  var var1 = ""
-	  var var3 = ""
-	  var var4 = ""
 	  if (typeof $(this).data('info5') != 'undefined'){
-	  var stringcounty = $(this).data('info5').replace(stringstate,'');
-	  var var1 = $(this).data('info');
-	  var var3 = $(this).data('info2')
-	   var var4 = $(this).data('info5')
-	   var nationrank=suffix(var1);
+	  stringcounty = $(this).data('info5').replace(stringstate,'');
+	  var1 = $(this).data('info');
+	  var3 = $(this).data('info2')
+	   var4 = $(this).data('info5')
+	   nationrank=suffix(var1);
 	  var3=suffix(var3);
 	  if (nationrank.length=='6'){
 		  nationrank=nationrank.replace(nationrank[0],nationrank[0]+',');
@@ -6003,7 +6230,7 @@ WY.addEventListener('click', function(ev){
 		  }
 	  
 	  
-		var myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
+		myTable= "<table><tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bolder; font-size:larger;'>Top Ranked Counties within the State</td></tr>";
 	  for (var i=1; i<12; i++) {
 		if (i==11){
 			myTable+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted county rank within the state (out of "+pathlength+")</td></tr><tr><td style='height:15px;'>&nbsp;" +var4+" - "+var3+ "</td></tr>";
