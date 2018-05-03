@@ -51,6 +51,57 @@ svgWisconsin=document.getElementById('svgWisconsin');
 svgWestvirginia=document.getElementById('svgWestvirginia');
 svgWyoming=document.getElementById('svgWyoming');
 
+AK=document.getElementById('AK');
+AL=document.getElementById('AL');
+AR=document.getElementById('AR');
+AZ=document.getElementById('AZ');
+CA=document.getElementById('CA');
+CO=document.getElementById('CO');
+HI=document.getElementById('HI');
+CT=document.getElementById('CT');
+DE=document.getElementById('DE');
+FL=document.getElementById('FL');
+GA=document.getElementById('GA');
+IA=document.getElementById('IA');
+ID=document.getElementById('ID');
+IL=document.getElementById('IL');
+IN=document.getElementById('IN');
+KS=document.getElementById('KS');
+KY=document.getElementById('KY');
+LA=document.getElementById('LA');
+MA=document.getElementById('MA');
+MD=document.getElementById('MD');
+ME=document.getElementById('ME');
+MI=document.getElementById('MI');
+MN=document.getElementById('MN');
+MO=document.getElementById('MO');
+MS=document.getElementById('MS');
+MT=document.getElementById('MT');
+NC=document.getElementById('NC');
+ND=document.getElementById('ND');
+NE=document.getElementById('NE');
+NH=document.getElementById('NH');
+NJ=document.getElementById('NJ');
+NM=document.getElementById('NM');
+NV=document.getElementById('NV');
+NY=document.getElementById('NY');
+OH=document.getElementById('OH');
+OK=document.getElementById('OK');
+OR=document.getElementById('OR');
+PA=document.getElementById('PA');
+RI=document.getElementById('RI');
+SC=document.getElementById('SC');
+SD=document.getElementById('SD');
+TN=document.getElementById('TN');
+TX=document.getElementById('TX');
+UT=document.getElementById('UT');
+VA=document.getElementById('VA');
+VT=document.getElementById('VT');
+WA=document.getElementById('WA');
+WI=document.getElementById('WI');
+WV=document.getElementById('WV');
+WY=document.getElementById('WY');
+
 //make for each state
 function hideall(){
 svgAlaska.style.display = 'none';
@@ -271,7 +322,7 @@ if(ios) {
 }
 
 //CALIFORNIA
-document.getElementById('CA').addEventListener('click', function(ev){
+CA.addEventListener('click', function(ev){
 	
 	
 	/*
@@ -301,8 +352,9 @@ document.getElementById('CA').addEventListener('click', function(ev){
 			
 	hideall();
 	hideselect();    
+	
 	svgCalifornia.style.display = 'block';
-	$("#CA").css('fill', '002868');
+	CA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgCalifornia.getBBox()
@@ -415,11 +467,11 @@ document.getElementById('CA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('AZ').addEventListener('click', function(ev){
+AZ.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgArizona.style.display = 'block';
-	$("#AZ").css('fill', '002868');
+	AZ.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgArizona.getBBox()
@@ -531,13 +583,13 @@ document.getElementById('AZ').addEventListener('click', function(ev){
 })
 
 //TEXAS
-document.getElementById('TX').addEventListener('click', function(ev){
+TX.addEventListener('click', function(ev){
 	
 	hideall();
 	hideselect();
 	svgTexas.style.display = 'block';
 	
-	$("#TX").css('fill', '002868');
+	TX.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgTexas.getBBox()
@@ -650,12 +702,12 @@ document.getElementById('TX').addEventListener('click', function(ev){
 })
 
 //NORTH DAKOTA
-document.getElementById('ND').addEventListener('click', function(ev){
+ND.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNorthdakota.style.display = 'block';
 	
-	$("#ND").css('fill', '002868');
+	ND.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNorthdakota.getBBox()
@@ -766,12 +818,12 @@ var myArray2    = new Array();
 })
 
 //LOUISIANA
-document.getElementById('LA').addEventListener('click', function(ev){
+LA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgLouisiana.style.display = 'block';
 	
-	$("#LA").css('fill', '002868');
+	LA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgLouisiana.getBBox()
@@ -882,11 +934,11 @@ document.getElementById('LA').addEventListener('click', function(ev){
 })
 
 
-document.getElementById('AK').addEventListener('click', function(ev){
+AK.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	//svgAlaska.style.display = 'block';
-	$("#AK").css('fill', '002868');
+	AK.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgAlaska.getBBox()
@@ -997,12 +1049,12 @@ document.getElementById('AK').addEventListener('click', function(ev){
 });
 })
 
-document.getElementById('AL').addEventListener('click', function(ev){
+AL.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgAlabama.style.display = 'block';
 	
-	$("#AL").css('fill', '002868');
+	AL.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgAlabama.getBBox()
@@ -1113,13 +1165,13 @@ document.getElementById('AL').addEventListener('click', function(ev){
 });
 })
 
-document.getElementById('AR').addEventListener('click', function(ev){
+AR.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgArkansas.style.display = 'block';
 	
 	
-  	$("#AR").css('fill', '002868');
+  	AR.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgArkansas.getBBox()
@@ -1230,12 +1282,12 @@ document.getElementById('AR').addEventListener('click', function(ev){
 });
 })
 
-document.getElementById('CO').addEventListener('click', function(ev){
+CO.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgColorado.style.display = 'block';
 	
-	$("#CO").css('fill', '002868');
+	CO.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgColorado.getBBox()
@@ -1345,12 +1397,12 @@ document.getElementById('CO').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('CT').addEventListener('click', function(ev){
+CT.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgConnecticut.style.display = 'block';
 	
-	$("#CT").css('fill', '002868');
+	CT.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgConnecticut.getBBox()
@@ -1460,12 +1512,12 @@ document.getElementById('CT').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('DE').addEventListener('click', function(ev){
+DE.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgDelaware.style.display = 'block';
 	
-	$("#DE").css('fill', '002868');
+	DE.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgDelaware.getBBox()
@@ -1575,12 +1627,12 @@ document.getElementById('DE').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('FL').addEventListener('click', function(ev){
+FL.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgFlorida.style.display = 'block';
 	
-	$("#FL").css('fill', '002868');
+	FL.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgFlorida.getBBox()
@@ -1691,12 +1743,12 @@ document.getElementById('FL').addEventListener('click', function(ev){
 });
 })
 
-document.getElementById('GA').addEventListener('click', function(ev){
+GA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgGeorgia.style.display = 'block';
 
-	$("#GA").css('fill', '002868');
+	GA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgGeorgia.getBBox()
@@ -1807,12 +1859,12 @@ document.getElementById('GA').addEventListener('click', function(ev){
 });
 })
 
-document.getElementById('HI').addEventListener('click', function(ev){
+HI.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	//svgHawaii.style.display = 'block';
 	
-	$("#HI").css('fill', '002868');
+	HI.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgHawaii.getBBox()
@@ -1833,12 +1885,12 @@ document.getElementById('HI').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('ID').addEventListener('click', function(ev){
+ID.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgIdaho.style.display = 'block';
 	
-	$("#ID").css('fill', '002868');
+	ID.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgIdaho.getBBox()
@@ -1948,12 +2000,12 @@ document.getElementById('ID').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('IL').addEventListener('click', function(ev){
+IL.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgIllinois.style.display = 'block';
 	
-	$("#IL").css('fill', '002868');
+	IL.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgIllinois.getBBox()
@@ -2063,12 +2115,12 @@ document.getElementById('IL').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('IN').addEventListener('click', function(ev){
+IN.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgIndiana.style.display = 'block';
 	
-	$("#IN").css('fill', '002868');
+	IN.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgIndiana.getBBox()
@@ -2178,12 +2230,12 @@ document.getElementById('IN').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('IA').addEventListener('click', function(ev){
+IA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgIowa.style.display = 'block';
 	
-	$("#IA").css('fill', '002868');
+	IA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgIowa.getBBox()
@@ -2293,12 +2345,12 @@ document.getElementById('IA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('KS').addEventListener('click', function(ev){
+KS.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgKansas.style.display = 'block';
 	
-	$("#KS").css('fill', '002868');
+	KS.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgKansas.getBBox()
@@ -2408,12 +2460,12 @@ document.getElementById('KS').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('KY').addEventListener('click', function(ev){
+KY.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgKentucky.style.display = 'block';
 	
-	$("#KY").css('fill', '002868');
+	KY.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgKentucky.getBBox()
@@ -2523,12 +2575,12 @@ document.getElementById('KY').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('ME').addEventListener('click', function(ev){
+ME.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMaine.style.display = 'block';
 	
-	$("#ME").css('fill', '002868');
+	ME.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMaine.getBBox()
@@ -2638,12 +2690,12 @@ document.getElementById('ME').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MD').addEventListener('click', function(ev){
+MD.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMaryland.style.display = 'block';
 	
-	$("#MD").css('fill', '002868');
+	MD.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMaryland.getBBox()
@@ -2753,12 +2805,12 @@ document.getElementById('MD').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MA').addEventListener('click', function(ev){
+MA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMassachusetts.style.display = 'block';
 	
-	$("#MA").css('fill', '002868');
+	MA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMassachusetts.getBBox()
@@ -2868,12 +2920,12 @@ document.getElementById('MA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MI').addEventListener('click', function(ev){
+MI.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMichigan.style.display = 'block';
 
-	$("#MI").css('fill', '002868');
+	MI.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMichigan.getBBox()
@@ -2983,12 +3035,12 @@ document.getElementById('MI').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MN').addEventListener('click', function(ev){
+MN.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMinnesota.style.display = 'block';
 	
-	$("#MN").css('fill', '002868');
+	MN.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMinnesota.getBBox()
@@ -3098,12 +3150,12 @@ document.getElementById('MN').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MS').addEventListener('click', function(ev){
+MS.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMississippi.style.display = 'block';
 	
-	$("#MS").css('fill', '002868');
+	MS.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMississippi.getBBox()
@@ -3213,12 +3265,12 @@ document.getElementById('MS').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MO').addEventListener('click', function(ev){
+MO.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMissouri.style.display = 'block';
 	
-	$("#MO").css('fill', '002868');
+	MO.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMissouri.getBBox()
@@ -3328,12 +3380,12 @@ document.getElementById('MO').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('MT').addEventListener('click', function(ev){
+MT.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgMontana.style.display = 'block';
 	
-	$("#MT").css('fill', '002868');
+	MT.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgMontana.getBBox()
@@ -3443,12 +3495,12 @@ document.getElementById('MT').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NE').addEventListener('click', function(ev){
+NE.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNebraska.style.display = 'block';
 	
-	$("#NE").css('fill', '002868');
+	NE.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNebraska.getBBox()
@@ -3558,12 +3610,12 @@ document.getElementById('NE').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NV').addEventListener('click', function(ev){
+NV.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNevada.style.display = 'block';
 
-	$("#NV").css('fill', '002868');
+	NV.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNevada.getBBox()
@@ -3673,12 +3725,12 @@ document.getElementById('NV').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NH').addEventListener('click', function(ev){
+NH.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNewhampshire.style.display = 'block';
 	
-	$("#NH").css('fill', '002868');
+	NH.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNewhampshire.getBBox()
@@ -3788,12 +3840,12 @@ document.getElementById('NH').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NJ').addEventListener('click', function(ev){
+NJ.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNewjersey.style.display = 'block';
 	
-	$("#NJ").css('fill', '002868');
+	NJ.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNewjersey.getBBox()
@@ -3903,12 +3955,12 @@ document.getElementById('NJ').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NM').addEventListener('click', function(ev){
+NM.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNewmexico.style.display = 'block';
 	
-	$("#NM").css('fill', '002868');
+	NM.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNewmexico.getBBox()
@@ -4018,12 +4070,12 @@ document.getElementById('NM').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NY').addEventListener('click', function(ev){
+NY.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNewyork.style.display = 'block';
 	
-	$("#NY").css('fill', '002868');
+	NY.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNewyork.getBBox()
@@ -4133,12 +4185,12 @@ document.getElementById('NY').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('NC').addEventListener('click', function(ev){
+NC.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgNorthcarolina.style.display = 'block';
 	
-	$("#NC").css('fill', '002868');
+	NC.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgNorthcarolina.getBBox()
@@ -4248,12 +4300,12 @@ document.getElementById('NC').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('OH').addEventListener('click', function(ev){
+OH.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgOhio.style.display = 'block';
 	
-	$("#OH").css('fill', '002868');
+	OH.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgOhio.getBBox()
@@ -4363,12 +4415,12 @@ document.getElementById('OH').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('OK').addEventListener('click', function(ev){
+OK.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgOklahoma.style.display = 'block';
 	
-	$("#OK").css('fill', '002868');
+	OK.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgOklahoma.getBBox()
@@ -4478,12 +4530,12 @@ document.getElementById('OK').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('OR').addEventListener('click', function(ev){
+OR.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgOregon.style.display = 'block';
 	
-	$("#OR").css('fill', '002868');
+	OR.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgOregon.getBBox()
@@ -4593,12 +4645,12 @@ document.getElementById('OR').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('PA').addEventListener('click', function(ev){
+PA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgPennsylvania.style.display = 'block';
 	
-	$("#PA").css('fill', '002868');
+	PA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgPennsylvania.getBBox()
@@ -4708,12 +4760,12 @@ document.getElementById('PA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('RI').addEventListener('click', function(ev){
+RI.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgRhodeisland.style.display = 'block';
 	
-	$("#RI").css('fill', '002868');
+	RI.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgRhodeisland.getBBox()
@@ -4823,12 +4875,12 @@ document.getElementById('RI').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('SC').addEventListener('click', function(ev){
+SC.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgSouthcarolina.style.display = 'block';
 
-	$("#SC").css('fill', '002868');
+	SC.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgSouthcarolina.getBBox()
@@ -4938,12 +4990,12 @@ document.getElementById('SC').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('SD').addEventListener('click', function(ev){
+SD.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgSouthdakota.style.display = 'block';
 
-	$("#SD").css('fill', '002868');
+	SD.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgSouthdakota.getBBox()
@@ -5053,12 +5105,12 @@ document.getElementById('SD').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('TN').addEventListener('click', function(ev){
+TN.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgTennessee.style.display = 'block';
 
-	$("#TN").css('fill', '002868');
+	TN.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgTennessee.getBBox()
@@ -5168,12 +5220,12 @@ document.getElementById('TN').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('UT').addEventListener('click', function(ev){
+UT.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgUtah.style.display = 'block';
 	
-	$("#UT").css('fill', '002868');
+	UT.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgUtah.getBBox()
@@ -5283,14 +5335,12 @@ document.getElementById('UT').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('VT').addEventListener('click', function(ev){
+VT.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgVermont.style.display = 'block';
-	svgVermont.setAttribute("viewBox", "80 155 50 150"); 
-	svgVermont.setAttribute("height", "1200"); 
-	svgVermont.setAttribute("width", "1200"); 
-	$("#VT").css('fill', '002868');
+	
+	VT.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgVermont.getBBox()
@@ -5400,14 +5450,12 @@ document.getElementById('VT').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('VA').addEventListener('click', function(ev){
+VA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgVirginia.style.display = 'block';
-	svgVirginia.setAttribute("viewBox", "80 155 50 150"); 
-	svgVirginia.setAttribute("height", "1200"); 
-	svgVirginia.setAttribute("width", "1200"); 
-	$("#VA").css('fill', '002868');
+	
+	VA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgVirginia.getBBox()
@@ -5517,14 +5565,12 @@ document.getElementById('VA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('WA').addEventListener('click', function(ev){
+WA.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgWashington.style.display = 'block';
-	svgWashington.setAttribute("viewBox", "80 155 50 150"); 
-	svgWashington.setAttribute("height", "1200"); 
-	svgWashington.setAttribute("width", "1200"); 
-	$("#WA").css('fill', '002868');
+
+	WA.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgWashington.getBBox()
@@ -5634,14 +5680,11 @@ document.getElementById('WA').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('WV').addEventListener('click', function(ev){
+WV.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgWestvirginia.style.display = 'block';
-	svgWestvirginia.setAttribute("viewBox", "80 155 50 150"); 
-	svgWestvirginia.setAttribute("height", "1200"); 
-	svgWestvirginia.setAttribute("width", "1200"); 
-	$("#WV").css('fill', '002868');
+	WV.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgWestvirginia.getBBox()
@@ -5751,14 +5794,12 @@ document.getElementById('WV').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('WI').addEventListener('click', function(ev){
+WI.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgWisconsin.style.display = 'block';
-	svgWisconsin.setAttribute("viewBox", "80 155 50 150"); 
-	svgWisconsin.setAttribute("height", "1200"); 
-	svgWisconsin.setAttribute("width", "1200"); 
-	$("#WI").css('fill', '002868');
+
+	WI.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgWisconsin.getBBox()
@@ -5868,12 +5909,12 @@ document.getElementById('WI').addEventListener('click', function(ev){
   $('#info-box').css('display','none');
 });
 })
-document.getElementById('WY').addEventListener('click', function(ev){
+WY.addEventListener('click', function(ev){
 	hideall();
 	hideselect();
 	svgWyoming.style.display = 'block';
 
-	$("#WY").css('fill', '002868');
+	WY.style.fill = '#002868';
 	var svgW=window.innerWidth
 	var svgH=window.innerHeight
     var bb=svgWyoming.getBBox()
