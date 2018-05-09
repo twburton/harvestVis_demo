@@ -12,20 +12,25 @@
 <!-- TemplateBeginEditable name="head" -->
 <!--edit <head> data here-->
 <meta name="description" content="">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+  	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--<script src="js/tooltip.js"></script>-->
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/main.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/normalize.min.css">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/jquery.mmenu.css" />
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/extensions/jquery.mmenu.positioning.css" />
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/custom-styling.css">
-  	<script src="https://d3js.org/d3.v4.min.js"></script>
-  	<script src="https://d3js.org/topojson.v2.min.js"></script>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script>document.write('<base href="' + document.location + '" />');</script>
 	<link rel="stylesheet" href="css/tooltip.css" />
-	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
-	<script src="js/tooltip.js"></script>
-
+  	
 <!-- TemplateEndEditable -->
 </head>
 
@@ -54,34 +59,64 @@
 			<div id="content">
 				<div id="page-headings">
 					<!-- TemplateBeginEditable name="headings" -->
+					<nav style="float: right; background-color:#F0EDE7; border:none;" class="navbar navbar-default">
+					  <div class="container-fluid">
+						<!--<div class="navbar-header">
+						  <a class="navbar-brand"></a>
+						</div>-->
+						<ul class="nav navbar-nav">
+						  <li><a href="index.html">Harvest Data</a></li>
+						  <li class="active"><a href="harvest-map.html">Wing ID</a></li>
+						</ul>
+					  </div>
+					</nav>
 					<h2>How do we identify species from their wings?</h2>
 					<!-- TemplateEndEditable -->
 				</div>
 				<div id="content-area">
 					<!-- TemplateBeginEditable name="content" -->
-					<p>The <strong>Waterfowl Diary Survey</strong> only asks about harvest of ducks, geese, sea ducks, and brant. <span class="tooltipCustom" tooltip-follow-cursor>Why?<span class="tooltipCustomContent">Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have "colored up" into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.</span></span> <img src="img/answer.fw.png" onclick="myFunction()" alt="" height="16" width="15" style="vertical-align: middle" /> However, it is possible to identify waterfowl to species: ducks can be ID'd from their wing plumage and geese can be ID'd from their tail feathers. The <strong>Waterfowl Parts Collection Survey</strong> randomly selects 5-6,000 waterfowl hunters to send us a wing from every duck and tail feathers from every goose they shoot throughout the hunting season. This survey tells us the species composition of each state's duck and goose harvests.</p>
-								
-					<div class="overflow-hidden">
-					<p>
-						<img class="img-left" src="img/envelope.fw.png" title="pcs envelope form" alt="pcs envelope form"/>
-						<img class="img-right" src="img/wingbee.fw.png" alt="envelopes" title="envelopes"/>
+					The <strong>Waterfowl Diary Survey</strong> only asks about harvest of ducks, geese, sea ducks, and brant.
+					
+					<a href="#" data-toggle="tooltip" title="Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have &#39;colored up&#39; into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.">
+						<span class="toolText">Why?</span>
+					
+					<!--<span class="tooltipCustom" tooltip-follow-cursor>Why?<span class="tooltipCustomContent">Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have "colored up" into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.</span></span>--> <img class="toolImg" src="img/answer.fw.png" onclick="myFunction()" alt="" height="16" width="15" style="vertical-align: middle" /></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. 
+						
+					Here is a short video that shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings.
+						<p align="center">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe></p>
+					
+
+					<div class="overflow-hidden" style="padding-bottom: 5px;">
+					<p style="padding-right:5px;">
+						<img class="img-left img-style" src="img/envelope.fw.png" title="pcs envelope form" alt="pcs envelope form" />
+						<img class="img-right img-style" src="img/wingbee.fw.png" alt="envelopes" title="envelopes" />
 					</p>
 						
-					<p>The image to the left shows an example of the form on a postage-paid envelope the selected waterfowl hunters are asked to complete for every individual bird they shoot during the hunting season. Once we receive the envelopes, biologists and volunteers gather together and sort through the wings and feathers to collect the data. The image to the right shows a stack of received envelopes and a duck wing ready for data collection.</p></div>
-				<p></p>
-					<p><span class="tooltipCustom" tooltip-follow-cursor>We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.<span class="tooltipCustomContent" >For example, say the estimated duck harvest (from the Diary Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000).</span></span> <img src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /> We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with Parts Collection Surveys.</p>
+					<p>The <strong>Waterfowl Parts Collection Survey</strong> randomly selects 5-6,000 waterfowl hunters to send us a wing from every duck, and tail feathers from every goose, they shoot during the hunting season. This survey tells us the species composition of each state's duck and goose harvests. The image to the left shows the  postage-paid envelope the selected waterfowl hunters send us for every individual bird they shoot during the hunting season. Once we receive the envelopes, biologists and volunteers gather together and sort through the wings and feathers to identify the species. The image above and to the right shows a stack of received envelopes and a duck wing ready for identification.</p></div>
+				
+					<p><a href="#" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Diary Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000).">
+						<span class="toolText">We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.</span> <img class="toolImg" src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a> 
+					
+					We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with Parts Collection Surveys.</p>
                     
 					<div class="overflow-hidden">
-                      <p class="img-right"><img src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal"/></p>
-                      <p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar. For example, what is the duck on the right? </p>
+                      <p class="img-right" style="padding-right: 5px;"><img class="img-style" src="img/femalebwte.jpg" alt="female blue-winged teal" title="female blue-winged teal" /></p>
+                      <p>Duck wing identification can be a handy skill when you're having a good day in the duck blind, since you're only allowed to shoot one or two of some species. Male ducks are usually (but not always) easy to identify, but young-of-the-year females of several species are pretty drab "brown ducks" and look similar.</p>
+						
+                      <p>What is the duck on the right?</p>
                       
-                      <p class="img-left"><img src="img/femgadw.jpg" alt="female gadwall" title="female gadwall"/></p>
-                      <br><p>What about the one on the left? Do you have to worry about the next bird you shoot if you have already bagged one of these? </p>
-                    </div>
-                    
+                      <p class="img-left"><img class="img-style" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" /></p>
+                      <br />
+                      <p><br />What about the one on the left? Do you have to worry about the next bird you shoot if you have already bagged one of these? Below is another video showing you how to identify several "brown ducks" of different species by their wings.</p></div>
+				
+						<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Mmzwrw-kg4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe></p>
+					  
+					   
+				
+						The image below shows the main feather groupings that are used in duck wing identification.
+						<p align="center"><img class="img-style" src="img/FeatherGroups.jpg" alt="feather groups" title="feather groups" width="560" /></p>
 					
-					Here is a short video that shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings.<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
-
 					<p><a href="index.html"><< return to the previous page</a></p>
           			<!-- TemplateEndEditable -->
 				</div><!--ends content area div-->
@@ -90,12 +125,19 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->April 26, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 9, 2018<!-- #EndDate --></p>
 	</div></div>
 
 </div><!--ends div for mobile nav-->
 
 <?php include "https://www.fws.gov/birdhabitat/includes/scripts.php" ?>
+
+<!--tooltip script-->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 
 <!-- TemplateBeginEditable name="content-footer" -->
 <!--bottom include: used for scripts, footers, etc-->
