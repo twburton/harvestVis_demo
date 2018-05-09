@@ -59,25 +59,26 @@
 			<div id="content">
 				<div id="page-headings">
 					<!-- TemplateBeginEditable name="headings" -->
-					<nav style="float: right; background-color:#F0EDE7; border:none;" class="navbar navbar-default">
+					<nav style="float: right; background-color:#F0EDE7; border:none; text-align: center;" class="navbar navbar-default">
 					  <div class="container-fluid">
 						<!--<div class="navbar-header">
 						  <a class="navbar-brand"></a>
 						</div>-->
 						<ul class="nav navbar-nav">
-						  <li><a href="index.html">Harvest Data</a></li>
+						  <li ><a href="index.html">Harvest <br>Data &amp; Maps</a></li>
 						  <li class="active"><a href="harvest-map.html">Wing ID</a></li>
 						</ul>
 					  </div>
 					</nav>
-					<h2>How do we identify species from their wings?</h2>
+					<h2>How do we identify species from their wings?</h2><br>
+
 					<!-- TemplateEndEditable -->
 				</div>
 				<div id="content-area">
 					<!-- TemplateBeginEditable name="content" -->
 					The <strong>Waterfowl Diary Survey</strong> only asks about harvest of ducks, geese, sea ducks, and brant.
 					
-					<a href="#" data-toggle="tooltip" title="Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have &#39;colored up&#39; into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.">
+					<a href="#" id="noJump" data-toggle="tooltip" title="Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have &#39;colored up&#39; into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.">
 						<span class="toolText">Why?</span>
 					
 					<!--<span class="tooltipCustom" tooltip-follow-cursor>Why?<span class="tooltipCustomContent">Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have "colored up" into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.</span></span>--> <img class="toolImg" src="img/answer.fw.png" onclick="myFunction()" alt="" height="16" width="15" style="vertical-align: middle" /></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. 
@@ -95,7 +96,7 @@
 						
 					<p>The <strong>Waterfowl Parts Collection Survey</strong> randomly selects 5-6,000 waterfowl hunters to send us a wing from every duck, and tail feathers from every goose, they shoot during the hunting season. This survey tells us the species composition of each state's duck and goose harvests. The image to the left shows the  postage-paid envelope the selected waterfowl hunters send us for every individual bird they shoot during the hunting season. Once we receive the envelopes, biologists and volunteers gather together and sort through the wings and feathers to identify the species. The image above and to the right shows a stack of received envelopes and a duck wing ready for identification.</p></div>
 				
-					<p><a href="#" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Diary Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000).">
+					<p><a href="#" id="noJump" data-toggle="tooltip" title="For example, say the estimated duck harvest (from the Diary Survey) in state X was 200,000 birds, and 35% of the wings from that state in the Parts Survey were mallards. Then estimated mallard harvest in state X is 70,000 birds (35% of 200,000).">
 						<span class="toolText">We combine Parts information with the estimates of harvest from the Diary Survey to get estimates of how many birds of each species were harvested.</span> <img class="toolImg" src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a> 
 					
 					We can also identify the sex of a duck from its wing, and whether it was a young-of-the-year bird or an adult. The ratio of young-of-the-year birds to adults gives a good measure of the production of each species compared to previous years. That, in turn, helps biologists keep track of how waterfowl populations are faring. The USFWS also measures annual production of dove, woodcock, and band-tailed pigeons with Parts Collection Surveys.</p>
@@ -117,7 +118,7 @@
 						The image below shows the main feather groupings that are used in duck wing identification.
 						<p align="center"><img class="img-style" src="img/FeatherGroups.jpg" alt="feather groups" title="feather groups" width="560" /></p>
 					
-					<p><a href="index.html"><< return to the previous page</a></p>
+					<p><a href="index.html"><< return to Harvest Data &amp; Maps!</a></p>
           			<!-- TemplateEndEditable -->
 				</div><!--ends content area div-->
 			</div><!--ends content div-->
@@ -136,6 +137,11 @@
 <script>
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
+});
+	$('#noJump').click(function(event) {
+
+    // This will prevent the default action of the anchor (ie, page jumping)
+    event.preventDefault();
 });
 </script>
 

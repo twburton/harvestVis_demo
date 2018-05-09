@@ -4,33 +4,37 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html ng-app="plunker" class="no-js">
-<!--<![endif]-->
-<head>
+<!--<![endif]--><head>
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>U.S. Fish &amp; Wildlife Service - Migratory Bird Program | Conserving America's Birds</title>
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!--edit <head> data here-->
 <meta name="description" content="">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+  	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>document.write('<base href="' + document.location + '" />');</script>
+	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--<script src="js/tooltip.js"></script>-->
+	<script src="js/HarvData.json"></script>
+	<script src="js/StateKey.json"></script>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/main.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/normalize.min.css">
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/jquery.mmenu.css" />
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/extensions/jquery.mmenu.positioning.css" />
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/custom-styling.css">
-  	<link rel="stylesheet" href="css/activity-map.css">
+	<link rel="stylesheet" href="css/activity-map.css">
   	<link rel="stylesheet" href="css/harvest-map.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-  	<script src="https://d3js.org/topojson.v2.min.js"></script>
-	<script src="js/HarvData.json"></script>
-	<script src="js/StateKey.json"></script>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-	<script>document.write('<base href="' + document.location + '" />');</script>
 	<link rel="stylesheet" href="css/tooltip.css" />
-	<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.14/angular.js" data-semver="1.3.14"></script>
-	<script src="js/tooltip.js"></script>
+  	
 <!-- TemplateEndEditable -->
 </head>
 
@@ -59,12 +63,24 @@
 			<div id="content">
 				<div id="page-headings">
 					<!-- TemplateBeginEditable name="headings" -->
-					<h2>What do we learn from harvest surveys?</h2>
+					<nav style="float: right; background-color:#F0EDE7; border:none; text-align: center;" class="navbar navbar-default">
+					  <div class="container-fluid">
+						<!--<div class="navbar-header">
+						  <a class="navbar-brand"></a>
+						</div>-->
+						<ul class="nav navbar-nav">
+						  <li class="active"><a href="index.html">Harvest <br>Data &amp; Maps</a></li>
+						  <li><a href="harvest-map.html">Wing ID</a></li>
+						</ul>
+					  </div>
+					</nav>
+					<h2>What do we learn from harvest surveys?</h2><br>
 					<!-- TemplateEndEditable -->
 				</div>
 				<div id="content-area">
 					<!-- TemplateBeginEditable name="content" -->
-					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. (Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <span class="tooltipCustom" tooltip-follow-cursor>"I get asked questions about my hunting when I register, is that all there is to the survey?"<span class="tooltipCustomContent">Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters.</span></span> No! <img src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />). The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
+					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. (Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#" id="noJump" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No!</span> 
+						<img class="toolImg" src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>). The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
 
 					<div class="overflow-hidden"><!--visualization #1-->
 						<h3 style="margin-bottom: -2px">hunting effort by state (2007&ndash;16 average)</h3>
@@ -76,7 +92,10 @@
 							<div id="data-panel" style="width: 30%;"></div>
 						</div>
 
-						<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<span class="tooltipCustom" tooltip-follow-cursor>how do we know the number of waterfowl hunters in a state?<span class="tooltipCustomContent">Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!</span></span> <img src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />).</p>
+						<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#" id="noJump" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!">
+						 <span class="toolText">how do we know the number of waterfowl hunters in a state?</span> 
+						<img class="toolImg" src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>). 
+							</p>
 
 						<p>Diary Survey participants tell us the days they hunted and how many birds they harvested each day. This information allows state wildlife agencies to choose the hunting dates that will provide the best hunting, because a state agency can look at the number of birds shot on each date for the past, say, 10 years, to figure out when the most birds are harvested in their state, and set their season to cover those dates.</p>
 					</div><!--end vis #1-->
@@ -6607,8 +6626,9 @@
 
 						<div class="overflow-hidden">
 						Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.
-							<p style="float: right; padding-left: 5px;"><img src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings" height="138" width="400"/></p>
-						<p> <span class="tooltipCustom" tooltip-follow-cursor>Did you know ducks can be identified using just a wing?<span class="tooltipCustomContent">We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits.</span></span> Yes, it's true! <img src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" />
+							<p style="float: right; padding: 5px;"><img class="img-style" src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings" height="138" width="400"/></p>
+						<p> 
+							Did you know ducks can be identified using just a wing? <a href="#" id="noJump" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits."><span class="toolText">Yes, it's true!</span> <img class="toolImg" src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>
 						<a href="harvest-map.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
 						</div>
 
@@ -6621,10 +6641,22 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->April 26, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 9, 2018<!-- #EndDate --></p>
 	</div></div>
 
 </div><!--ends div for mobile nav--><!-- TemplateBeginEditable name="content-footer" -->
+<!--tooltip script-->
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+	$('#noJump').click(function(event) {
+
+    // This will prevent the default action of the anchor (ie, page jumping)
+    event.preventDefault();
+});
+</script>
+	
 <!--bottom include: used for scripts, footers, etc-->
 <!-- TemplateEndEditable -->
 </body>
