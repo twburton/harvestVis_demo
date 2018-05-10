@@ -264,7 +264,7 @@ hideall();
 		//myTable2+="<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'>Highlighted state rank within the nation</td></tr><tr><td style='height:15px;'>&nbsp;" +myArray3[i]+ "</td></tr>";
 		
 	  if($(this).data('info3')=="Hawaii"){
-				myTable2+="<tr><td><strong>Waterfowl are not hunted in Hawaii</strong>.</td></tr>";
+				myTable2+="<tr><td>Waterfowl are not hunted in <strong>Hawaii</strong>.</td></tr>";
 			
 		}
 		else{
@@ -273,7 +273,7 @@ hideall();
 		myTable2+= "<table>"; //<tr><td style='height:15px; color:black; font-variant: small-caps; font-weight: bold; font-style:italic;'></td>
 		myTable2+="<tr><td>The top three harvested duck species are</td></tr><tr><td class='indented'>"+statespecies+"</td></tr>";
 		if(stateid==" Alaska"){
-				myTable2+="<tr><td><strong><p class='indented2'>Alaskan harvest data are not <br>available at the borough-level.</p></strong></td></tr>";
+				myTable2+="<tr><td><p></p><strong><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Alaskan harvest data are not <br>available at the borough-level.</span></p></strong></td></tr>";
 			}
 			else{
 			myTable2+="<tr><td><p></p><p><span id='subhead-text' style='margin-left: 0px; font-weight: normal;'>Hover over the state map below<br> for county-level information!</span></p></td></td>"

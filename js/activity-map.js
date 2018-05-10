@@ -92,7 +92,7 @@ function drawMap() {
               textblock.innerHTML += '<div class="state" id="hunter-value" style="font-weight: normal;">The average hunter spends</div>\n';
               textblock.innerHTML += '<div id="tx-indent">'+ Number(data.duck_days) + ' days afield hunting ducks,<br>' + Number(data.goose_days) + ' days afield hunting geese.</span></div>\n';
 
-              textblock.innerHTML += '<div class="label state" id="hunter-value" style="font-weight: normal;">A hunter harvests an average of</div>\n';
+              textblock.innerHTML += '<div class="label state" id="hunter-value" style="margin-left:-10px;font-weight: normal; font-size: 15pt; color: #002868; font-family: "Arial Narrow", Arial, sans-serif;">A hunter harvests an average of</div>\n';
               textblock.innerHTML +=  '<div id="tx-indent">' + Number(data.duck_bag) + ' ducks<br>' + Number(data.goose_bag) + ' geese.</div>';
             }
               var panel = document.getElementById('data-panel');

@@ -20,8 +20,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!--<script src="js/tooltip.js"></script>-->
-	<script src="js/HarvData.json"></script>
-	<script src="js/StateKey.json"></script>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/main.css">
@@ -30,11 +28,13 @@
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/jquery.mmenu.css" />
 	<link type="text/css" rel="stylesheet" media="all" href="https://www.fws.gov/birdhabitat/css/mobile-menu/extensions/jquery.mmenu.positioning.css" />
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/custom-styling.css">
-	<link rel="stylesheet" href="css/activity-map.css">
-  	<link rel="stylesheet" href="css/harvest-map.css">
+	<link rel="stylesheet" href="css/harvest-map.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/tooltip.css" />
+	<link rel="stylesheet" href="css/activity-map.css">
   	
+	<script src="js/HarvData.json"></script>
+	<script src="js/StateKey.json"></script>	
 <!-- TemplateEndEditable -->
 </head>
 
@@ -79,7 +79,7 @@
 				</div>
 				<div id="content-area">
 					<!-- TemplateBeginEditable name="content" -->
-					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. (Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#!" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No!</span> 
+					Hunters provide information that helps set annual hunting regulations, ensuring the best possible opportunities for both hunting and healthy waterfowl populations. The <strong>Harvest Diary Survey</strong> tells us how many people hunted in each state, how many days, when and in what county they hunted, and how many birds were harvested. (Someone registering for the <strong>Harvest Information Program (HIP)</strong> might wonder: <em>"I get asked questions about my hunting when I register, is that all there is to the survey?"</em> <a href="#!" id="tooltip" data-toggle="tooltip" data-html="true" title="Questions asked during HIP registration about how many birds you harvested the <strong>previous</strong> year help make sure we send surveys to the right people ... so that, for example, we send most of our dove surveys to people who hunt doves, rather than to waterfowl hunters."><span class="toolText">No!</span> 
 						<img class="toolImg" src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>). The Diary Survey has been conducted for over 50 years, including years with short hunting seasons, years with long hunting seasons, various daily bag limits, and a range of season dates.
 
 					<div class="overflow-hidden"><!--visualization #1-->
@@ -92,8 +92,7 @@
 							<div id="data-panel" style="width: 30%;"></div>
 						</div>
 
-						<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state (<a href="#!" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!">
-						 <span class="toolText">how do we know the number of waterfowl hunters in a state?</span> 
+						<p>We use the Diary Survey to estimate harvest and hunting effort. For example, we multiply the average number of ducks shot, as reported on the Diary Survey, by the number of duck hunters to estimate the number of ducks shot in each state <br>(<a href="#!" id="tooltip" data-toggle="tooltip" title="Hunters are required to register for the Harvest Information Program (HIP) in each state they hunt migratory game birds. Methods of registration vary from state to state - some states require a separate permit, others offer free HIP registration over the internet, etc. - so, before you hunt game birds, be sure you know what the state requires, especially if you're a nonresident!"><span class="toolText">how do we know the number of waterfowl hunters in a state?</span> 
 						<img class="toolImg" src="img/answer.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>). 
 							</p>
 
@@ -228,11 +227,24 @@
     </path>
 
   </svg>
+	  
 	  </div> <!--hmapcontainer div for states maps-->
+								
 <div style="float: right;" class="table2" id="mytable2"></div><!--table for data div-->
 
 							</div><!--end hcontainer div-->
+<div id="legend">
+	<ul class="legend" style="list-style: none;">
+		high harvest<br>
+		<li><span class="five"></span></li><br>
+		<li><span class="four"></span></li><br>
+		<li><span class="three"></span></li><br>
+		<li><span class="two"></span></li>
+		<br>low harvest
+								
+	</ul>
 
+		</div><!--<p align="center"><img src="img/harvestMap-legend.png" width="40%" alt=""/></p>-->
 <div id="hsmap-container">
   <svg class="alaska" id="svgAlaska">
    <path d="M 62.678745,259.31235 L 63.560745,258.43135 L 64.220745,257.99135 L 64.439745,258.43135 L 64.000745,258.65135 L 64.439745,258.65135 L 66.643745,257.99135 L 68.626745,255.56635 L 70.388745,256.44835 L 70.388745,256.89035 L 69.727745,257.54935 L 69.727745,258.21235 L 70.388745,257.99135 L 70.829745,256.89035 L 71.269745,256.44835 L 71.930745,257.10835 L 72.150745,257.99135 L 72.811745,258.21235 L 73.030745,257.77135 L 74.131745,257.54935 L 75.894745,257.54935 L 76.113745,257.77135 L 75.673745,258.43135 L 75.673745,258.65135 L 76.996745,258.87235 L 76.774745,259.53235 L 77.656745,259.53235 L 78.757745,258.87235 L 81.180745,258.65135 L 82.722745,259.09235 L 83.386745,259.09235 L 84.044745,259.31235 L 84.267745,259.53235 L 85.148745,259.53235 L 86.249745,259.31235 L 87.572745,259.31235 L 89.114745,259.75435 L 89.554745,259.53235 L 90.436745,258.87235 L 90.655745,258.65135 L 91.096745,258.21235 L 92.639745,258.43135 L 96.163745,259.53235 L 97.264745,263.05835 L 97.925745,265.26135 L 88.893745,267.46435 L 89.334745,269.88635 L 87.572745,270.32735 L 82.945745,271.21135 L 82.722745,271.21135 L 72.371745,272.31135 L 69.947745,272.31135 L 69.947745,271.87035 L 68.186745,271.87035 L 68.186745,271.42935 L 66.423745,271.42935 L 64.661745,271.64935 L 63.338745,271.64935 L 63.338745,271.21135 L 62.678745,271.21135 L 62.678745,271.42935 L 60.696745,271.42935 L 60.255745,271.21135 L 60.034745,271.21135 L 60.034745,271.42935 L 59.154745,271.42935 L 58.932745,270.98935 L 57.831745,270.98935 L 57.831745,271.42935 L 57.389745,271.42935 L 54.304745,271.21135 L 54.304745,272.08935 L 52.762745,272.08935 L 51.441745,271.42935 L 50.780745,270.54735 L 51.220745,269.22735 L 51.441745,267.68335 L 52.983745,267.90535 L 54.967745,267.68335 L 55.626745,267.46435 L 56.948745,265.92135 L 57.611745,263.93935 L 58.932745,261.95735 L 59.814745,261.07435 L 60.474745,261.29735 L 61.356745,260.85535 L 62.678745,259.31235" data-info="North Slope, AK" id="02185" style="font-size:12px;fill:#d0d0d0;fill-rule:nonzero;stroke:#000000;stroke-opacity:1;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-linecap:butt;marker-start:none;stroke-linejoin:bevel">
@@ -6621,14 +6633,14 @@
 							<div id="info-box"></div><!---->
 
 					<!--<span id="subhead-text" style="font-weight: normal;">Hover over a county on the map</span>-->
-<!--<div id="legend"><p align="center"><img src="img/harvestMap-legend.png" width="40%" alt=""/></p></div>-->
+
 						</div> <!--end vis3-->
 
 						<div class="overflow-hidden">
 						Estimating harvest, hunter effort, and where birds are harvested are not the only pieces of information we can collect through Harvest Surveys. We also gather species-specific information about some migratory game species.
 							<p style="float: right; padding: 5px;"><img class="img-style" src="img/mallardwings.jpg" title="mallard wings" onmouseover="mallard wings" height="138" width="400"/></p>
 						<p> 
-							Did you know ducks can be identified using just a wing? <a href="#!" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits."><span class="toolText">Yes, it's true!</span> <img class="toolImg" src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>
+							Did you know ducks can be identified using just a wing? <a href="#!" id="tooltip" data-toggle="tooltip" title="We can also determine the bird's age and sex. Knowing the species and sex are important because of hunter bag limits."><span class="toolText">Yes, it's true!</span> <img class="toolImg" src="img/info.fw.png" alt="" height="16" width="15" style="vertical-align: middle" /></a>
 						<a href="harvest-map.html" style="font-weight: bold;">Click here to watch videos on identifying ducks by wing!</a></p>
 						</div>
 
@@ -6641,7 +6653,7 @@
 	</div><!--ends content wrapper div-->
 
 	<div id="update"><div class="wrap">
-		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 9, 2018<!-- #EndDate --></p>
+		<p>Last Updated: <!-- #BeginDate format:Am1 -->May 10, 2018<!-- #EndDate --></p>
 	</div></div>
 
 </div><!--ends div for mobile nav--><!-- TemplateBeginEditable name="content-footer" -->
