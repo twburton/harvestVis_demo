@@ -20,7 +20,6 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!--<script src="js/tooltip.js"></script>-->
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.fws.gov/birdhabitat/css/main.css">
@@ -83,13 +82,25 @@
 					
 					<!--<span class="tooltipCustom" tooltip-follow-cursor>Why?<span class="tooltipCustomContent">Well, many novice hunters can't identify every duck they shoot, especially early in the season before birds have "colored up" into their distinctive breeding plumage. Even experienced hunters can have a tough time identifying some birds. That's why we don't ask for species information in the Waterfowl Diary Survey.</span></span>--> <img class="toolImg" src="img/answer.fw.png" onclick="myFunction()" alt="" height="16" width="15" style="vertical-align: middle" /></a> However, it is possible to identify duck species from their wing plumage and geese from their tail feathers. 
 						
-					Here is a short video that shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings.
-						<p align="center">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe></p>
+					Here is a short video that shows you how to tell a female "hen" mallard from a male "drake" mallard that doesn't have its bright breeding plumage (i.e., hasn't "colored up") yet, just by looking at their wings. Also, see further down on this page for a <strong>second video</strong> about species identification using wings.
+					<div class="overflow-hidden" style="padding-bottom: 5px; padding-right: 5px;">	
+					<p> 
+  						<iframe class="img-style" style="float: left; margin-right: 16px;" width="560" height="315" src="https://www.youtube.com/embed/p9Y7-IDlPDg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe>
 					
+						<span style="padding-top: 50px; padding-bottom: 5px; display: block; text-align: right; line-height: 1.2; font-size: 10pt;">Below is a duck wing showing the different feather groupings that are key to identifying duck species (click for a larger version)!</span>
+							
+						<img id="myImg" class="img-style" style="float: right" width="30%" src="img/FeatherGroups.jpg" alt="Duck wing feather groupings" title="Duck wing feather groupings" />
+						<!-- The Modal (popup image larger)-->
+							<div id="myModal" class="modal">
+							  <span class="close">&times;</span>
+							  <img class="modal-content" id="img01">
+							  <!----><div id="caption"></div>
+							</div>
+					</p>
+					</div><br>
 
-					<div class="overflow-hidden" style="padding-bottom: 5px;">
-					<p style="padding-right:5px;">
+					<div class="overflow-hidden" style="padding-bottom: 5px; padding-right:5px;">
+					<p>
 						<img class="img-left img-style" src="img/envelope.fw.png" title="pcs envelope form" alt="pcs envelope form" />
 						<img class="img-right img-style" src="img/wingbee.fw.png" alt="envelopes" title="envelopes" />
 					</p>
@@ -110,13 +121,24 @@
                       <p class="img-left"><img class="img-style" src="img/femgadw.jpg" alt="female gadwall" title="female gadwall" /></p>
                       <br />
                       <p><br />What about the one on the left? Do you have to worry about the next bird you shoot if you have already bagged one of these? Below is another video showing you how to identify several "brown ducks" of different species by their wings.</p></div>
+									  
+					   <div class="overflow-hidden" style="padding-bottom: 5px; padding-right: 5px;">	
+					<p> 
+  						<iframe class="img-style" style="float: left; margin-right: 16px;" width="560" height="315" src="https://www.youtube.com/embed/Mmzwrw-kg4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe>
+					
+						<span style="padding-top: 50px; padding-bottom: 5px; display: block; text-align: right; line-height: 1.2; font-size: 10pt;">Below is a duck wing showing the different feather groupings that are key to identifying duck species (click for a larger version)!</span>
+						
+						<img id="myImg2" class="img-style" style="float: right" width="30%" src="img/FeatherGroups.jpg" alt="Duck wing feather groupings" title="Duck wing feather groupings" />
+						<!-- The Modal (popup image larger)-->
+							<div id="myModal2" class="modal2">
+							  <span class="close2">&times;</span>
+							  <img class="modal-content2" id="img02">
+							  <!----><div id="caption2"></div>
+							</div>
+					</p>
+					</div><br>
 				
-						<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/Mmzwrw-kg4E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="img-style"></iframe></p>
-					  
-					   
-				
-						The image below shows the main feather groupings that are used in duck wing identification.
-						<p align="center"><img class="img-style" src="img/FeatherGroups.jpg" alt="feather groups" title="feather groups" width="560" /></p>
+						
 					<p><a href="index.html" style="font-weight: bold;">Click here to see maps showing waterfowl harvest in through the U.S.</a></p>
           			<!-- TemplateEndEditable -->
 				</div><!--ends content area div-->
@@ -132,15 +154,9 @@
 
 <?php include "https://www.fws.gov/birdhabitat/includes/scripts.php" ?>
 
-<!--tooltip script-->
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
-
 <!-- TemplateBeginEditable name="content-footer" -->
 <!--bottom include: used for scripts, footers, etc-->
+<script src="js/tooltip.js" type="text/javascript"></script>
 <!-- TemplateEndEditable -->
 </body>
 </html>

@@ -1,21 +1,48 @@
-// JavaScript Document
-var app = angular.module('plunker', []);
-
-app.controller('MainCtrl', function($scope) {
-  $scope.name = 'World';
+//tooltip script
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
 });
 
+//modal script
+// Get the modal
+var modal = document.getElementById('myModal');
 
-app.directive('tooltipFollowCursor', function() {
-  return {
-    restrict: 'A',
-    link: function(scope, element, attrs) {
-      var x, y;
-      element.on('mousemove', function(e) {
-        x = e.pageX, y = e.pageY;
-        this.children[0].style.top = (y + -60) + 'px';
-        this.children[0].style.left = (x + -180) + 'px';
-      });
-    }
-  };
-})
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+};
+
+//modal script 2
+// Get the modal
+var modal = document.getElementById('myModal2');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg2');
+var modalImg = document.getElementById("img02");
+var captionText = document.getElementById("caption2");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close2")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+};
