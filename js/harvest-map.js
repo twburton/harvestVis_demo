@@ -1,5 +1,6 @@
 
 svg1=document.getElementById('svg1');
+svg2=document.getElementById('svg2');
 svgAlaska=document.getElementById('svgAlaska');
 svgAlabama=document.getElementById('svgAlabama');
 svgArkansas=document.getElementById('svgArkansas');
